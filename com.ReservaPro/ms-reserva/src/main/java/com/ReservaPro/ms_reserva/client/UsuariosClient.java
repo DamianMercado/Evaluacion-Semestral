@@ -1,6 +1,5 @@
 package com.ReservaPro.ms_reserva.client;
 
-import com.ReservaPro.ms_reserva.model.Usuario;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -1,8 +1,8 @@
 package com.ReservaPro.ms_reserva.exception;
 
-public class OrdenNoEncontrado extends RuntimeException {
+public class ReservaNoEncontrado extends RuntimeException {
 
-    public OrdenNoEncontrado(Long id) {
+    public ReservaNoEncontrado(Long id) {
         super("No se encontró ningún usuario con el id " + id);
     }
 }

@@ -14,15 +14,14 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "usuario")
 public class Usuario {
-//prueba
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nombre", length = 255, nullable = false)
+    @Column(name = "nombre", length = 100, nullable = false)
     private String nombre;
 
-    @Column(name = "Apellido", length = 255, nullable = false)
+    @Column(name = "Apellido", length = 100, nullable = false)
     private String Apellido;
 
     @Column(name = "password", length = 50, nullable = false)
@@ -31,15 +30,14 @@ public class Usuario {
     @Column(name = "email", length = 50, nullable = false)
     private String email;
 
-    @Column(name = "rut", length = 50, nullable = false)
+    @Column(name = "rut", length = 12, nullable = false)
     private String rut;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false, length = 50)
+    @Column(nullable = false, length = 20)
     private RolUsuario rol;
 
-    @Column(nullable = false)
-    @Builder.Default
-    private Boolean activo = true;
 
 }
+
+

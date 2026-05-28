@@ -1,9 +1,8 @@
 package com.ReservaPro.ms_reserva.controller;
-import com.ReservaPro.ms_reserva.client.OrdenResponse;
+import com.ReservaPro.ms_reserva.client.ReservaResponse;
 import com.ReservaPro.ms_reserva.client.UsuariosClient;
-import com.ReservaPro.ms_reserva.model.Orden;
-import com.ReservaPro.ms_reserva.model.Usuario;
-import com.ReservaPro.ms_reserva.service.OrdenService;
+import com.ReservaPro.ms_reserva.model.Reserva;
+import com.ReservaPro.ms_reserva.service.ReservaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,26 +13,26 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/ordenes")
-public class OrdenController {
-    private final OrdenService ordenService;
+public class ReservaController {
+    private final ReservaService ordenService;
     private final UsuariosClient usuariosClient;
 
     @GetMapping
-    public ResponseEntity<List<Orden>> findAll() {
+    public ResponseEntity<List<Reserva>> findAll() {
         return ResponseEntity.ok(ordenService.obtenerUsuarios());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<OrdenResponse> findById(@PathVariable Long id) {
+    public ResponseEntity<ReservaResponse> findById(@PathVariable Long id) {
         Usuario user = usuariosClient.getUsuario(id);
-        Orden order = ordenService.obtenerUsuario(id);
-        OrdenResponse ordenResponse = new OrdenResponse();
-        return ResponseEntity.ok(new OrdenResponse(order.getId(), user, order.getTotal(), order.getFechaCreacion(), order.getEstado()));
+        Reserva order = ordenService.obtenerUsuario(id);
+        ReservaResponse ordenResponse = new ReservaResponse();
+        return ResponseEntity.ok(new ReservaResponse(order.getId(), user, order.getTotal(), order.getFechaCreacion(), order.getEstado()));
     }
 
     @PostMapping
-    public ResponseEntity<Orden> create(@RequestBody Orden orden) {
-        Orden ordenCreado = ordenService.crearUsuario(orden);
+    public ResponseEntity<Reserva> create(@RequestBody Reserva orden) {
+        Reserva ordenCreado = ordenService.crearUsuario(orden);
         return ResponseEntity.status(HttpStatus.CREATED).body(ordenCreado);
     }
 
