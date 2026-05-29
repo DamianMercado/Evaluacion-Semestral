@@ -1,6 +1,5 @@
 package com.ReservaPro.ms_reserva.controller;
-import com.ReservaPro.ms_reserva.client.ReservaResponse;
-import com.ReservaPro.ms_reserva.client.UsuariosClient;
+import com.ReservaPro.ms_reserva.client.UsuarioClient;
 import com.ReservaPro.ms_reserva.model.Reserva;
 import com.ReservaPro.ms_reserva.service.ReservaService;
 import lombok.RequiredArgsConstructor;
@@ -15,7 +14,7 @@ import java.util.List;
 @RequestMapping("/api/v1/ordenes")
 public class ReservaController {
     private final ReservaService ordenService;
-    private final UsuariosClient usuariosClient;
+    private final UsuarioClient usuariosClient;
 
     @GetMapping
     public ResponseEntity<List<Reserva>> findAll() {

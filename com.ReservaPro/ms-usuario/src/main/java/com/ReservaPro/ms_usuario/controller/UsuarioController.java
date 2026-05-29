@@ -37,5 +37,26 @@ public class UsuarioController {
         usuarioService.eliminarUsuario(id);
         return ResponseEntity.noContent().build();
     }
-
+    //Validacion de cliente
+    @GetMapping("/{id}/validar-cliente")
+    public ResponseEntity<Boolean> esCliente(@PathVariable Long id) {
+        try {
+            Usuario usuario = usuarioService.obtenerUsuarioPorId(id);
+            boolean esValido = usuario.getRol() == RolUsuario.CLIENTE;
+            return ResponseEntity.ok(esValido);
+        } catch (Exception e) {
+            return ResponseEntity.ok(false);
+        }
+    }
+    //Validacion de Operador
+    @GetMapping("/{id}/validar-operador")
+    public ResponseEntity<Boolean> esOperadorServicio(@PathVariable Long id) {
+        try {
+            Usuario usuario = usuarioService.obtenerUsuarioPorId(id);
+            boolean esValido = usuario.getRol() == RolUsuario.OPERADOR_SERVICIO;
+            return ResponseEntity.ok(esValido);
+        } catch (Exception e) {
+            return ResponseEntity.ok(false);
+        }
+    }
 }
