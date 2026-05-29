@@ -15,6 +15,8 @@ import java.util.List;
 
 public class UsuarioController {
     private final UsuarioService usuarioService;
+
+
     //Lista de usuarios
     @GetMapping
     public ResponseEntity<List<Usuario>> findAll() {
