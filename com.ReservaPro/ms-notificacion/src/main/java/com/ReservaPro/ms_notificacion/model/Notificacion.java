@@ -30,8 +30,7 @@ public class Notificacion {
     @Column(name = "tipo", nullable = false, length = 20)
     private String tipo;
 
-    @Column(name = "fecha_envio", nullable = false)
-    private LocalDateTime fechaEnvio;
+
 
     @Column(name = "leida", nullable = false)
     private Boolean leida;

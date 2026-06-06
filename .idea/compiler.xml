@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -16,9 +17,11 @@
           <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.5.5.Final/mapstruct-processor-1.5.5.Final.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok-mapstruct-binding/0.2.0/lombok-mapstruct-binding-0.2.0.jar" />
         </processorPath>
+        <module name="ms-usuario (1)" />
+        <module name="ms-usuario (2)" />
         <module name="ms-usuario" />
       </profile>
-      <profile name="Annotation profile for ms-notificacion" enabled="true">
+      <profile name="Annotation profile for ms-reserva" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -35,6 +38,8 @@
       <module name="ms-notificacion" options="-parameters" />
       <module name="ms-reserva" options="-parameters" />
       <module name="ms-usuario" options="-parameters" />
+      <module name="ms-usuario (1)" options="-parameters" />
+      <module name="ms-usuario (2)" options="-parameters" />
     </option>
   </component>
 </project>
