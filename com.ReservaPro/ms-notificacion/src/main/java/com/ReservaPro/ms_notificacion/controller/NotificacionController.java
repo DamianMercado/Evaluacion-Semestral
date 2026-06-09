@@ -6,6 +6,7 @@ import com.ReservaPro.ms_notificacion.service.NotificacionService;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -23,7 +24,8 @@ import java.util.List;
 @RequestMapping("/api/v1/notificaciones")
 @RequiredArgsConstructor
 @Tag(
-        name = "Notificaciones", description = "Operaciones relacionadas con las notificaciones"
+        name = "Notificaciones",
+        description = "Operaciones relacionadas con las notificaciones"
 )
 public class NotificacionController {
 
@@ -31,7 +33,8 @@ public class NotificacionController {
 
     @GetMapping
     @Operation(
-            summary = "Obtener todas las notificaciones", description = "Retorna una lista de todas las notificaciones"
+            summary = "Obtener todas las notificaciones",
+            description = "Retorna una lista de todas las notificaciones"
     )
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Lista obtenida correctamente")
@@ -49,9 +52,11 @@ public class NotificacionController {
             description = "Obtiene una notificación según su identificador"
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Notificación encontrada"), @ApiResponse(responseCode = "404", description = "Notificación no encontrada")
+            @ApiResponse(responseCode = "200", description = "Notificación encontrada"),
+            @ApiResponse(responseCode = "404", description = "Notificación no encontrada")
     })
     public ResponseEntity<NotificacionResponse> obtenerNotificacion(
+
             @Parameter(
                     description = "ID de la notificación",
                     required = true
@@ -69,10 +74,18 @@ public class NotificacionController {
             description = "Crea una nueva notificación en el sistema"
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "201", description = "Notificación creada correctamente"), @ApiResponse(responseCode = "400", description = "Datos inválidos")
+            @ApiResponse(responseCode = "201", description = "Notificación creada correctamente"),
+            @ApiResponse(responseCode = "400", description = "Datos inválidos")
     })
     public ResponseEntity<NotificacionResponse> crearNotificacion(
-            @Valid @RequestBody NotificacionRequest request) {
+
+            @RequestBody(
+                    description = "Datos de la notificación a crear",
+                    required = true
+            )
+            @Valid
+            @org.springframework.web.bind.annotation.RequestBody
+            NotificacionRequest request) {
 
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(notificacionService.crear(request));
@@ -80,19 +93,28 @@ public class NotificacionController {
 
     @PutMapping("/{id}")
     @Operation(
-            summary = "Actualizar una notificación", description = "Actualiza una notificación existente por su ID"
+            summary = "Actualizar una notificación",
+            description = "Actualiza una notificación existente por su ID"
     )
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Notificación actualizada"),
             @ApiResponse(responseCode = "404", description = "Notificación no encontrada")
     })
     public ResponseEntity<NotificacionResponse> actualizarNotificacion(
+
             @Parameter(
                     description = "ID de la notificación",
                     required = true
             )
             @PathVariable Long id,
-            @Valid @RequestBody NotificacionRequest request) {
+
+            @RequestBody(
+                    description = "Datos actualizados de la notificación",
+                    required = true
+            )
+            @Valid
+            @org.springframework.web.bind.annotation.RequestBody
+            NotificacionRequest request) {
 
         return ResponseEntity.ok(
                 notificacionService.actualizar(id, request)
@@ -101,13 +123,15 @@ public class NotificacionController {
 
     @DeleteMapping("/{id}")
     @Operation(
-            summary = "Eliminar una notificación", description = "Elimina una notificación por su ID"
+            summary = "Eliminar una notificación",
+            description = "Elimina una notificación por su ID"
     )
     @ApiResponses(value = {
             @ApiResponse(responseCode = "204", description = "Notificación eliminada"),
             @ApiResponse(responseCode = "404", description = "Notificación no encontrada")
     })
     public ResponseEntity<Void> eliminarNotificacion(
+
             @Parameter(
                     description = "ID de la notificación",
                     required = true
