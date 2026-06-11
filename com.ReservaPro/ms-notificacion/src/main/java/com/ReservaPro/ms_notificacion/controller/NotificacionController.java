@@ -33,8 +33,7 @@ public class NotificacionController {
 
     @GetMapping
     @Operation(
-            summary = "Obtener todas las notificaciones",
-            description = "Retorna una lista de todas las notificaciones"
+            summary = "Obtener todas las notificaciones", description = "Retorna una lista de todas las notificaciones"
     )
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Lista obtenida correctamente")
@@ -48,8 +47,7 @@ public class NotificacionController {
 
     @GetMapping("/{id}")
     @Operation(
-            summary = "Obtener notificación por ID",
-            description = "Obtiene una notificación según su identificador"
+            summary = "Obtener notificación por ID", description = "Obtiene una notificación según su identificador"
     )
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Notificación encontrada"),
@@ -70,8 +68,7 @@ public class NotificacionController {
 
     @PostMapping
     @Operation(
-            summary = "Crear una notificación",
-            description = "Crea una nueva notificación en el sistema"
+            summary = "Crear una notificación", description = "Crea una nueva notificación en el sistema"
     )
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "Notificación creada correctamente"),
@@ -93,8 +90,7 @@ public class NotificacionController {
 
     @PutMapping("/{id}")
     @Operation(
-            summary = "Actualizar una notificación",
-            description = "Actualiza una notificación existente por su ID"
+            summary = "Actualizar una notificación", description = "Actualiza una notificación existente por su ID"
     )
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Notificación actualizada"),
@@ -123,8 +119,7 @@ public class NotificacionController {
 
     @DeleteMapping("/{id}")
     @Operation(
-            summary = "Eliminar una notificación",
-            description = "Elimina una notificación por su ID"
+            summary = "Eliminar una notificación", description = "Elimina una notificación por su ID"
     )
     @ApiResponses(value = {
             @ApiResponse(responseCode = "204", description = "Notificación eliminada"),
