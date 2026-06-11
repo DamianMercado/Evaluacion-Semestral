@@ -8,7 +8,7 @@
 		<relativePath/>
 	</parent>
 	<groupId>com.ReservaPro</groupId>
-	<artifactId>ms-usuario</artifactId>
+	<artifactId>ms-disponibilidad</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<properties>
 		<java.version>17</java.version>

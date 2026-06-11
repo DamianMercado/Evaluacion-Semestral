@@ -4,9 +4,15 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
+        <option value="$PROJECT_DIR$/com.ReservaPro/ms-pago/pom.xml" />
         <option value="$PROJECT_DIR$/com.ReservaPro/ms-usuario/pom.xml" />
-        <option value="$PROJECT_DIR$/com.ReservaPro/ms-reserva/pom.xml" />
         <option value="$PROJECT_DIR$/com.ReservaPro/ms-notificacion/pom.xml" />
+        <option value="$PROJECT_DIR$/com.ReservaPro/ms-promocion/pom.xml" />
+        <option value="$PROJECT_DIR$/com.ReservaPro/ms-reserva/pom.xml" />
+        <option value="$PROJECT_DIR$/com.ReservaPro/ms-gestion-servicio/pom.xml" />
+        <option value="$PROJECT_DIR$/com.ReservaPro/ms-calificacion/pom.xml" />
+        <option value="$PROJECT_DIR$/com.ReservaPro/ms-cancelacion/pom.xml" />
+        <option value="$PROJECT_DIR$/com.ReservaPro/ms-disponibilidad/pom.xml" />
       </list>
     </option>
   </component>
