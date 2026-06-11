@@ -20,13 +20,15 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CancelacionService {
 
-    private final CancelacionRepository cancelacionRepository;
-    private final CancelacionMapper cancelacionMapper;
-
     private static final Logger log =
             LoggerFactory.getLogger(CancelacionService.class);
 
+    private final CancelacionRepository cancelacionRepository;
+    private final CancelacionMapper cancelacionMapper;
+
     public List<CancelacionResponse> obtener() {
+
+        log.info("Obteniendo todas las cancelaciones");
 
         return cancelacionMapper.toResponseList(
                 cancelacionRepository.findAll()
@@ -35,7 +37,7 @@ public class CancelacionService {
 
     public CancelacionResponse obtenerPorId(Long id) {
 
-        log.info("Se está obteniendo una cancelacion con id {}", id);
+        log.info("Buscando cancelación con ID: {}", id);
 
         return cancelacionMapper.toResponse(
                 cancelacionRepository.findById(id)
@@ -47,30 +49,54 @@ public class CancelacionService {
     public CancelacionResponse crear(
             CancelacionRequest cancelacionRequest) {
 
-        return cancelacionMapper.toResponse(
-                cancelacionRepository.save(
-                        cancelacionMapper.toEntity(cancelacionRequest)
-                )
+        log.info(
+                "Creando cancelación. Motivo: {}",
+                cancelacionRequest.getMotivo()
         );
+
+        Cancelacion cancelacion = cancelacionRepository.save(
+                cancelacionMapper.toEntity(cancelacionRequest)
+        );
+
+        log.info(
+                "Cancelación creada correctamente con ID: {}",
+                cancelacion.getIdCancelacion()
+        );
+
+        return cancelacionMapper.toResponse(cancelacion);
     }
 
     public void eliminar(Long id) {
 
+        log.info("Eliminando cancelación con ID: {}", id);
+
         if (!cancelacionRepository.existsById(id)) {
+
+            log.error("No existe la cancelación con ID: {}", id);
+
             throw new CancelacionNotFoundException(id);
         }
 
         cancelacionRepository.deleteById(id);
+
+        log.info("Cancelación eliminada correctamente con ID: {}", id);
     }
 
     public CancelacionResponse actualizar(
             Long id,
             CancelacionRequest cancelacionRequest) {
 
+        log.info("Actualizando cancelación con ID: {}", id);
+
         Cancelacion cancelacionExistente =
                 cancelacionRepository.findById(id)
-                        .orElseThrow(() ->
-                                new CancelacionNotFoundException(id));
+                        .orElseThrow(() -> {
+                            log.error(
+                                    "No se encontró la cancelación con ID: {}",
+                                    id
+                            );
+                            return new CancelacionNotFoundException(id);
+                        });
 
         try {
 
@@ -86,15 +112,23 @@ public class CancelacionService {
         } catch (Exception e) {
 
             log.error(
-                    "Error actualizando cancelacion: {}",
-                    cancelacionRequest
+                    "Error actualizando cancelación ID {}: {}",
+                    id,
+                    e.getMessage()
             );
 
             throw new RuntimeException(e);
         }
 
-        return cancelacionMapper.toResponse(
-                cancelacionRepository.save(cancelacionExistente)
+        Cancelacion actualizada = cancelacionRepository.save(
+                cancelacionExistente
         );
+
+        log.info(
+                "Cancelación actualizada correctamente con ID: {}",
+                id
+        );
+
+        return cancelacionMapper.toResponse(actualizada);
     }
 }

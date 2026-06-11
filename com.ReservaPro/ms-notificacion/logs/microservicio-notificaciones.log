@@ -30,3 +30,8 @@
 2026-06-10T20:54:26.083-04:00  INFO 28144 --- [ms-notificacion] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
 2026-06-10T20:54:27.096-04:00  INFO 28144 --- [ms-notificacion] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
 2026-06-10T20:54:27.104-04:00  INFO 28144 --- [ms-notificacion] [main] c.R.m.MsNotificacionApplication          : Started MsNotificacionApplication in 5.272 seconds (process running for 5.561)
+2026-06-10T21:01:02.369-04:00  INFO 28144 --- [ms-notificacion] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-10T21:01:02.375-04:00  INFO 28144 --- [ms-notificacion] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-10T21:01:02.377-04:00  INFO 28144 --- [ms-notificacion] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-10T21:01:02.379-04:00  INFO 28144 --- [ms-notificacion] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-10T21:01:02.383-04:00  INFO 28144 --- [ms-notificacion] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
