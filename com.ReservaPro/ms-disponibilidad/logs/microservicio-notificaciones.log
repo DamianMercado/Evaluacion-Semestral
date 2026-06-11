@@ -1,0 +1,50 @@
+2026-06-10T21:48:10.795-04:00  INFO 24320 --- [ms-disponibilidad] [main] c.R.m.MsDisponibilidadApplication        : Starting MsDisponibilidadApplication using Java 21.0.9 with PID 24320 (C:\Users\va-alumno\Documents\GitHub\Evaluacion-Semestral\com.ReservaPro\ms-disponibilidad\target\classes started by VA-Alumno in C:\Users\va-alumno\Documents\GitHub\Evaluacion-Semestral\com.ReservaPro\ms-disponibilidad)
+2026-06-10T21:48:10.797-04:00  INFO 24320 --- [ms-disponibilidad] [main] c.R.m.MsDisponibilidadApplication        : No active profile set, falling back to 1 default profile: "default"
+2026-06-10T21:48:11.201-04:00  INFO 24320 --- [ms-disponibilidad] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-10T21:48:11.230-04:00  INFO 24320 --- [ms-disponibilidad] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 1 JPA repository interface.
+2026-06-10T21:48:11.309-04:00  INFO 24320 --- [ms-disponibilidad] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=314c5e30-7e01-36b4-8c6b-2f428ca7735c
+2026-06-10T21:48:11.482-04:00  INFO 24320 --- [ms-disponibilidad] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-06-10T21:48:11.490-04:00  INFO 24320 --- [ms-disponibilidad] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-10T21:48:11.490-04:00  INFO 24320 --- [ms-disponibilidad] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2026-06-10T21:48:11.528-04:00  INFO 24320 --- [ms-disponibilidad] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-10T21:48:11.528-04:00  INFO 24320 --- [ms-disponibilidad] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 702 ms
+2026-06-10T21:48:11.591-04:00  INFO 24320 --- [ms-disponibilidad] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-10T21:48:11.614-04:00  INFO 24320 --- [ms-disponibilidad] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.2.Final
+2026-06-10T21:48:11.629-04:00  INFO 24320 --- [ms-disponibilidad] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-10T21:48:11.755-04:00  INFO 24320 --- [ms-disponibilidad] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-10T21:48:11.768-04:00  INFO 24320 --- [ms-disponibilidad] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-10T21:48:11.923-04:00  INFO 24320 --- [ms-disponibilidad] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@77020328
+2026-06-10T21:48:11.924-04:00  INFO 24320 --- [ms-disponibilidad] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-10T21:48:11.969-04:00  INFO 24320 --- [ms-disponibilidad] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-10T21:48:12.387-04:00  INFO 24320 --- [ms-disponibilidad] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-10T21:48:12.433-04:00  INFO 24320 --- [ms-disponibilidad] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-10T21:48:12.578-04:00  WARN 24320 --- [ms-disponibilidad] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'disponibilidadController' defined in file [C:\Users\va-alumno\Documents\GitHub\Evaluacion-Semestral\com.ReservaPro\ms-disponibilidad\target\classes\com\ReservaPro\ms_disponibilidad\controller\DisponibilidadController.class]: Unsatisfied dependency expressed through constructor parameter 1: No qualifying bean of type 'com.ReservaPro.ms_disponibilidad.client.ReservaClient' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2026-06-10T21:48:12.580-04:00  INFO 24320 --- [ms-disponibilidad] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-10T21:48:12.581-04:00  INFO 24320 --- [ms-disponibilidad] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-10T21:48:12.585-04:00  INFO 24320 --- [ms-disponibilidad] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-10T21:48:12.586-04:00  INFO 24320 --- [ms-disponibilidad] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-06-10T21:48:12.592-04:00  INFO 24320 --- [ms-disponibilidad] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-10T21:48:12.602-04:00 ERROR 24320 --- [ms-disponibilidad] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in com.ReservaPro.ms_disponibilidad.controller.DisponibilidadController required a bean of type 'com.ReservaPro.ms_disponibilidad.client.ReservaClient' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.ReservaPro.ms_disponibilidad.client.ReservaClient' in your configuration.
+
