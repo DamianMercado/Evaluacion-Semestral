@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/com.ReservaPro/ms-calificacion/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com.ReservaPro/ms-cancelacion/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com.ReservaPro/ms-disponibilidad/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com.ReservaPro/ms-gestion-servicio/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/com.ReservaPro/ms-notificacion/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com.ReservaPro/ms-pago/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com.ReservaPro/ms-promocion/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/com.ReservaPro/ms-reserva/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/com.ReservaPro/ms-usuario/src/main/java" charset="UTF-8" />
   </component>
