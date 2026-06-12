@@ -1,10 +1,10 @@
-package com.ReservaPro.ms_reserva;
+package com.ReservaPro.eruka_Server;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MsReservaApplicationTests {
+class ErukaServerApplicationTests {
 
 	@Test
 	void contextLoads() {

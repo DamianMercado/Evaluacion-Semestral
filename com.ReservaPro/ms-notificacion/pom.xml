@@ -46,6 +46,12 @@
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
 
+		<!-- 🔥 EUREKA CLIENT -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+
 		<!-- MySQL -->
 		<dependency>
 			<groupId>com.mysql</groupId>
@@ -93,6 +99,7 @@
 	<dependencyManagement>
 		<dependencies>
 
+			<!-- Spring Cloud BOM -->
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
