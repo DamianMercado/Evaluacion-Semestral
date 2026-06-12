@@ -16,8 +16,11 @@ public class CancelacionMapper {
         Cancelacion cancelacion = new Cancelacion();
 
         cancelacion.setMotivo(request.getMotivo());
-        cancelacion.setFechaCancelacion(request.getFechaCancelacion());
+        cancelacion.setFechaCancelacion(request.getFechaCancelacion()); // LocalDate correcto
         cancelacion.setEstadoReembolso(request.getEstadoReembolso());
+
+        // AGREGADO (sin cambiar nada más)
+        cancelacion.setIdReserva(request.getIdReserva());
 
         return cancelacion;
     }

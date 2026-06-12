@@ -1,9 +1,14 @@
 package com.ReservaPro.ms_cancelacion.model;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
 import lombok.*;
+
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "cancelaciones")
@@ -24,10 +29,10 @@ public class Cancelacion {
     @Schema(description = "Motivo de la cancelación", example = "Cambio de planes")
     private String motivo;
 
-    @NotBlank(message = "La fecha de cancelación es obligatoria")
+    @NotNull(message = "La fecha de cancelación es obligatoria")
     @Column(nullable = false)
     @Schema(description = "Fecha de la cancelación", example = "2026-06-10")
-    private String fechaCancelacion;
+    private LocalDate fechaCancelacion;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
@@ -37,13 +42,8 @@ public class Cancelacion {
     )
     private EstadoReembolso estadoReembolso;
 
-    public void cancelarReserva(String motivo) {
-        this.motivo = motivo;
-        this.estadoReembolso = EstadoReembolso.PENDIENTE;
-    }
 
-    public boolean procesarReembolso() {
-        this.estadoReembolso = EstadoReembolso.REEMBOLSADO;
-        return true;
-    }
+    @Column(name = "id_reserva", nullable = false)
+    @Schema(description = "ID de la reserva asociada", example = "123")
+    private Long idReserva;
 }

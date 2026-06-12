@@ -6,6 +6,8 @@ import io.swagger.v3.oas.annotations.media.Schema;
 
 import lombok.Data;
 
+import java.time.LocalDate;
+
 @Data
 @Schema(description = "Respuesta con la información de una cancelación")
 public class CancelacionResponse {
@@ -26,11 +28,17 @@ public class CancelacionResponse {
             description = "Fecha de la cancelación",
             example = "10-06-2026"
     )
-    private String fechaCancelacion;
+    private LocalDate fechaCancelacion;
 
     @Schema(
             description = "Estado del reembolso asociado a la cancelación",
             example = "PENDIENTE"
     )
     private EstadoReembolso estadoReembolso;
+
+    @Schema(
+            description = "ID de la reserva asociada a la cancelación",
+            example = "123"
+    )
+    private Long idReserva;
 }
