@@ -3,6 +3,7 @@ package com.ReservaPro.ms_notificacion.model;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 import jakarta.persistence.*;
+
 import lombok.Data;
 
 @Data
@@ -29,14 +30,31 @@ public class Notificacion {
     private Long idCancelacion;
 
     @Column(name = "mensaje", nullable = false, length = 200)
-    @Schema(description = "Mensaje de la notificación", example = "Reserva confirmada")
+    @Schema(
+            description = "Mensaje de la notificación",
+            example = "Reserva confirmada"
+    )
     private String mensaje;
 
     @Column(name = "tipo", nullable = false, length = 20)
-    @Schema(description = "Tipo de notificación", example = "EMAIL")
+    @Schema(
+            description = "Tipo de notificación",
+            example = "EMAIL"
+    )
     private String tipo;
 
     @Column(name = "leida", nullable = false)
-    @Schema(description = "Indica si la notificación fue leída", example = "false")
+    @Schema(
+            description = "Indica si la notificación fue leída",
+            example = "false"
+    )
     private Boolean leida;
+
+    @PrePersist
+    public void prePersist() {
+
+        if (this.leida == null) {
+            this.leida = false;
+        }
+    }
 }

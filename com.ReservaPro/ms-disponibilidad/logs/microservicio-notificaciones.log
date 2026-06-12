@@ -117,3 +117,8 @@ Consider defining a bean of type 'com.ReservaPro.ms_disponibilidad.client.Reserv
 2026-06-11T21:35:13.879-04:00  INFO 17472 --- [ms-disponibilidad] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
 2026-06-11T21:35:14.895-04:00  INFO 17472 --- [ms-disponibilidad] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
 2026-06-11T21:35:14.901-04:00  INFO 17472 --- [ms-disponibilidad] [main] c.R.m.MsDisponibilidadApplication        : Started MsDisponibilidadApplication in 7.307 seconds (process running for 7.973)
+2026-06-11T21:37:54.568-04:00  INFO 17472 --- [ms-disponibilidad] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-11T21:37:54.579-04:00  INFO 17472 --- [ms-disponibilidad] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-11T21:37:54.583-04:00  INFO 17472 --- [ms-disponibilidad] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-11T21:37:54.584-04:00  INFO 17472 --- [ms-disponibilidad] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-11T21:37:54.592-04:00  INFO 17472 --- [ms-disponibilidad] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
