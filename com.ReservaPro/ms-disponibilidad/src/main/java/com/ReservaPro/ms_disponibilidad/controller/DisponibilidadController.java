@@ -3,8 +3,6 @@ package com.ReservaPro.ms_disponibilidad.controller;
 import com.ReservaPro.ms_disponibilidad.client.ReservaClient;
 import com.ReservaPro.ms_disponibilidad.dto.request.DisponibilidadRequest;
 import com.ReservaPro.ms_disponibilidad.dto.response.DisponibilidadResponse;
-import com.ReservaPro.ms_disponibilidad.mapper.DisponibilidadMapper;
-import com.ReservaPro.ms_disponibilidad.model.Disponibilidad;
 import com.ReservaPro.ms_disponibilidad.service.DisponibilidadService;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -47,13 +45,9 @@ public class DisponibilidadController {
     })
     public ResponseEntity<List<DisponibilidadResponse>> listarDisponibilidades() {
 
-        List<DisponibilidadResponse> respuesta =
+        return ResponseEntity.ok(
                 disponibilidadService.listarDisponibilidades()
-                        .stream()
-                        .map(DisponibilidadMapper::toResponse)
-                        .toList();
-
-        return ResponseEntity.ok(respuesta);
+        );
     }
 
     @PostMapping
@@ -76,14 +70,9 @@ public class DisponibilidadController {
             DisponibilidadRequest request
     ) {
 
-        Disponibilidad disponibilidad =
-                DisponibilidadMapper.toEntity(request);
-
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(
-                        DisponibilidadMapper.toResponse(
-                                disponibilidadService.guardarDisponibilidad(disponibilidad)
-                        )
+                        disponibilidadService.guardarDisponibilidad(request)
                 );
     }
 
@@ -106,9 +95,7 @@ public class DisponibilidadController {
     ) {
 
         return ResponseEntity.ok(
-                DisponibilidadMapper.toResponse(
-                        disponibilidadService.buscarPorId(id)
-                )
+                disponibilidadService.buscarPorId(id)
         );
     }
 
@@ -132,9 +119,6 @@ public class DisponibilidadController {
 
         return ResponseEntity.ok(
                 disponibilidadService.buscarPorFecha(fecha)
-                        .stream()
-                        .map(DisponibilidadMapper::toResponse)
-                        .toList()
         );
     }
 
@@ -150,9 +134,6 @@ public class DisponibilidadController {
 
         return ResponseEntity.ok(
                 disponibilidadService.buscarActivas()
-                        .stream()
-                        .map(DisponibilidadMapper::toResponse)
-                        .toList()
         );
     }
 
@@ -182,16 +163,8 @@ public class DisponibilidadController {
             DisponibilidadRequest request
     ) {
 
-        Disponibilidad disponibilidad =
-                DisponibilidadMapper.toEntity(request);
-
         return ResponseEntity.ok(
-                DisponibilidadMapper.toResponse(
-                        disponibilidadService.actualizarDisponibilidad(
-                                id,
-                                disponibilidad
-                        )
-                )
+                disponibilidadService.actualizarDisponibilidad(id, request)
         );
     }
 

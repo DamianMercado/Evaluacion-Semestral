@@ -1,6 +1,6 @@
 package com.ReservaPro.ms_disponibilidad.dto.request;
 
-import com.ReservaPro.ms_disponibilidad.model.Disponibilidad;
+import com.ReservaPro.ms_disponibilidad.model.EstadoDisponibilidad;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 
@@ -16,6 +16,13 @@ import java.time.LocalTime;
 @Data
 @Schema(description = "Datos necesarios para crear o actualizar una disponibilidad")
 public class DisponibilidadRequest {
+
+    @Schema(
+            description = "ID del servicio asociado",
+            example = "1"
+    )
+    @NotNull(message = "El id del servicio es obligatorio")
+    private Long idServicio;
 
     @Schema(
             description = "Fecha de la disponibilidad",
@@ -58,7 +65,7 @@ public class DisponibilidadRequest {
             description = "Estado de la disponibilidad",
             example = "DISPONIBLE"
     )
-    private Disponibilidad.EstadoDisponibilidad estado;
+    private EstadoDisponibilidad estado;
 
     @Schema(
             description = "Observaciones adicionales",

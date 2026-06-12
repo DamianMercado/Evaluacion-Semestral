@@ -48,3 +48,72 @@ Action:
 
 Consider defining a bean of type 'com.ReservaPro.ms_disponibilidad.client.ReservaClient' in your configuration.
 
+2026-06-11T20:50:24.400-04:00  INFO 23064 --- [ms-disponibilidad] [main] c.R.m.MsDisponibilidadApplication        : Starting MsDisponibilidadApplication using Java 21.0.9 with PID 23064 (C:\Users\va-alumno\Documents\GitHub\Evaluacion-Semestral\com.ReservaPro\ms-disponibilidad\target\classes started by VA-Alumno in C:\Users\va-alumno\Documents\GitHub\Evaluacion-Semestral\com.ReservaPro\ms-disponibilidad)
+2026-06-11T20:50:24.402-04:00  INFO 23064 --- [ms-disponibilidad] [main] c.R.m.MsDisponibilidadApplication        : No active profile set, falling back to 1 default profile: "default"
+2026-06-11T20:50:25.101-04:00  INFO 23064 --- [ms-disponibilidad] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-11T20:50:25.163-04:00  INFO 23064 --- [ms-disponibilidad] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 1 JPA repository interface.
+2026-06-11T20:50:25.298-04:00  INFO 23064 --- [ms-disponibilidad] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=dc2f321f-dd6b-3b08-acf2-d691f13664fc
+2026-06-11T20:50:25.637-04:00  INFO 23064 --- [ms-disponibilidad] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-06-11T20:50:25.650-04:00  INFO 23064 --- [ms-disponibilidad] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-11T20:50:25.650-04:00  INFO 23064 --- [ms-disponibilidad] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2026-06-11T20:50:25.737-04:00  INFO 23064 --- [ms-disponibilidad] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-11T20:50:25.737-04:00  INFO 23064 --- [ms-disponibilidad] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1297 ms
+2026-06-11T20:50:25.862-04:00  INFO 23064 --- [ms-disponibilidad] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-11T20:50:25.916-04:00  INFO 23064 --- [ms-disponibilidad] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.2.Final
+2026-06-11T20:50:25.947-04:00  INFO 23064 --- [ms-disponibilidad] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-11T20:50:26.212-04:00  INFO 23064 --- [ms-disponibilidad] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-11T20:50:26.240-04:00  INFO 23064 --- [ms-disponibilidad] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-11T20:50:26.527-04:00  INFO 23064 --- [ms-disponibilidad] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1b317e7d
+2026-06-11T20:50:26.528-04:00  INFO 23064 --- [ms-disponibilidad] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-11T20:50:26.596-04:00  INFO 23064 --- [ms-disponibilidad] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-11T20:50:27.365-04:00  INFO 23064 --- [ms-disponibilidad] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-11T20:50:27.432-04:00  INFO 23064 --- [ms-disponibilidad] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-11T20:50:27.804-04:00  WARN 23064 --- [ms-disponibilidad] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-11T20:50:29.209-04:00  INFO 23064 --- [ms-disponibilidad] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-06-11T20:50:29.257-04:00  INFO 23064 --- [ms-disponibilidad] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2026-06-11T20:50:30.268-04:00  INFO 23064 --- [ms-disponibilidad] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-06-11T20:50:30.275-04:00  INFO 23064 --- [ms-disponibilidad] [main] c.R.m.MsDisponibilidadApplication        : Started MsDisponibilidadApplication in 7.33 seconds (process running for 8.527)
+2026-06-11T21:16:19.953-04:00  INFO 23064 --- [ms-disponibilidad] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-11T21:16:19.964-04:00  INFO 23064 --- [ms-disponibilidad] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-11T21:16:19.968-04:00  INFO 23064 --- [ms-disponibilidad] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-11T21:16:19.970-04:00  INFO 23064 --- [ms-disponibilidad] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-11T21:16:19.977-04:00  INFO 23064 --- [ms-disponibilidad] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-11T21:35:09.042-04:00  INFO 17472 --- [ms-disponibilidad] [main] c.R.m.MsDisponibilidadApplication        : Starting MsDisponibilidadApplication using Java 21.0.9 with PID 17472 (C:\Users\va-alumno\Documents\GitHub\Evaluacion-Semestral\com.ReservaPro\ms-disponibilidad\target\classes started by VA-Alumno in C:\Users\va-alumno\Documents\GitHub\Evaluacion-Semestral\com.ReservaPro\ms-disponibilidad)
+2026-06-11T21:35:09.044-04:00  INFO 17472 --- [ms-disponibilidad] [main] c.R.m.MsDisponibilidadApplication        : No active profile set, falling back to 1 default profile: "default"
+2026-06-11T21:35:09.726-04:00  INFO 17472 --- [ms-disponibilidad] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-11T21:35:09.775-04:00  INFO 17472 --- [ms-disponibilidad] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 1 JPA repository interface.
+2026-06-11T21:35:09.905-04:00  INFO 17472 --- [ms-disponibilidad] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=dc2f321f-dd6b-3b08-acf2-d691f13664fc
+2026-06-11T21:35:10.240-04:00  INFO 17472 --- [ms-disponibilidad] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-06-11T21:35:10.254-04:00  INFO 17472 --- [ms-disponibilidad] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-11T21:35:10.256-04:00  INFO 17472 --- [ms-disponibilidad] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2026-06-11T21:35:10.341-04:00  INFO 17472 --- [ms-disponibilidad] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-11T21:35:10.342-04:00  INFO 17472 --- [ms-disponibilidad] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1260 ms
+2026-06-11T21:35:10.473-04:00  INFO 17472 --- [ms-disponibilidad] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-11T21:35:10.542-04:00  INFO 17472 --- [ms-disponibilidad] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.2.Final
+2026-06-11T21:35:10.575-04:00  INFO 17472 --- [ms-disponibilidad] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-11T21:35:10.838-04:00  INFO 17472 --- [ms-disponibilidad] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-11T21:35:10.866-04:00  INFO 17472 --- [ms-disponibilidad] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-11T21:35:11.166-04:00  INFO 17472 --- [ms-disponibilidad] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1c792107
+2026-06-11T21:35:11.169-04:00  INFO 17472 --- [ms-disponibilidad] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-11T21:35:11.247-04:00  INFO 17472 --- [ms-disponibilidad] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-11T21:35:12.032-04:00  INFO 17472 --- [ms-disponibilidad] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-11T21:35:12.100-04:00  INFO 17472 --- [ms-disponibilidad] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-11T21:35:12.448-04:00  WARN 17472 --- [ms-disponibilidad] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-11T21:35:13.834-04:00  INFO 17472 --- [ms-disponibilidad] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-06-11T21:35:13.879-04:00  INFO 17472 --- [ms-disponibilidad] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2026-06-11T21:35:14.895-04:00  INFO 17472 --- [ms-disponibilidad] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-06-11T21:35:14.901-04:00  INFO 17472 --- [ms-disponibilidad] [main] c.R.m.MsDisponibilidadApplication        : Started MsDisponibilidadApplication in 7.307 seconds (process running for 7.973)

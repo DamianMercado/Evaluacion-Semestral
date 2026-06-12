@@ -1,6 +1,6 @@
 package com.ReservaPro.ms_disponibilidad.dto.response;
 
-import com.ReservaPro.ms_disponibilidad.model.Disponibilidad;
+import com.ReservaPro.ms_disponibilidad.model.EstadoDisponibilidad;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 
@@ -21,6 +21,12 @@ public class DisponibilidadResponse {
             example = "1"
     )
     private Long idDisponibilidad;
+
+    @Schema(
+            description = "ID del servicio asociado",
+            example = "1"
+    )
+    private Long idServicio;
 
     @Schema(
             description = "Fecha de la disponibilidad",
@@ -56,7 +62,7 @@ public class DisponibilidadResponse {
             description = "Estado de la disponibilidad",
             example = "DISPONIBLE"
     )
-    private Disponibilidad.EstadoDisponibilidad estado;
+    private EstadoDisponibilidad estado;
 
     @Schema(
             description = "Observaciones adicionales",
@@ -75,4 +81,10 @@ public class DisponibilidadResponse {
             example = "2026-06-10T15:30:00"
     )
     private LocalDateTime fechaCreacion;
+
+    @Schema(
+            description = "Fecha y hora de la última actualización",
+            example = "2026-06-10T16:00:00"
+    )
+    private LocalDateTime fechaActualizacion;
 }

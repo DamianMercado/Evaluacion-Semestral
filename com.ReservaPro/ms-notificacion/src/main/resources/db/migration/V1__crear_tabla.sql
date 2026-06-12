@@ -8,16 +8,12 @@ CREATE TABLE `notificaciones` (
                                   `leida` TINYINT(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Índices
---
+
 
 ALTER TABLE `notificaciones`
     ADD PRIMARY KEY (`id_notificacion`);
 
---
--- AUTO_INCREMENT
---
+
 
 ALTER TABLE `notificaciones`
     MODIFY `id_notificacion` BIGINT(20) NOT NULL AUTO_INCREMENT;
