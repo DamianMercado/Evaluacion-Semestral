@@ -2,10 +2,9 @@
 import com.ReservaPro.ms_gestion_servicio.dto.request.GestionServicioRequest;
 import com.ReservaPro.ms_gestion_servicio.dto.response.GestionServicioResponse;
 import com.ReservaPro.ms_gestion_servicio.service.GestionServicioService;
-
+import org.springframework.web.bind.annotation.RequestBody;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -69,54 +68,29 @@ public class GestionServicioController {
 
 
     @PostMapping
-    @Operation(
-            summary = "Crear un servicio", description = "Crea un nuevo servicio en el sistema"
-    )
+    @Operation(summary = "Crear un servicio", description = "Crea un nuevo servicio en el sistema")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "Servicio creado correctamente"),
             @ApiResponse(responseCode = "400", description = "Datos inválidos")
     })
     public ResponseEntity<GestionServicioResponse> crearServicio(
-
-            @RequestBody(
-                    description = "Datos del servicio a crear",
-                    required = true
-            )
-            @Valid
-            @org.springframework.web.bind.annotation.RequestBody
-            GestionServicioRequest request) {
+            @Valid @RequestBody GestionServicioRequest request) {   // ← solo Spring, sin Swagger
 
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(gestionServicioService.crear(request));
     }
 
     @PutMapping("/{id}")
-    @Operation(
-            summary = "Actualizar un servicio", description = "Actualiza un servicio existente por su ID"
-    )
+    @Operation(summary = "Actualizar un servicio", description = "Actualiza un servicio existente por su ID")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Servicio actualizado"),
             @ApiResponse(responseCode = "404", description = "Servicio no encontrado")
     })
     public ResponseEntity<GestionServicioResponse> actualizarServicio(
-
-            @Parameter(
-                    description = "ID del servicio",
-                    required = true
-            )
             @PathVariable Long id,
+            @Valid @RequestBody GestionServicioRequest request) {   // ← igual aquí
 
-            @RequestBody(
-                    description = "Datos actualizados del servicio",
-                    required = true
-            )
-            @Valid
-            @org.springframework.web.bind.annotation.RequestBody
-            GestionServicioRequest request) {
-
-        return ResponseEntity.ok(
-                gestionServicioService.actualizar(id, request)
-        );
+        return ResponseEntity.ok(gestionServicioService.actualizar(id, request));
     }
 
     @DeleteMapping("/{id}")

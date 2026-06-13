@@ -14,6 +14,8 @@
         <option value="$PROJECT_DIR$/com.ReservaPro/eureka-server/pom.xml" />
         <option value="$PROJECT_DIR$/com.ReservaPro/ms-notificacion/pom.xml" />
         <option value="$PROJECT_DIR$/com.ReservaPro/ms-disponibilidad/pom.xml" />
+        <option value="$PROJECT_DIR$/com.ReservaPro/eruka_Server/pom.xml" />
+        <option value="$PROJECT_DIR$/com.ReservaPro/ms-autentificacion/pom.xml" />
       </list>
     </option>
   </component>
