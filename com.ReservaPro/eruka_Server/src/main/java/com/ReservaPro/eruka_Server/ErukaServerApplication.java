@@ -1,13 +1,13 @@
-package com.ReservaPro.ms_reserva;
+package com.ReservaPro.eruka_Server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MsReservaApplication {
+public class ErukaServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MsReservaApplication.class, args);
+		SpringApplication.run(ErukaServerApplication.class, args);
 	}
 
 }

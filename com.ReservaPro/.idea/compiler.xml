@@ -2,20 +2,6 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile name="Annotation profile for ms-usuario" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.34/lombok-1.18.34.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.5.5.Final/mapstruct-processor-1.5.5.Final.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok-mapstruct-binding/0.2.0/lombok-mapstruct-binding-0.2.0.jar" />
-        </processorPath>
-        <module name="ms-usuario (1)" />
-        <module name="ms-usuario (2)" />
-        <module name="ms-usuario (3)" />
-        <module name="ms-usuario (4)" />
-      </profile>
       <profile name="Annotation profile for ms-reserva" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -30,10 +16,26 @@
         <module name="ms-promocion (1)" />
         <module name="ms-disponibilidad" />
         <module name="ms-promocion (2)" />
-        <module name="ms-cancelacion" />
         <module name="ms-reserva" />
-        <module name="ms-usuario" />
         <module name="ms-notificacion" />
+      </profile>
+      <profile name="Annotation profile for ms-usuario" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.34/lombok-1.18.34.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.5.5.Final/mapstruct-processor-1.5.5.Final.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok-mapstruct-binding/0.2.0/lombok-mapstruct-binding-0.2.0.jar" />
+        </processorPath>
+        <module name="ms-notificacion (1)" />
+        <module name="ms-notificacion (2)" />
+        <module name="ms-usuario (1)" />
+        <module name="ms-cancelacion" />
+        <module name="ms-usuario (2)" />
+        <module name="ms-usuario (3)" />
+        <module name="ms-usuario" />
+        <module name="ms-usuario (4)" />
       </profile>
     </annotationProcessing>
   </component>
@@ -44,6 +46,8 @@
       <module name="ms-disponibilidad" options="-parameters" />
       <module name="ms-gestion-servicio" options="-parameters" />
       <module name="ms-notificacion" options="-parameters" />
+      <module name="ms-notificacion (1)" options="-parameters" />
+      <module name="ms-notificacion (2)" options="-parameters" />
       <module name="ms-pago" options="-parameters" />
       <module name="ms-promocion" options="-parameters" />
       <module name="ms-promocion (1)" options="-parameters" />
