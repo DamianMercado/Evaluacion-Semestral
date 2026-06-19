@@ -1,8 +1,0 @@
-ALTER TABLE pago
-    ADD COLUMN monto_original DOUBLE NOT NULL DEFAULT 0.0;
-
-ALTER TABLE pago
-    ADD COLUMN aplica_descuento TINYINT(1) NOT NULL DEFAULT 0;
-
-ALTER TABLE pago
-    ADD COLUMN codigo_promocion VARCHAR(50) NULL;
