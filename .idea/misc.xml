@@ -7,10 +7,12 @@
         <option value="$PROJECT_DIR$/com.ReservaPro/ms-usuario/pom.xml" />
         <option value="$PROJECT_DIR$/com.ReservaPro/ms-reserva/pom.xml" />
         <option value="$PROJECT_DIR$/com.ReservaPro/ms-notificacion/pom.xml" />
+        <option value="$PROJECT_DIR$/com.ReservaPro/ms_pago/pom.xml" />
+        <option value="$PROJECT_DIR$/com.ReservaPro/ms_promocion/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="21" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_25" default="true" project-jdk-name="25" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
