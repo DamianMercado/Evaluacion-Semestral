@@ -38,7 +38,7 @@ public class Reserva {
     @Schema(description = "Id del pago", example = "1")
     private Long idPago;
 
-//Campos del microservicio Reserva
+//Campos de este microservicio
 
     @Column ( name = "fecha_reserva", nullable = false, length = 30)
     @Schema(description = "Fecha de la reserva", example = "")
