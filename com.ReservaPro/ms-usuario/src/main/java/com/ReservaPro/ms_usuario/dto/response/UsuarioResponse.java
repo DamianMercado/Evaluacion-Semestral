@@ -1,22 +1,28 @@
 package com.ReservaPro.ms_usuario.dto.response;
 
 import com.ReservaPro.ms_usuario.enums.RolUsuario;
-import jakarta.persistence.Column;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.Data;
 
+@Data
+@Schema(description = "Respuesta con la información de un usuario")
 public class UsuarioResponse {
-    private Long id;
 
+    @Schema(description = "ID del usuario", example = "1")
+    private Long idUsuario;
+
+    @Schema(description = "Nombre del usuario", example = "Juan")
     private String nombre;
 
-    private String Apellido;
+    @Schema(description = "Apellido del usuario", example = "Pérez")
+    private String apellido;
 
-    private String password;
-
+    @Schema(description = "Correo electrónico del usuario", example = "juan@gmail.com")
     private String email;
 
+    @Schema(description = "RUT del usuario", example = "12345678-9")
     private String rut;
 
+    @Schema(description = "Rol del usuario", example = "CLIENTE")
     private RolUsuario rol;
 }

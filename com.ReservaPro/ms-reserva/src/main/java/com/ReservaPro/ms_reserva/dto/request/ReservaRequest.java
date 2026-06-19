@@ -1,26 +1,23 @@
 package com.ReservaPro.ms_reserva.dto.request;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.NotNull;
 
+
+import lombok.Data;
+
+import java.time.LocalDateTime;
+
+@Data
 public class ReservaRequest {
-    @NotBlank( message = "El nombre es obligatorio")
-    @Size(min = 1, max = 100, message = "El Nombre debe tener un largo entre 1 y 100")
-    private String nombre;
 
-    @NotBlank( message = "El apellido es obligatorio")
-    @Size(min = 1, max = 100, message = "El apellido debe tener un largo entre 1 y 100")
-    private String apellido;
+    @NotNull(message = "El ID del usuario es obligatorio")
+    private Long idUsuario;
 
-    @NotBlank( message = "El password es obligatorio")
-    @Size(min = 1, max = 50, message = "El password debe tener un largo entre 1 y 50")
-    private String password;
+    @NotNull(message = "El ID del servicio es obligatorio")
+    private Long idGestionServicio;
 
-    @NotBlank( message = "El email es obligatorio")
-    @Size(min = 1, max = 50, message = "El email debe tener un largo entre 1 y 50")
-    private String email;
+    private Long idPromocion;
 
-    @NotBlank( message = "El rut es obligatorio")
-    @Size(min = 1, max = 12, message = "El rut debe tener un largo entre 1 y 12")
-    private String rut;
+    @NotNull(message = "La fecha de reserva es obligatoria")
+    private LocalDateTime fechaReserva;
 }

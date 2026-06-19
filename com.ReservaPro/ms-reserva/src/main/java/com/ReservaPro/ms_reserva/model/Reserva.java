@@ -1,59 +1,64 @@
 package com.ReservaPro.ms_reserva.model;
 
+import com.ReservaPro.ms_reserva.enums.EstadoReserva;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
 @Entity
-@Table(name = "reservas")
 public class Reserva {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(description = "Id de la reserva", example = "1")
     private Long id;
 
-    // Relación con ms-usuario
-    @Column(name = "usuario_id", nullable = false)
-    private Long usuarioId;
+    //ids de los otros microservicios
 
-    // CORRECCIÓN: Relación con ms-servicio.
-    @Column(name = "servicio_id", nullable = false)
-    private Long servicioId;
+    @Column(name = "id_usuario", nullable = false)
+    @Schema(description = "Id del usuario", example = "1")
+    private Long idUsuario;
 
-    // Fechas importantes
-    @Column(name = "fecha_reserva", nullable = false)
-    private LocalDateTime fechaReserva; // La fecha en la que el cliente usará el servicio
+    @Column(name = "id_gestion_servicio", nullable = false)
+    @Schema(description = "Id de la gestion del servicio", example = "1")
+    private Long idGestionServicio;
 
-    @Column(name = "fecha_creacion", nullable = false, updatable = false)
-    private LocalDateTime fechaCreacion;
+    @Column(name = "id_promocion")
+    @Schema(description = "Id de la promocion", example = "1")
+    private Long idPromocion;
 
-    // Estado (Pendiente - Confirmada - Cancelada - Completada)
-    @Column(name = "estado", length = 20, nullable = false)
-    private String estado;
+    @Column(name = "id_calificacion")
+    @Schema(description = "Id de la Calificacion", example = "1")
+    private Long idCalificacion;
 
-    // Precio original del servicio
-    @Column(name = "total", nullable = false)
-    private Double total;
+    @Column(name = "id_pago")
+    @Schema(description = "Id del pago", example = "1")
+    private Long idPago;
 
-    // dato de ms-promocion
-    @Column(name = "total_promocion")
-    private Double totalPromocion;
+//Campos del microservicio Reserva
 
-    // Opcional: Guardar el ID de la promoción aplicada para auditoría de ms-promocion
-    @Column(name = "promocion_id")
-    private Long promocionId;
+    @Column ( name = "fecha_reserva", nullable = false, length = 30)
+    @Schema(description = "Fecha de la reserva", example = "")
+    private LocalDateTime FechaReserva;
 
-    // Ciclo de vida de JPA para setear la fecha de creación automáticamente
-    @PrePersist
-    protected void onCreate() {
-        this.fechaCreacion = LocalDateTime.now();
-    }
+    @Column ( name = "precio_reserva", nullable = false)
+    @Schema(description = "Monto original de la reserva en CLP", example = "1000")
+    private Double precioReserva;
+
+    @Column ( name = "descuento_aplicado")
+    @Schema(description = "Descuento para aplicar al monto original", example = "1500")
+    private Double descuentoAplicado;
+
+    @Column ( name = "precio_final", nullable = false)
+    @Schema(description = "Monto final de la reserva (Promocion restada)", example = "500")
+    private Double precioFinal;
+
+    @Enumerated(EnumType.STRING)
+    @Column ( name = "estado_reserva", nullable = false, length = 20)
+    @Schema(description = "Estado de la reserva", example = "PENDIENTE_PAGO/CONFIRMADA/CANCELADA/COMPLETADA")
+    private EstadoReserva estadoReserva;
+
 }

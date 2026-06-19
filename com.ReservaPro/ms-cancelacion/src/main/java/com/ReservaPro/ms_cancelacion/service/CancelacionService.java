@@ -6,6 +6,7 @@ import com.ReservaPro.ms_cancelacion.exception.CancelacionNotFoundException;
 import com.ReservaPro.ms_cancelacion.mapper.CancelacionMapper;
 import com.ReservaPro.ms_cancelacion.model.Cancelacion;
 import com.ReservaPro.ms_cancelacion.repository.CancelacionRepository;
+import com.ReservaPro.ms_cancelacion.client.ReservaClient;
 
 import lombok.RequiredArgsConstructor;
 
@@ -20,13 +21,16 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CancelacionService {
 
-    private final CancelacionRepository cancelacionRepository;
-    private final CancelacionMapper cancelacionMapper;
-
     private static final Logger log =
             LoggerFactory.getLogger(CancelacionService.class);
 
+    private final CancelacionRepository cancelacionRepository;
+    private final CancelacionMapper cancelacionMapper;
+    private final ReservaClient reservaClient;
+
     public List<CancelacionResponse> obtener() {
+
+        log.info("Obteniendo todas las cancelaciones");
 
         return cancelacionMapper.toResponseList(
                 cancelacionRepository.findAll()
@@ -35,66 +39,96 @@ public class CancelacionService {
 
     public CancelacionResponse obtenerPorId(Long id) {
 
-        log.info("Se está obteniendo una cancelacion con id {}", id);
+        log.info("Buscando cancelación con ID: {}", id);
 
-        return cancelacionMapper.toResponse(
-                cancelacionRepository.findById(id)
-                        .orElseThrow(() ->
-                                new CancelacionNotFoundException(id))
-        );
+        Cancelacion cancelacion = cancelacionRepository.findById(id)
+                .orElseThrow(() -> {
+                    log.error("No se encontró la cancelación con ID: {}", id);
+                    return new CancelacionNotFoundException(id);
+                });
+
+        return cancelacionMapper.toResponse(cancelacion);
     }
 
-    public CancelacionResponse crear(
-            CancelacionRequest cancelacionRequest) {
+    public CancelacionResponse crear(CancelacionRequest cancelacionRequest) {
 
-        return cancelacionMapper.toResponse(
-                cancelacionRepository.save(
-                        cancelacionMapper.toEntity(cancelacionRequest)
-                )
+        log.info(
+                "Creando cancelación. Motivo: {}",
+                cancelacionRequest.getMotivo()
         );
-    }
 
-    public void eliminar(Long id) {
+        // AGREGADO (sin cambiar nada más)
+        reservaClient.obtenerReservaPorId(cancelacionRequest.getIdReserva());
 
-        if (!cancelacionRepository.existsById(id)) {
-            throw new CancelacionNotFoundException(id);
-        }
+        Cancelacion cancelacion = cancelacionMapper.toEntity(cancelacionRequest);
 
-        cancelacionRepository.deleteById(id);
+        Cancelacion guardada = cancelacionRepository.save(cancelacion);
+
+        log.info(
+                "Cancelación creada correctamente con ID: {}",
+                guardada.getIdCancelacion()
+        );
+
+        return cancelacionMapper.toResponse(guardada);
     }
 
     public CancelacionResponse actualizar(
             Long id,
             CancelacionRequest cancelacionRequest) {
 
+        log.info("Actualizando cancelación con ID: {}", id);
+
         Cancelacion cancelacionExistente =
                 cancelacionRepository.findById(id)
-                        .orElseThrow(() ->
-                                new CancelacionNotFoundException(id));
+                        .orElseThrow(() -> {
+                            log.error(
+                                    "No se encontró la cancelación con ID: {}",
+                                    id
+                            );
+                            return new CancelacionNotFoundException(id);
+                        });
 
-        try {
+        cancelacionExistente.setMotivo(
+                cancelacionRequest.getMotivo()
+        );
 
-            cancelacionExistente.setMotivo(
-                    cancelacionRequest.getMotivo());
+        cancelacionExistente.setFechaCancelacion(
+                cancelacionRequest.getFechaCancelacion()
+        );
 
-            cancelacionExistente.setFechaCancelacion(
-                    cancelacionRequest.getFechaCancelacion());
+        cancelacionExistente.setEstadoReembolso(
+                cancelacionRequest.getEstadoReembolso()
+        );
 
-            cancelacionExistente.setEstadoReembolso(
-                    cancelacionRequest.getEstadoReembolso());
+        Cancelacion actualizada =
+                cancelacionRepository.save(cancelacionExistente);
 
-        } catch (Exception e) {
+        log.info(
+                "Cancelación actualizada correctamente con ID: {}",
+                id
+        );
 
-            log.error(
-                    "Error actualizando cancelacion: {}",
-                    cancelacionRequest
-            );
+        return cancelacionMapper.toResponse(actualizada);
+    }
 
-            throw new RuntimeException(e);
-        }
+    public void eliminar(Long id) {
 
-        return cancelacionMapper.toResponse(
-                cancelacionRepository.save(cancelacionExistente)
+        log.info("Eliminando cancelación con ID: {}", id);
+
+        Cancelacion cancelacion = cancelacionRepository.findById(id)
+                .orElseThrow(() -> {
+                    log.error(
+                            "No se encontró la cancelación con ID: {}",
+                            id
+                    );
+                    return new CancelacionNotFoundException(id);
+                });
+
+        cancelacionRepository.delete(cancelacion);
+
+        log.info(
+                "Cancelación eliminada correctamente con ID: {}",
+                id
         );
     }
 }

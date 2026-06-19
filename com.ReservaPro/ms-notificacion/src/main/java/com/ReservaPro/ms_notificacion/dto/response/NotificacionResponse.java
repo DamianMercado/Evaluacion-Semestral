@@ -14,6 +14,5 @@ public class NotificacionResponse {
     private Long idCancelacion;
     private String mensaje;
     private String tipo;
-
     private Boolean leida;
 }
