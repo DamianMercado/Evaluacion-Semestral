@@ -29,8 +29,6 @@ public class ReservaRequest {
     private Long idPago;
 
     //Campos de este ms
-    @NotNull(message = "El idReserva es obligatorio")
-    private Long id;
 
     @NotNull(message = "La fecha de fecha de la reserva es obligatoria")
     private LocalDateTime fechaReserva;

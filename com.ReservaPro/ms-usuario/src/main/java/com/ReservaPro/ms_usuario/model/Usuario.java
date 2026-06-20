@@ -23,7 +23,7 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_usuario")
     @Schema(description = "ID del usuario", example = "1")
-    private Long idUsuario;
+    private Long id;
 
     @Column(name = "nombre", nullable = false, length = 100)
     @Schema(description = "Nombre del usuario", example = "Juan")

@@ -62,7 +62,7 @@ public class UsuarioService {
 
         log.info(
                 "Usuario creado correctamente con ID: {}",
-                guardado.getIdUsuario()
+                guardado.getId()
         );
 
         return usuarioMapper.toResponse(guardado);

@@ -9,7 +9,7 @@ import lombok.Data;
 public class UsuarioResponse {
 
     @Schema(description = "ID del usuario", example = "1")
-    private Long idUsuario;
+    private Long id;
 
     @Schema(description = "Nombre del usuario", example = "Juan")
     private String nombre;
