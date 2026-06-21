@@ -3,44 +3,23 @@ package com.ReservaPro.ms_cancelacion.mapper;
 import com.ReservaPro.ms_cancelacion.dto.request.CancelacionRequest;
 import com.ReservaPro.ms_cancelacion.dto.response.CancelacionResponse;
 import com.ReservaPro.ms_cancelacion.model.Cancelacion;
-import org.springframework.stereotype.Component;
+
+import org.mapstruct.Mapper;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
-@Component
-public class CancelacionMapper {
+@Mapper(componentModel = "spring")
+public interface CancelacionMapper {
 
-    public Cancelacion toEntity(CancelacionRequest request) {
+    Cancelacion toEntity(
+            CancelacionRequest cancelacionRequest
+    );
 
-        Cancelacion cancelacion = new Cancelacion();
+    CancelacionResponse toResponse(
+            Cancelacion cancelacion
+    );
 
-        cancelacion.setMotivo(request.getMotivo());
-        cancelacion.setFechaCancelacion(request.getFechaCancelacion()); // LocalDate correcto
-        cancelacion.setEstadoReembolso(request.getEstadoReembolso());
-
-        // AGREGADO (sin cambiar nada más)
-        cancelacion.setIdReserva(request.getIdReserva());
-
-        return cancelacion;
-    }
-
-    public CancelacionResponse toResponse(Cancelacion cancelacion) {
-
-        CancelacionResponse response = new CancelacionResponse();
-
-        response.setIdCancelacion(cancelacion.getIdCancelacion());
-        response.setMotivo(cancelacion.getMotivo());
-        response.setFechaCancelacion(cancelacion.getFechaCancelacion());
-        response.setEstadoReembolso(cancelacion.getEstadoReembolso());
-
-        return response;
-    }
-
-    public List<CancelacionResponse> toResponseList(List<Cancelacion> lista) {
-
-        return lista.stream()
-                .map(this::toResponse)
-                .collect(Collectors.toList());
-    }
+    List<CancelacionResponse> toResponseList(
+            List<Cancelacion> cancelacionList
+    );
 }

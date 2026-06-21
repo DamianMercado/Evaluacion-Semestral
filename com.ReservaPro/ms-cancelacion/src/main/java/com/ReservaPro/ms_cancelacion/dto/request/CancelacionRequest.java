@@ -30,14 +30,16 @@ public class CancelacionRequest {
     private LocalDate fechaCancelacion;
 
     @Schema(
-            description = "Estado del reembolso asociado a la cancelación",
+            description = "Estado del reembolso. Valores permitidos: PENDIENTE, REEMBOLSADO",
             example = "PENDIENTE"
     )
+    @NotNull(message = "El estado del reembolso es obligatorio")
     private EstadoReembolso estadoReembolso;
 
     @Schema(
             description = "ID de la reserva asociada a la cancelación",
             example = "123"
     )
+    @NotNull(message = "El id de la reserva es obligatorio")
     private Long idReserva;
 }

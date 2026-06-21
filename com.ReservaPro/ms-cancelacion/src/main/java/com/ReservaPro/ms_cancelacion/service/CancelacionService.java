@@ -1,12 +1,13 @@
 package com.ReservaPro.ms_cancelacion.service;
 
+import com.ReservaPro.ms_cancelacion.client.ReservaClient;
 import com.ReservaPro.ms_cancelacion.dto.request.CancelacionRequest;
 import com.ReservaPro.ms_cancelacion.dto.response.CancelacionResponse;
 import com.ReservaPro.ms_cancelacion.exception.CancelacionNotFoundException;
+import com.ReservaPro.ms_cancelacion.exception.ReglaNegocioException;
 import com.ReservaPro.ms_cancelacion.mapper.CancelacionMapper;
 import com.ReservaPro.ms_cancelacion.model.Cancelacion;
 import com.ReservaPro.ms_cancelacion.repository.CancelacionRepository;
-import com.ReservaPro.ms_cancelacion.client.ReservaClient;
 
 import lombok.RequiredArgsConstructor;
 
@@ -15,6 +16,7 @@ import org.slf4j.LoggerFactory;
 
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -50,19 +52,25 @@ public class CancelacionService {
         return cancelacionMapper.toResponse(cancelacion);
     }
 
-    public CancelacionResponse crear(CancelacionRequest cancelacionRequest) {
+    public CancelacionResponse crear(
+            CancelacionRequest cancelacionRequest) {
 
         log.info(
                 "Creando cancelación. Motivo: {}",
                 cancelacionRequest.getMotivo()
         );
 
-        // AGREGADO (sin cambiar nada más)
-        reservaClient.obtenerReservaPorId(cancelacionRequest.getIdReserva());
+        validarCancelacion(cancelacionRequest);
 
-        Cancelacion cancelacion = cancelacionMapper.toEntity(cancelacionRequest);
+        reservaClient.obtenerReservaPorId(
+                cancelacionRequest.getIdReserva()
+        );
 
-        Cancelacion guardada = cancelacionRepository.save(cancelacion);
+        Cancelacion cancelacion =
+                cancelacionMapper.toEntity(cancelacionRequest);
+
+        Cancelacion guardada =
+                cancelacionRepository.save(cancelacion);
 
         log.info(
                 "Cancelación creada correctamente con ID: {}",
@@ -87,6 +95,16 @@ public class CancelacionService {
                             );
                             return new CancelacionNotFoundException(id);
                         });
+
+        validarCancelacion(cancelacionRequest);
+
+        reservaClient.obtenerReservaPorId(
+                cancelacionRequest.getIdReserva()
+        );
+
+        cancelacionExistente.setIdReserva(
+                cancelacionRequest.getIdReserva()
+        );
 
         cancelacionExistente.setMotivo(
                 cancelacionRequest.getMotivo()
@@ -115,14 +133,15 @@ public class CancelacionService {
 
         log.info("Eliminando cancelación con ID: {}", id);
 
-        Cancelacion cancelacion = cancelacionRepository.findById(id)
-                .orElseThrow(() -> {
-                    log.error(
-                            "No se encontró la cancelación con ID: {}",
-                            id
-                    );
-                    return new CancelacionNotFoundException(id);
-                });
+        Cancelacion cancelacion =
+                cancelacionRepository.findById(id)
+                        .orElseThrow(() -> {
+                            log.error(
+                                    "No se encontró la cancelación con ID: {}",
+                                    id
+                            );
+                            return new CancelacionNotFoundException(id);
+                        });
 
         cancelacionRepository.delete(cancelacion);
 
@@ -130,5 +149,25 @@ public class CancelacionService {
                 "Cancelación eliminada correctamente con ID: {}",
                 id
         );
+    }
+
+    private void validarCancelacion(
+            CancelacionRequest request) {
+
+        if (request.getMotivo() == null
+                || request.getMotivo().isBlank()) {
+
+            throw new ReglaNegocioException(
+                    "El motivo de la cancelación es obligatorio"
+            );
+        }
+
+        if (request.getFechaCancelacion()
+                .isAfter(LocalDate.now())) {
+
+            throw new ReglaNegocioException(
+                    "La fecha de cancelación no puede ser futura"
+            );
+        }
     }
 }

@@ -37,7 +37,10 @@ public class CancelacionController {
             description = "Retorna una lista de todas las cancelaciones"
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Lista obtenida correctamente")
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Lista obtenida correctamente"
+            )
     })
     public ResponseEntity<List<CancelacionResponse>> obtenerCancelaciones() {
 
@@ -52,8 +55,14 @@ public class CancelacionController {
             description = "Obtiene una cancelación según su identificador"
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Cancelación encontrada"),
-            @ApiResponse(responseCode = "404", description = "Cancelación no encontrada")
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Cancelación encontrada"
+            ),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "Cancelación no encontrada"
+            )
     })
     public ResponseEntity<CancelacionResponse> obtenerCancelacion(
 
@@ -74,8 +83,14 @@ public class CancelacionController {
             description = "Crea una nueva cancelación en el sistema"
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "201", description = "Cancelación creada correctamente"),
-            @ApiResponse(responseCode = "400", description = "Datos inválidos")
+            @ApiResponse(
+                    responseCode = "201",
+                    description = "Cancelación creada correctamente"
+            ),
+            @ApiResponse(
+                    responseCode = "400",
+                    description = "Datos inválidos"
+            )
     })
     public ResponseEntity<CancelacionResponse> crearCancelacion(
 
@@ -97,8 +112,14 @@ public class CancelacionController {
             description = "Actualiza una cancelación existente por su ID"
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Cancelación actualizada"),
-            @ApiResponse(responseCode = "404", description = "Cancelación no encontrada")
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Cancelación actualizada"
+            ),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "Cancelación no encontrada"
+            )
     })
     public ResponseEntity<CancelacionResponse> actualizarCancelacion(
 
@@ -127,8 +148,14 @@ public class CancelacionController {
             description = "Elimina una cancelación por su ID"
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "204", description = "Cancelación eliminada"),
-            @ApiResponse(responseCode = "404", description = "Cancelación no encontrada")
+            @ApiResponse(
+                    responseCode = "204",
+                    description = "Cancelación eliminada"
+            ),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "Cancelación no encontrada"
+            )
     })
     public ResponseEntity<Void> eliminarCancelacion(
 

@@ -1,4 +1,4 @@
-package com.cinemark.gateway_service;
+package com.ReservaPro.gateway_service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

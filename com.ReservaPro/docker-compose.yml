@@ -1,0 +1,126 @@
+services:
+
+  mysql-reservapro:
+    image: mysql:8.0
+    container_name: reservapro-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: gestion_servicio
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_reservapro_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    networks:
+      - reservapro-net
+
+  eureka-server:
+    build:
+      context: ./eureka-server
+      dockerfile: Dockerfile
+    container_name: reservapro-eureka
+    ports:
+      - "8761:8761"
+    networks:
+      - reservapro-net
+    restart: unless-stopped
+
+  gateway-service:
+    build:
+      context: ./gateway-service
+      dockerfile: Dockerfile
+    container_name: reservapro-gateway
+    ports:
+      - "8080:8080"
+    environment:
+      EUREKA_URL: http://eureka-server:8761/eureka
+    depends_on:
+      eureka-server:
+        condition: service_started
+    networks:
+      - reservapro-net
+    restart: unless-stopped
+
+  ms-notificacion:
+    build:
+      context: ./ms-notificacion
+      dockerfile: Dockerfile
+    container_name: reservapro-notificacion
+    ports:
+      - "8083:8083"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    depends_on:
+      mysql-reservapro:
+        condition: service_healthy
+      eureka-server:
+        condition: service_started
+    networks:
+      - reservapro-net
+    restart: unless-stopped
+
+  ms-cancelacion:
+    build:
+      context: ./ms-cancelacion
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8082"
+    container_name: reservapro-cancelacion
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    depends_on:
+      mysql-reservapro:
+        condition: service_healthy
+      eureka-server:
+        condition: service_started
+    networks:
+      - reservapro-net
+    restart: unless-stopped
+
+  ms-disponibilidad:
+    build:
+      context: ./ms-disponibilidad
+      dockerfile: Dockerfile
+    container_name: reservapro-disponibilidad
+    ports:
+      - "8085:8085"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    depends_on:
+      mysql-reservapro:
+        condition: service_healthy
+      eureka-server:
+        condition: service_started
+    networks:
+      - reservapro-net
+    restart: unless-stopped
+
+  ms-historial-reserva:
+    build:
+      context: ./ms-historial-reserva
+      dockerfile: Dockerfile
+    container_name: reservapro-historial
+    ports:
+      - "8086:8086"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    depends_on:
+      mysql-reservapro:
+        condition: service_healthy
+      eureka-server:
+        condition: service_started
+    networks:
+      - reservapro-net
+    restart: unless-stopped
+
+networks:
+  reservapro-net:
+    driver: bridge
+
+volumes:
+  mysql_reservapro_data:
