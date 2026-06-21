@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 
 import lombok.Data;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Data
 @Entity
@@ -40,8 +40,11 @@ public class Notificacion {
     private String tipo;
 
     @Column(name = "fecha_envio", nullable = false)
-    @Schema(description = "Fecha y hora de envío de la notificación", example = "2026-06-21T18:30:00")
-    private LocalDateTime fechaEnvio;
+    @Schema(
+            description = "Fecha de envío de la notificación",
+            example = "2026-06-21"
+    )
+    private LocalDate fechaEnvio;
 
     @Column(name = "leida", nullable = false)
     @Schema(description = "Indica si la notificación fue leída", example = "false")
@@ -51,7 +54,7 @@ public class Notificacion {
     public void prePersist() {
 
         if (this.fechaEnvio == null) {
-            this.fechaEnvio = LocalDateTime.now();
+            this.fechaEnvio = LocalDate.now();
         }
 
         if (this.leida == null) {

@@ -2,7 +2,7 @@ package com.ReservaPro.ms_notificacion.dto.response;
 
 import lombok.Data;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Data
 public class NotificacionResponse {
@@ -13,6 +13,6 @@ public class NotificacionResponse {
     private Long idCancelacion;
     private String mensaje;
     private String tipo;
-    private LocalDateTime fechaEnvio;
+    private LocalDate fechaEnvio;
     private Boolean leida;
 }

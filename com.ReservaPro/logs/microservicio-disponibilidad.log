@@ -866,3 +866,87 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
 
 2026-06-21T18:01:58.712-04:00  INFO 19948 --- [ms-disponibilidad] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2026-06-21T18:54:34.597-04:00  INFO 12636 --- [ms-disponibilidad] [main] c.R.m.MsDisponibilidadApplication        : Starting MsDisponibilidadApplication using Java 17.0.19 with PID 12636 (C:\Users\maldo\Desktop\Evaluacion-Semestral\com.ReservaPro\ms-disponibilidad\target\classes started by maldo in C:\Users\maldo\Desktop\Evaluacion-Semestral\com.ReservaPro)
+2026-06-21T18:54:34.601-04:00  INFO 12636 --- [ms-disponibilidad] [main] c.R.m.MsDisponibilidadApplication        : No active profile set, falling back to 1 default profile: "default"
+2026-06-21T18:54:36.358-04:00  INFO 12636 --- [ms-disponibilidad] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-21T18:54:36.649-04:00  INFO 12636 --- [ms-disponibilidad] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 274 ms. Found 1 JPA repository interface.
+2026-06-21T18:54:37.101-04:00  INFO 12636 --- [ms-disponibilidad] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=fe54f0a8-8616-3cbd-8234-ee0a88032429
+2026-06-21T18:54:37.830-04:00  INFO 12636 --- [ms-disponibilidad] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8085 (http)
+2026-06-21T18:54:37.861-04:00  INFO 12636 --- [ms-disponibilidad] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-21T18:54:37.861-04:00  INFO 12636 --- [ms-disponibilidad] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2026-06-21T18:54:38.020-04:00  INFO 12636 --- [ms-disponibilidad] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-21T18:54:38.021-04:00  INFO 12636 --- [ms-disponibilidad] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3328 ms
+2026-06-21T18:54:38.539-04:00  INFO 12636 --- [ms-disponibilidad] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-21T18:54:39.132-04:00  INFO 12636 --- [ms-disponibilidad] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@70ee9d31
+2026-06-21T18:54:39.135-04:00  INFO 12636 --- [ms-disponibilidad] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-21T18:54:39.224-04:00  INFO 12636 --- [ms-disponibilidad] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/ms-disponibilidad (MySQL 8.4)
+2026-06-21T18:54:39.277-04:00  WARN 12636 --- [ms-disponibilidad] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: MySQL 8.4 is newer than this version of Flyway and support has not been tested. The latest supported version of MySQL is 8.1.
+2026-06-21T18:54:39.390-04:00  INFO 12636 --- [ms-disponibilidad] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.091s)
+2026-06-21T18:54:39.429-04:00  INFO 12636 --- [ms-disponibilidad] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `ms-disponibilidad`: 2
+2026-06-21T18:54:39.436-04:00  INFO 12636 --- [ms-disponibilidad] [main] o.f.core.internal.command.DbMigrate      : Schema `ms-disponibilidad` is up to date. No migration necessary.
+2026-06-21T18:54:39.595-04:00  INFO 12636 --- [ms-disponibilidad] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-21T18:54:39.732-04:00  INFO 12636 --- [ms-disponibilidad] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2026-06-21T18:54:39.807-04:00  INFO 12636 --- [ms-disponibilidad] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-21T18:54:40.385-04:00  INFO 12636 --- [ms-disponibilidad] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-21T18:54:40.604-04:00  INFO 12636 --- [ms-disponibilidad] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-21T18:54:42.201-04:00  INFO 12636 --- [ms-disponibilidad] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-21T18:54:42.289-04:00  INFO 12636 --- [ms-disponibilidad] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-21T18:54:43.036-04:00  WARN 12636 --- [ms-disponibilidad] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-21T18:54:44.278-04:00  INFO 12636 --- [ms-disponibilidad] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-06-21T18:54:44.371-04:00  WARN 12636 --- [ms-disponibilidad] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-06-21T18:54:44.437-04:00  INFO 12636 --- [ms-disponibilidad] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-06-21T18:54:44.479-04:00  INFO 12636 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-06-21T18:54:44.487-04:00  INFO 12636 --- [ms-disponibilidad] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-21T18:54:44.508-04:00  INFO 12636 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-06-21T18:54:44.508-04:00  INFO 12636 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-06-21T18:54:44.509-04:00  INFO 12636 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-06-21T18:54:44.509-04:00  INFO 12636 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-06-21T18:54:44.509-04:00  INFO 12636 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-06-21T18:54:44.509-04:00  INFO 12636 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-06-21T18:54:44.509-04:00  INFO 12636 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-06-21T18:54:45.096-04:00  INFO 12636 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-06-21T18:54:45.100-04:00  INFO 12636 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-06-21T18:54:45.104-04:00  INFO 12636 --- [ms-disponibilidad] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-06-21T18:54:45.107-04:00  INFO 12636 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1782082485106 with initial instances count: 1
+2026-06-21T18:54:45.113-04:00  INFO 12636 --- [ms-disponibilidad] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MS-DISPONIBILIDAD with eureka with status UP
+2026-06-21T18:54:45.115-04:00  INFO 12636 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1782082485115, current=UP, previous=STARTING]
+2026-06-21T18:54:45.118-04:00  INFO 12636 --- [ms-disponibilidad] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-DISPONIBILIDAD/DESKTOP-TVVBNLB:ms-disponibilidad:8085: registering service...
+2026-06-21T18:54:45.159-04:00  INFO 12636 --- [ms-disponibilidad] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8085 (http) with context path '/'
+2026-06-21T18:54:45.161-04:00  INFO 12636 --- [ms-disponibilidad] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8085
+2026-06-21T18:54:45.209-04:00  INFO 12636 --- [ms-disponibilidad] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-DISPONIBILIDAD/DESKTOP-TVVBNLB:ms-disponibilidad:8085 - registration status: 204
+2026-06-21T18:54:45.333-04:00  INFO 12636 --- [ms-disponibilidad] [main] c.R.m.MsDisponibilidadApplication        : Started MsDisponibilidadApplication in 12.147 seconds (process running for 13.855)
+2026-06-21T18:58:15.563-04:00  INFO 12636 --- [ms-disponibilidad] [DiscoveryClient-HeartbeatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-DISPONIBILIDAD/DESKTOP-TVVBNLB:ms-disponibilidad:8085 - Re-registering apps/MS-DISPONIBILIDAD
+2026-06-21T18:58:15.607-04:00  INFO 12636 --- [ms-disponibilidad] [DiscoveryClient-HeartbeatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-DISPONIBILIDAD/DESKTOP-TVVBNLB:ms-disponibilidad:8085: registering service...
+2026-06-21T18:58:15.664-04:00  INFO 12636 --- [ms-disponibilidad] [DiscoveryClient-HeartbeatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-DISPONIBILIDAD/DESKTOP-TVVBNLB:ms-disponibilidad:8085 - registration status: 204
+2026-06-21T18:58:45.503-04:00  INFO 12636 --- [ms-disponibilidad] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-06-21T18:58:45.505-04:00  INFO 12636 --- [ms-disponibilidad] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-06-21T18:58:45.505-04:00  INFO 12636 --- [ms-disponibilidad] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-06-21T18:58:45.505-04:00  INFO 12636 --- [ms-disponibilidad] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-06-21T18:58:45.505-04:00  INFO 12636 --- [ms-disponibilidad] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-06-21T18:58:45.505-04:00  INFO 12636 --- [ms-disponibilidad] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2026-06-21T18:58:45.506-04:00  INFO 12636 --- [ms-disponibilidad] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-06-21T18:58:45.527-04:00  INFO 12636 --- [ms-disponibilidad] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-06-21T18:59:44.524-04:00  INFO 12636 --- [ms-disponibilidad] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-21T19:04:44.554-04:00  INFO 12636 --- [ms-disponibilidad] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-21T19:09:44.881-04:00  INFO 12636 --- [ms-disponibilidad] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-21T19:14:44.894-04:00  INFO 12636 --- [ms-disponibilidad] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-21T19:16:09.341-04:00  INFO 12636 --- [ms-disponibilidad] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application MS-DISPONIBILIDAD with eureka with status DOWN
+2026-06-21T19:16:09.347-04:00  INFO 12636 --- [ms-disponibilidad] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1782083769347, current=DOWN, previous=UP]
+2026-06-21T19:16:09.350-04:00  INFO 12636 --- [ms-disponibilidad] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-DISPONIBILIDAD/DESKTOP-TVVBNLB:ms-disponibilidad:8085: registering service...
+2026-06-21T19:16:09.391-04:00  INFO 12636 --- [ms-disponibilidad] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-DISPONIBILIDAD/DESKTOP-TVVBNLB:ms-disponibilidad:8085 - registration status: 204
+2026-06-21T19:16:09.549-04:00  INFO 12636 --- [ms-disponibilidad] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-21T19:16:09.999-04:00  INFO 12636 --- [ms-disponibilidad] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-21T19:16:10.052-04:00  INFO 12636 --- [ms-disponibilidad] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-21T19:16:10.141-04:00  INFO 12636 --- [ms-disponibilidad] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-21T19:16:10.282-04:00  INFO 12636 --- [ms-disponibilidad] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-21T19:16:10.289-04:00  INFO 12636 --- [ms-disponibilidad] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2026-06-21T19:16:13.300-04:00  INFO 12636 --- [ms-disponibilidad] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2026-06-21T19:16:13.338-04:00  INFO 12636 --- [ms-disponibilidad] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-DISPONIBILIDAD/DESKTOP-TVVBNLB:ms-disponibilidad:8085 - deregister  status: 200
+2026-06-21T19:16:13.343-04:00  INFO 12636 --- [ms-disponibilidad] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
