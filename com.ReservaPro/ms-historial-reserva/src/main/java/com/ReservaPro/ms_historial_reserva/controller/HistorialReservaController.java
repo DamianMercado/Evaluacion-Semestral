@@ -37,7 +37,8 @@ public class HistorialReservaController {
             description = "Retorna una lista de todos los historiales de reservas"
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200",
+            @ApiResponse(
+                    responseCode = "200",
                     description = "Lista obtenida correctamente")
     })
     public ResponseEntity<List<HistorialReservaResponse>> obtenerHistoriales() {
@@ -53,9 +54,11 @@ public class HistorialReservaController {
             description = "Obtiene un historial según su identificador"
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200",
+            @ApiResponse(
+                    responseCode = "200",
                     description = "Historial encontrado"),
-            @ApiResponse(responseCode = "404",
+            @ApiResponse(
+                    responseCode = "404",
                     description = "Historial no encontrado")
     })
     public ResponseEntity<HistorialReservaResponse> obtenerHistorial(
@@ -71,15 +74,40 @@ public class HistorialReservaController {
         );
     }
 
+    @GetMapping("/reserva/{idReserva}")
+    @Operation(
+            summary = "Obtener historial por reserva",
+            description = "Obtiene todos los historiales asociados a una reserva"
+    )
+    @ApiResponses(value = {
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Historiales encontrados")
+    })
+    public ResponseEntity<List<HistorialReservaResponse>> obtenerPorReserva(
+
+            @Parameter(
+                    description = "ID de la reserva",
+                    required = true
+            )
+            @PathVariable Long idReserva) {
+
+        return ResponseEntity.ok(
+                historialReservaService.obtenerPorReserva(idReserva)
+        );
+    }
+
     @PostMapping
     @Operation(
             summary = "Crear un historial",
             description = "Crea un nuevo historial de reserva"
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "201",
+            @ApiResponse(
+                    responseCode = "201",
                     description = "Historial creado correctamente"),
-            @ApiResponse(responseCode = "400",
+            @ApiResponse(
+                    responseCode = "400",
                     description = "Datos inválidos")
     })
     public ResponseEntity<HistorialReservaResponse> crearHistorial(
@@ -102,9 +130,11 @@ public class HistorialReservaController {
             description = "Actualiza un historial existente por su ID"
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200",
+            @ApiResponse(
+                    responseCode = "200",
                     description = "Historial actualizado"),
-            @ApiResponse(responseCode = "404",
+            @ApiResponse(
+                    responseCode = "404",
                     description = "Historial no encontrado")
     })
     public ResponseEntity<HistorialReservaResponse> actualizarHistorial(
@@ -134,9 +164,11 @@ public class HistorialReservaController {
             description = "Elimina un historial por su ID"
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "204",
+            @ApiResponse(
+                    responseCode = "204",
                     description = "Historial eliminado"),
-            @ApiResponse(responseCode = "404",
+            @ApiResponse(
+                    responseCode = "404",
                     description = "Historial no encontrado")
     })
     public ResponseEntity<Void> eliminarHistorial(

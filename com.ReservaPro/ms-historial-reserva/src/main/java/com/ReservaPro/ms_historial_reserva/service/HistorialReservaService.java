@@ -4,6 +4,7 @@ import com.ReservaPro.ms_historial_reserva.client.ReservaClient;
 import com.ReservaPro.ms_historial_reserva.dto.request.HistorialReservaRequest;
 import com.ReservaPro.ms_historial_reserva.dto.response.HistorialReservaResponse;
 import com.ReservaPro.ms_historial_reserva.exception.HistorialReservaNoEncontradaException;
+import com.ReservaPro.ms_historial_reserva.exception.ReglaNegocioException;
 import com.ReservaPro.ms_historial_reserva.mapper.HistorialReservaMapper;
 import com.ReservaPro.ms_historial_reserva.model.HistorialReserva;
 import com.ReservaPro.ms_historial_reserva.repository.HistorialReservaRepository;
@@ -55,12 +56,21 @@ public class HistorialReservaService {
 
         reservaClient.obtenerReservaPorId(request.getIdReserva());
 
-        log.info("Creando historial para reserva ID: {}", request.getIdReserva());
+        validarEstados(
+                request.getEstadoAnterior(),
+                request.getEstadoNuevo()
+        );
+
+        log.info(
+                "Creando historial para reserva ID: {}",
+                request.getIdReserva()
+        );
+
+        HistorialReserva historial =
+                historialReservaMapper.toEntity(request);
 
         return historialReservaMapper.toResponse(
-                historialReservaRepository.save(
-                        historialReservaMapper.toEntity(request)
-                )
+                historialReservaRepository.save(historial)
         );
     }
 
@@ -70,39 +80,80 @@ public class HistorialReservaService {
 
         log.info("Actualizando historial de reserva ID: {}", id);
 
-        HistorialReserva historial = historialReservaRepository.findById(id)
-                .orElseThrow(() ->
-                        new HistorialReservaNoEncontradaException(id)
-                );
+        HistorialReserva historialExistente =
+                historialReservaRepository.findById(id)
+                        .orElseThrow(() ->
+                                new HistorialReservaNoEncontradaException(id)
+                        );
 
         log.info("Validando reserva ID: {}", request.getIdReserva());
 
         reservaClient.obtenerReservaPorId(request.getIdReserva());
 
-        historial.setIdReserva(request.getIdReserva());
-        historial.setEstadoAnterior(request.getEstadoAnterior());
-        historial.setEstadoNuevo(request.getEstadoNuevo());
-        historial.setObservacion(request.getObservacion());
+        validarEstados(
+                request.getEstadoAnterior(),
+                request.getEstadoNuevo()
+        );
 
-        HistorialReserva actualizado =
-                historialReservaRepository.save(historial);
+        historialExistente.setIdReserva(
+                request.getIdReserva()
+        );
 
-        log.info("Historial actualizado correctamente ID: {}", id);
+        historialExistente.setEstadoAnterior(
+                request.getEstadoAnterior()
+        );
 
-        return historialReservaMapper.toResponse(actualizado);
+        historialExistente.setEstadoNuevo(
+                request.getEstadoNuevo()
+        );
+
+        historialExistente.setObservacion(
+                request.getObservacion()
+        );
+
+        return historialReservaMapper.toResponse(
+                historialReservaRepository.save(historialExistente)
+        );
     }
 
     public void eliminar(Long id) {
 
         log.info("Eliminando historial de reserva ID: {}", id);
 
-        HistorialReserva historial = historialReservaRepository.findById(id)
-                .orElseThrow(() ->
-                        new HistorialReservaNoEncontradaException(id)
-                );
+        if (!historialReservaRepository.existsById(id)) {
+            throw new HistorialReservaNoEncontradaException(id);
+        }
 
-        historialReservaRepository.delete(historial);
+        historialReservaRepository.deleteById(id);
 
-        log.info("Historial eliminado correctamente ID: {}", id);
+        log.info(
+                "Historial eliminado correctamente ID: {}",
+                id
+        );
+    }
+
+    public List<HistorialReservaResponse> obtenerPorReserva(
+            Long idReserva) {
+
+        log.info(
+                "Obteniendo historial de la reserva ID: {}",
+                idReserva
+        );
+
+        return historialReservaMapper.toResponseList(
+                historialReservaRepository.findByIdReserva(idReserva)
+        );
+    }
+
+    private void validarEstados(
+            Object estadoAnterior,
+            Object estadoNuevo) {
+
+        if (estadoAnterior == estadoNuevo) {
+
+            throw new ReglaNegocioException(
+                    "El estado anterior y el nuevo no pueden ser iguales"
+            );
+        }
     }
 }
