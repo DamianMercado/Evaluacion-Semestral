@@ -33,25 +33,29 @@ public class NotificacionController {
 
     @GetMapping
     @Operation(
-            summary = "Obtener todas las notificaciones", description = "Retorna una lista de todas las notificaciones"
+            summary = "Obtener todas las notificaciones",
+            description = "Retorna una lista de todas las notificaciones"
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Lista obtenida correctamente")
+            @ApiResponse(responseCode = "200",
+                    description = "Lista obtenida correctamente")
     })
     public ResponseEntity<List<NotificacionResponse>> obtenerNotificaciones() {
 
-        return ResponseEntity.ok(
-                notificacionService.obtener()
-        );
+        return ResponseEntity.ok()
+                .body(notificacionService.obtener());
     }
 
     @GetMapping("/{id}")
     @Operation(
-            summary = "Obtener notificación por ID", description = "Obtiene una notificación según su identificador"
+            summary = "Obtener notificación por ID",
+            description = "Obtiene una notificación según su identificador"
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Notificación encontrada"),
-            @ApiResponse(responseCode = "404", description = "Notificación no encontrada")
+            @ApiResponse(responseCode = "200",
+                    description = "Notificación encontrada"),
+            @ApiResponse(responseCode = "404",
+                    description = "Notificación no encontrada")
     })
     public ResponseEntity<NotificacionResponse> obtenerNotificacion(
 
@@ -61,18 +65,20 @@ public class NotificacionController {
             )
             @PathVariable Long id) {
 
-        return ResponseEntity.ok(
-                notificacionService.obtenerPorId(id)
-        );
+        return ResponseEntity.ok()
+                .body(notificacionService.obtenerPorId(id));
     }
 
     @PostMapping
     @Operation(
-            summary = "Crear una notificación", description = "Crea una nueva notificación en el sistema"
+            summary = "Crear una notificación",
+            description = "Crea una nueva notificación en el sistema"
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "201", description = "Notificación creada correctamente"),
-            @ApiResponse(responseCode = "400", description = "Datos inválidos")
+            @ApiResponse(responseCode = "201",
+                    description = "Notificación creada correctamente"),
+            @ApiResponse(responseCode = "400",
+                    description = "Datos inválidos")
     })
     public ResponseEntity<NotificacionResponse> crearNotificacion(
 
@@ -90,11 +96,14 @@ public class NotificacionController {
 
     @PutMapping("/{id}")
     @Operation(
-            summary = "Actualizar una notificación", description = "Actualiza una notificación existente por su ID"
+            summary = "Actualizar una notificación",
+            description = "Actualiza una notificación existente por su ID"
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Notificación actualizada"),
-            @ApiResponse(responseCode = "404", description = "Notificación no encontrada")
+            @ApiResponse(responseCode = "200",
+                    description = "Notificación actualizada"),
+            @ApiResponse(responseCode = "404",
+                    description = "Notificación no encontrada")
     })
     public ResponseEntity<NotificacionResponse> actualizarNotificacion(
 
@@ -112,18 +121,20 @@ public class NotificacionController {
             @org.springframework.web.bind.annotation.RequestBody
             NotificacionRequest request) {
 
-        return ResponseEntity.ok(
-                notificacionService.actualizar(id, request)
-        );
+        return ResponseEntity.ok()
+                .body(notificacionService.actualizar(id, request));
     }
 
     @DeleteMapping("/{id}")
     @Operation(
-            summary = "Eliminar una notificación", description = "Elimina una notificación por su ID"
+            summary = "Eliminar una notificación",
+            description = "Elimina una notificación por su ID"
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "204", description = "Notificación eliminada"),
-            @ApiResponse(responseCode = "404", description = "Notificación no encontrada")
+            @ApiResponse(responseCode = "204",
+                    description = "Notificación eliminada"),
+            @ApiResponse(responseCode = "404",
+                    description = "Notificación no encontrada")
     })
     public ResponseEntity<Void> eliminarNotificacion(
 

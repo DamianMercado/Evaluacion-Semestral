@@ -26,101 +26,53 @@ public class NotificacionService {
     private final NotificacionMapper notificacionMapper;
 
     public List<NotificacionResponse> obtener() {
-
         log.info("Obteniendo todas las notificaciones");
-
-        return notificacionMapper.toResponseList(
-                notificacionRepository.findAll()
-        );
+        return notificacionMapper.toResponseList(notificacionRepository.findAll());
     }
 
     public NotificacionResponse obtenerPorId(Long id) {
-
         log.info("Buscando notificación con ID: {}", id);
-
-        return notificacionMapper.toResponse(
-                notificacionRepository
-                        .findById(id)
-                        .orElseThrow(() ->
-                                new NotificacionNoEncontradaException(id)
-                        )
-        );
+        return notificacionMapper.toResponse(notificacionRepository
+                .findById(id)
+                .orElseThrow(() -> new NotificacionNoEncontradaException(id)));
     }
 
     public NotificacionResponse crear(NotificacionRequest request) {
+        log.info("Creando notificación para usuario ID: {}", request.getIdUsuario());
 
-        log.info(
-                "Creando notificación para usuario ID: {}",
-                request.getIdUsuario()
-        );
+        Notificacion notificacion = notificacionMapper.toEntity(request);
 
         return notificacionMapper.toResponse(
-                notificacionRepository.save(
-                        notificacionMapper.toEntity(request)
-                )
+                notificacionRepository.save(notificacion)
         );
-    }
-
-    public NotificacionResponse actualizar(
-            Long id,
-            NotificacionRequest request) {
-
-        log.info("Actualizando notificación ID: {}", id);
-
-        Notificacion notificacion = notificacionRepository.findById(id)
-                .orElseThrow(() ->
-                        new NotificacionNoEncontradaException(id)
-                );
-
-        notificacion.setIdUsuario(
-                request.getIdUsuario()
-        );
-
-        notificacion.setIdReserva(
-                request.getIdReserva()
-        );
-
-        notificacion.setIdCancelacion(
-                request.getIdCancelacion()
-        );
-
-        notificacion.setMensaje(
-                request.getMensaje()
-        );
-
-        notificacion.setTipo(
-                request.getTipo()
-        );
-
-        notificacion.setLeida(
-                request.getLeida()
-        );
-
-        Notificacion actualizada =
-                notificacionRepository.save(notificacion);
-
-        log.info(
-                "Notificación actualizada correctamente ID: {}",
-                id
-        );
-
-        return notificacionMapper.toResponse(actualizada);
     }
 
     public void eliminar(Long id) {
-
         log.info("Eliminando notificación ID: {}", id);
 
-        Notificacion notificacion = notificacionRepository.findById(id)
-                .orElseThrow(() ->
-                        new NotificacionNoEncontradaException(id)
-                );
+        if (!notificacionRepository.existsById(id)) {
+            throw new NotificacionNoEncontradaException(id);
+        }
 
-        notificacionRepository.delete(notificacion);
+        notificacionRepository.deleteById(id);
+    }
 
-        log.info(
-                "Notificación eliminada correctamente ID: {}",
-                id
+    public NotificacionResponse actualizar(Long id, NotificacionRequest request) {
+        log.info("Actualizando notificación ID: {}", id);
+
+        Notificacion notificacionExistente = notificacionRepository
+                .findById(id)
+                .orElseThrow(() -> new NotificacionNoEncontradaException(id));
+
+        notificacionExistente.setIdUsuario(request.getIdUsuario());
+        notificacionExistente.setIdReserva(request.getIdReserva());
+        notificacionExistente.setIdCancelacion(request.getIdCancelacion());
+        notificacionExistente.setMensaje(request.getMensaje());
+        notificacionExistente.setTipo(request.getTipo());
+        notificacionExistente.setLeida(request.getLeida());
+
+        return notificacionMapper.toResponse(
+                notificacionRepository.save(notificacionExistente)
         );
     }
 }

@@ -2,8 +2,8 @@ package com.ReservaPro.ms_notificacion.repository;
 
 import com.ReservaPro.ms_notificacion.model.Notificacion;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface NotificacionRepository
-        extends JpaRepository<Notificacion, Long> {
-
+@Repository
+public interface NotificacionRepository extends JpaRepository<Notificacion, Long> {
 }

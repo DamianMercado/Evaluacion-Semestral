@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @FeignClient(
         name = "ms-cancelacion",
-        url = "http://localhost:8082"
+        url = "${reservapro.cancelacion.url}"
 )
 public interface CancelacionClient {
 
