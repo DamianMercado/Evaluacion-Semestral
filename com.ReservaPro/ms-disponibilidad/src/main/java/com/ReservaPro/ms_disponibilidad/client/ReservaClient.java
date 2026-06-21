@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @FeignClient(
         name = "ms-reserva",
-        url = "${reservapro.reserva.url}"
+        url = "http://localhost:8084"
 )
 public interface ReservaClient {
 
