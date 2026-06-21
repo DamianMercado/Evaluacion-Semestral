@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: gateway-service
+
+  cloud:
+    gateway:
+      server:
+        webmvc:
+          routes:
+            - id: peliculas
+              uri: lb://peliculas-service
+              predicates:
+                - Path=/api/v1/peliculas
+
+            - id: funciones
+              uri: lb://funciones-service
+              predicates:
+                - Path=/api/v1/funciones
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}

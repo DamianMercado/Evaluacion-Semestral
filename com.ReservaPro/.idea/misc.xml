@@ -13,6 +13,8 @@
         <option value="$PROJECT_DIR$/ms-promocion/pom.xml" />
         <option value="$PROJECT_DIR$/ms-reserva/pom.xml" />
         <option value="$PROJECT_DIR$/ms-usuario/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/gateway-service/pom.xml" />
       </list>
     </option>
   </component>
