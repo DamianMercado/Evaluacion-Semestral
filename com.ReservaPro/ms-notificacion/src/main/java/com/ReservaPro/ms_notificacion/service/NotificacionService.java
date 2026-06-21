@@ -140,5 +140,13 @@ public class NotificacionService {
                     "El tipo de la notificación es obligatorio"
             );
         }
+
+        if (request.getIdReserva() == null
+                && request.getIdCancelacion() == null) {
+
+            throw new ReglaNegocioException(
+                    "La notificación debe estar asociada a una reserva o cancelación"
+            );
+        }
     }
 }
