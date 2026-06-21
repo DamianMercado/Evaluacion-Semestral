@@ -3,6 +3,7 @@ package com.ReservaPro.ms_disponibilidad.service;
 import com.ReservaPro.ms_disponibilidad.dto.request.DisponibilidadRequest;
 import com.ReservaPro.ms_disponibilidad.dto.response.DisponibilidadResponse;
 import com.ReservaPro.ms_disponibilidad.exception.DisponibilidadNotFoundException;
+import com.ReservaPro.ms_disponibilidad.exception.ReglaNegocioException;
 import com.ReservaPro.ms_disponibilidad.mapper.DisponibilidadMapper;
 import com.ReservaPro.ms_disponibilidad.model.Disponibilidad;
 import com.ReservaPro.ms_disponibilidad.repository.DisponibilidadRepository;
@@ -11,7 +12,6 @@ import lombok.RequiredArgsConstructor;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -21,22 +21,35 @@ import java.util.List;
 @RequiredArgsConstructor
 public class DisponibilidadService {
 
-    private final DisponibilidadRepository disponibilidadRepository;
-
     private static final Logger log =
             LoggerFactory.getLogger(DisponibilidadService.class);
 
-    public List<DisponibilidadResponse> listarDisponibilidades() {
+    private final DisponibilidadRepository disponibilidadRepository;
+    private final DisponibilidadMapper disponibilidadMapper;
+
+    public List<DisponibilidadResponse> obtener() {
 
         log.info("Listando todas las disponibilidades");
 
-        return disponibilidadRepository.findAll()
-                .stream()
-                .map(DisponibilidadMapper::toResponse)
-                .toList();
+        return disponibilidadMapper.toResponseList(
+                disponibilidadRepository.findAll()
+        );
     }
 
-    public DisponibilidadResponse guardarDisponibilidad(
+    public DisponibilidadResponse obtenerPorId(Long id) {
+
+        log.info("Buscando disponibilidad con ID {}", id);
+
+        return disponibilidadMapper.toResponse(
+                disponibilidadRepository
+                        .findById(id)
+                        .orElseThrow(() ->
+                                new DisponibilidadNotFoundException(id)
+                        )
+        );
+    }
+
+    public DisponibilidadResponse crear(
             DisponibilidadRequest request) {
 
         log.info(
@@ -44,125 +57,126 @@ public class DisponibilidadService {
                 request.getFecha()
         );
 
-        Disponibilidad disponibilidad =
-                DisponibilidadMapper.toEntity(request);
-
-        Disponibilidad guardada =
-                disponibilidadRepository.save(disponibilidad);
-
-        log.info(
-                "Disponibilidad creada con ID {}",
-                guardada.getIdDisponibilidad()
-        );
-
-        return DisponibilidadMapper.toResponse(guardada);
-    }
-
-    public DisponibilidadResponse buscarPorId(Long id) {
-
-        log.info("Buscando disponibilidad con ID {}", id);
+        validarDisponibilidad(request);
 
         Disponibilidad disponibilidad =
-                disponibilidadRepository.findById(id)
-                        .orElseThrow(() -> {
-                            log.error(
-                                    "No existe disponibilidad con ID {}",
-                                    id
-                            );
-                            return new DisponibilidadNotFoundException(id);
-                        });
+                disponibilidadMapper.toEntity(request);
 
-        return DisponibilidadMapper.toResponse(disponibilidad);
-    }
-
-    public List<DisponibilidadResponse> buscarPorFecha(
-            LocalDate fecha) {
-
-        log.info(
-                "Buscando disponibilidades para la fecha {}",
-                fecha
+        return disponibilidadMapper.toResponse(
+                disponibilidadRepository.save(disponibilidad)
         );
-
-        return disponibilidadRepository.findByFecha(fecha)
-                .stream()
-                .map(DisponibilidadMapper::toResponse)
-                .toList();
     }
 
-    public List<DisponibilidadResponse> buscarActivas() {
-
-        log.info("Buscando disponibilidades activas");
-
-        return disponibilidadRepository.findByActivo(true)
-                .stream()
-                .map(DisponibilidadMapper::toResponse)
-                .toList();
-    }
-
-    public DisponibilidadResponse actualizarDisponibilidad(
+    public DisponibilidadResponse actualizar(
             Long id,
             DisponibilidadRequest request) {
 
-        log.info(
-                "Actualizando disponibilidad con ID {}",
-                id
-        );
+        log.info("Actualizando disponibilidad con ID {}", id);
 
-        Disponibilidad disponibilidad =
+        Disponibilidad disponibilidadExistente =
                 disponibilidadRepository.findById(id)
-                        .orElseThrow(() -> {
-                            log.error(
-                                    "No existe disponibilidad con ID {}",
-                                    id
-                            );
-                            return new DisponibilidadNotFoundException(id);
-                        });
+                        .orElseThrow(() ->
+                                new DisponibilidadNotFoundException(id)
+                        );
 
-        disponibilidad.setFecha(request.getFecha());
-        disponibilidad.setHoraInicio(request.getHoraInicio());
-        disponibilidad.setHoraFin(request.getHoraFin());
-        disponibilidad.setCuposDisponibles(
-                request.getCuposDisponibles());
-        disponibilidad.setCuposTotales(
-                request.getCuposTotales());
-        disponibilidad.setEstado(request.getEstado());
-        disponibilidad.setObservacion(
-                request.getObservacion());
-        disponibilidad.setActivo(request.getActivo());
+        validarDisponibilidad(request);
 
-        Disponibilidad actualizada =
-                disponibilidadRepository.save(disponibilidad);
-
-        log.info(
-                "Disponibilidad con ID {} actualizada correctamente",
-                id
+        disponibilidadExistente.setIdServicio(
+                request.getIdServicio()
         );
 
-        return DisponibilidadMapper.toResponse(actualizada);
+        disponibilidadExistente.setFecha(
+                request.getFecha()
+        );
+
+        disponibilidadExistente.setHoraInicio(
+                request.getHoraInicio()
+        );
+
+        disponibilidadExistente.setHoraFin(
+                request.getHoraFin()
+        );
+
+        disponibilidadExistente.setCuposDisponibles(
+                request.getCuposDisponibles()
+        );
+
+        disponibilidadExistente.setCuposTotales(
+                request.getCuposTotales()
+        );
+
+        disponibilidadExistente.setEstado(
+                request.getEstado()
+        );
+
+        disponibilidadExistente.setObservacion(
+                request.getObservacion()
+        );
+
+        disponibilidadExistente.setActivo(
+                request.getActivo()
+        );
+
+        return disponibilidadMapper.toResponse(
+                disponibilidadRepository.save(disponibilidadExistente)
+        );
     }
 
-    public void eliminarDisponibilidad(Long id) {
+    public void eliminar(Long id) {
 
-        log.info(
-                "Eliminando disponibilidad con ID {}",
-                id
+        log.info("Eliminando disponibilidad con ID {}", id);
+
+        if (!disponibilidadRepository.existsById(id)) {
+            throw new DisponibilidadNotFoundException(id);
+        }
+
+        disponibilidadRepository.deleteById(id);
+    }
+
+    public List<DisponibilidadResponse> obtenerPorFecha(
+            LocalDate fecha) {
+
+        log.info("Buscando disponibilidades para la fecha {}", fecha);
+
+        return disponibilidadMapper.toResponseList(
+                disponibilidadRepository.findByFecha(fecha)
         );
+    }
 
-        Disponibilidad disponibilidad =
-                disponibilidadRepository.findById(id)
-                        .orElseThrow(() -> {
-                            log.error(
-                                    "No existe disponibilidad con ID {}",
-                                    id
-                            );
-                            return new DisponibilidadNotFoundException(id);
-                        });
+    public List<DisponibilidadResponse> obtenerActivas() {
 
-        disponibilidadRepository.delete(disponibilidad);
+        log.info("Buscando disponibilidades activas");
 
-        log.info(
-                "Disponibilidad con ID {} eliminada correctamente",
-                id
+        return disponibilidadMapper.toResponseList(
+                disponibilidadRepository.findByActivo(true)
         );
+    }
+
+    private void validarDisponibilidad(
+            DisponibilidadRequest request) {
+
+        if (request.getHoraInicio()
+                .isAfter(request.getHoraFin())) {
+
+            throw new ReglaNegocioException(
+                    "La hora de inicio no puede ser posterior a la hora de fin"
+            );
+        }
+
+        if (request.getHoraInicio()
+                .equals(request.getHoraFin())) {
+
+            throw new ReglaNegocioException(
+                    "La hora de inicio y la hora de fin no pueden ser iguales"
+            );
+        }
+
+        if (request.getCuposDisponibles()
+                > request.getCuposTotales()) {
+
+            throw new ReglaNegocioException(
+                    "Los cupos disponibles no pueden ser mayores que los cupos totales"
+            );
+        }
     }
 }

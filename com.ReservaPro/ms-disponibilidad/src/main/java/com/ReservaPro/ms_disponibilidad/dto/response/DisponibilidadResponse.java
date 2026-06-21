@@ -4,8 +4,10 @@ import com.ReservaPro.ms_disponibilidad.model.EstadoDisponibilidad;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -13,6 +15,8 @@ import java.time.LocalTime;
 
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Schema(description = "Respuesta con la información de una disponibilidad")
 public class DisponibilidadResponse {
 

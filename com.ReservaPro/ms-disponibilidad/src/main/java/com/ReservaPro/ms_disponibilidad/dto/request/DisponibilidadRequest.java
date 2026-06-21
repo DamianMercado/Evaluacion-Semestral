@@ -62,9 +62,10 @@ public class DisponibilidadRequest {
     private Integer cuposTotales;
 
     @Schema(
-            description = "Estado de la disponibilidad",
+            description = "Estado de la disponibilidad. Valores permitidos: DISPONIBLE, BLOQUEADO",
             example = "DISPONIBLE"
     )
+    @NotNull(message = "El estado es obligatorio")
     private EstadoDisponibilidad estado;
 
     @Schema(
