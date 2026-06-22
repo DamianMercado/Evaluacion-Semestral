@@ -415,3 +415,177 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 2026-06-21T19:16:11.365-04:00  INFO 19428 --- [ms-historial-reserva] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
 2026-06-21T19:16:11.529-04:00  INFO 19428 --- [ms-historial-reserva] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-HISTORIAL-RESERVA/DESKTOP-TVVBNLB:ms-historial-reserva:8086 - deregister  status: 200
 2026-06-21T19:16:11.530-04:00  INFO 19428 --- [ms-historial-reserva] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2026-06-21T21:06:59.518-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] c.R.m.MsHistorialReservaApplication      : Starting MsHistorialReservaApplication using Java 17.0.19 with PID 19980 (C:\Users\maldo\Desktop\Evaluacion-Semestral\com.ReservaPro\ms-historial-reserva\target\classes started by maldo in C:\Users\maldo\Desktop\Evaluacion-Semestral\com.ReservaPro)
+2026-06-21T21:06:59.521-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] c.R.m.MsHistorialReservaApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-06-21T21:06:59.595-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-21T21:06:59.596-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-21T21:07:01.438-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-21T21:07:01.675-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 223 ms. Found 1 JPA repository interface.
+2026-06-21T21:07:02.139-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=76d9416b-c8a6-324a-9c8d-66d6d1a0ce3f
+2026-06-21T21:07:02.858-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8086 (http)
+2026-06-21T21:07:02.879-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-21T21:07:02.880-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2026-06-21T21:07:02.986-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-21T21:07:02.987-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3390 ms
+2026-06-21T21:07:03.371-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-21T21:07:03.806-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@66fb8f0e
+2026-06-21T21:07:03.809-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-21T21:07:03.876-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/ms-historial-reserva (MySQL 8.4)
+2026-06-21T21:07:03.922-04:00  WARN 19980 --- [ms-historial-reserva] [restartedMain] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: MySQL 8.4 is newer than this version of Flyway and support has not been tested. The latest supported version of MySQL is 8.1.
+2026-06-21T21:07:03.979-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `ms-historial-reserva`.`flyway_schema_history` does not exist yet
+2026-06-21T21:07:03.989-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.046s)
+2026-06-21T21:07:04.051-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `ms-historial-reserva`.`flyway_schema_history` ...
+2026-06-21T21:07:04.270-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `ms-historial-reserva`: << Empty Schema >>
+2026-06-21T21:07:04.286-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema `ms-historial-reserva` to version "1 - crear tabla"
+2026-06-21T21:07:04.377-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema `ms-historial-reserva` to version "2 - insert historiales"
+2026-06-21T21:07:04.421-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema `ms-historial-reserva`, now at version v2 (execution time 00:00.057s)
+2026-06-21T21:07:04.548-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-21T21:07:04.636-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2026-06-21T21:07:04.685-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-21T21:07:05.128-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-21T21:07:05.263-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-21T21:07:06.507-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-21T21:07:06.573-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-21T21:07:07.223-04:00  WARN 19980 --- [ms-historial-reserva] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-21T21:07:07.256-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-06-21T21:07:08.435-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-06-21T21:07:08.479-04:00  WARN 19980 --- [ms-historial-reserva] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-06-21T21:07:08.520-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-06-21T21:07:08.566-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-06-21T21:07:08.575-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-21T21:07:08.589-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-06-21T21:07:08.590-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-06-21T21:07:08.590-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-06-21T21:07:08.590-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-06-21T21:07:08.590-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-06-21T21:07:08.590-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-06-21T21:07:08.590-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-06-21T21:07:09.103-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-06-21T21:07:09.106-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-06-21T21:07:09.109-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-06-21T21:07:09.112-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1782090429111 with initial instances count: 2
+2026-06-21T21:07:09.117-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MS-HISTORIAL-RESERVA with eureka with status UP
+2026-06-21T21:07:09.117-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1782090429117, current=UP, previous=STARTING]
+2026-06-21T21:07:09.120-04:00  INFO 19980 --- [ms-historial-reserva] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-HISTORIAL-RESERVA/DESKTOP-TVVBNLB:ms-historial-reserva:8086: registering service...
+2026-06-21T21:07:09.166-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8086 (http) with context path '/'
+2026-06-21T21:07:09.168-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8086
+2026-06-21T21:07:09.223-04:00  INFO 19980 --- [ms-historial-reserva] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-HISTORIAL-RESERVA/DESKTOP-TVVBNLB:ms-historial-reserva:8086 - registration status: 204
+2026-06-21T21:07:09.305-04:00  INFO 19980 --- [ms-historial-reserva] [restartedMain] c.R.m.MsHistorialReservaApplication      : Started MsHistorialReservaApplication in 10.608 seconds (process running for 12.72)
+2026-06-21T21:08:44.094-04:00  INFO 19980 --- [ms-historial-reserva] [http-nio-8086-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-21T21:08:44.101-04:00  INFO 19980 --- [ms-historial-reserva] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-21T21:08:44.137-04:00  INFO 19980 --- [ms-historial-reserva] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 35 ms
+2026-06-21T21:08:44.240-04:00  INFO 19980 --- [ms-historial-reserva] [http-nio-8086-exec-1] c.R.m.service.HistorialReservaService    : Obteniendo todos los historiales de reservas
+2026-06-21T21:10:14.003-04:00  INFO 19980 --- [ms-historial-reserva] [http-nio-8086-exec-4] c.R.m.service.HistorialReservaService    : Obteniendo todos los historiales de reservas
+2026-06-21T21:11:47.359-04:00  INFO 19980 --- [ms-historial-reserva] [http-nio-8086-exec-5] c.R.m.service.HistorialReservaService    : Validando reserva ID: 1
+2026-06-21T21:11:47.430-04:00  WARN 19980 --- [ms-historial-reserva] [http-nio-8086-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [feign.RetryableException: Connection refused: getsockopt executing GET http://localhost:8084/api/v1/reservas/1]
+2026-06-21T21:12:08.611-04:00  INFO 19980 --- [ms-historial-reserva] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-21T21:12:38.803-04:00  INFO 19980 --- [ms-historial-reserva] [http-nio-8086-exec-6] c.R.m.service.HistorialReservaService    : Validando reserva ID: 2
+2026-06-21T21:12:38.817-04:00  WARN 19980 --- [ms-historial-reserva] [http-nio-8086-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [feign.RetryableException: Connection refused: getsockopt executing GET http://localhost:8084/api/v1/reservas/2]
+2026-06-21T21:13:42.700-04:00  INFO 19980 --- [ms-historial-reserva] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application MS-HISTORIAL-RESERVA with eureka with status DOWN
+2026-06-21T21:13:42.703-04:00  INFO 19980 --- [ms-historial-reserva] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1782090822703, current=DOWN, previous=UP]
+2026-06-21T21:13:42.704-04:00  INFO 19980 --- [ms-historial-reserva] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-HISTORIAL-RESERVA/DESKTOP-TVVBNLB:ms-historial-reserva:8086: registering service...
+2026-06-21T21:13:42.812-04:00  INFO 19980 --- [ms-historial-reserva] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-HISTORIAL-RESERVA/DESKTOP-TVVBNLB:ms-historial-reserva:8086 - registration status: 204
+2026-06-21T21:13:42.903-04:00  INFO 19980 --- [ms-historial-reserva] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-21T21:13:43.216-04:00  INFO 19980 --- [ms-historial-reserva] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-21T21:13:43.304-04:00  INFO 19980 --- [ms-historial-reserva] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-21T21:13:43.552-04:00  INFO 19980 --- [ms-historial-reserva] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-21T21:13:43.790-04:00  INFO 19980 --- [ms-historial-reserva] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-21T21:13:43.802-04:00  INFO 19980 --- [ms-historial-reserva] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2026-06-21T21:13:46.805-04:00  INFO 19980 --- [ms-historial-reserva] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2026-06-21T21:13:46.876-04:00  INFO 19980 --- [ms-historial-reserva] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-HISTORIAL-RESERVA/DESKTOP-TVVBNLB:ms-historial-reserva:8086 - deregister  status: 200
+2026-06-21T21:13:46.903-04:00  INFO 19980 --- [ms-historial-reserva] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2026-06-21T21:17:58.883-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] c.R.m.MsHistorialReservaApplication      : Starting MsHistorialReservaApplication using Java 17.0.19 with PID 18100 (C:\Users\maldo\Desktop\Evaluacion-Semestral\com.ReservaPro\ms-historial-reserva\target\classes started by maldo in C:\Users\maldo\Desktop\Evaluacion-Semestral\com.ReservaPro)
+2026-06-21T21:17:58.887-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] c.R.m.MsHistorialReservaApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-06-21T21:17:58.964-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-21T21:17:58.964-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-21T21:18:00.644-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-21T21:18:00.907-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 249 ms. Found 1 JPA repository interface.
+2026-06-21T21:18:01.379-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=76d9416b-c8a6-324a-9c8d-66d6d1a0ce3f
+2026-06-21T21:18:02.131-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8086 (http)
+2026-06-21T21:18:02.156-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-21T21:18:02.156-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2026-06-21T21:18:02.261-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-21T21:18:02.262-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3296 ms
+2026-06-21T21:18:02.662-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-21T21:18:03.199-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@66fb8f0e
+2026-06-21T21:18:03.202-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-21T21:18:03.297-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/ms-historial-reserva (MySQL 8.4)
+2026-06-21T21:18:03.384-04:00  WARN 18100 --- [ms-historial-reserva] [restartedMain] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: MySQL 8.4 is newer than this version of Flyway and support has not been tested. The latest supported version of MySQL is 8.1.
+2026-06-21T21:18:03.526-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.116s)
+2026-06-21T21:18:03.563-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `ms-historial-reserva`: 2
+2026-06-21T21:18:03.570-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `ms-historial-reserva` is up to date. No migration necessary.
+2026-06-21T21:18:03.710-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-21T21:18:03.827-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2026-06-21T21:18:03.886-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-21T21:18:04.295-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-21T21:18:04.434-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-21T21:18:05.597-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-21T21:18:05.666-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-21T21:18:06.257-04:00  WARN 18100 --- [ms-historial-reserva] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-21T21:18:06.286-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-06-21T21:18:07.511-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-06-21T21:18:07.547-04:00  WARN 18100 --- [ms-historial-reserva] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-06-21T21:18:07.600-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-06-21T21:18:07.662-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-06-21T21:18:07.669-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-21T21:18:07.696-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-06-21T21:18:07.697-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-06-21T21:18:07.697-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-06-21T21:18:07.697-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-06-21T21:18:07.697-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-06-21T21:18:07.697-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-06-21T21:18:07.698-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-06-21T21:18:08.280-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-06-21T21:18:08.284-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-06-21T21:18:08.289-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-06-21T21:18:08.293-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1782091088292 with initial instances count: 2
+2026-06-21T21:18:08.298-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MS-HISTORIAL-RESERVA with eureka with status UP
+2026-06-21T21:18:08.299-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1782091088299, current=UP, previous=STARTING]
+2026-06-21T21:18:08.301-04:00  INFO 18100 --- [ms-historial-reserva] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-HISTORIAL-RESERVA/DESKTOP-TVVBNLB:ms-historial-reserva:8086: registering service...
+2026-06-21T21:18:08.339-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8086 (http) with context path '/'
+2026-06-21T21:18:08.341-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8086
+2026-06-21T21:18:08.382-04:00  INFO 18100 --- [ms-historial-reserva] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-HISTORIAL-RESERVA/DESKTOP-TVVBNLB:ms-historial-reserva:8086 - registration status: 204
+2026-06-21T21:18:08.475-04:00  INFO 18100 --- [ms-historial-reserva] [restartedMain] c.R.m.MsHistorialReservaApplication      : Started MsHistorialReservaApplication in 10.71 seconds (process running for 12.496)
+2026-06-21T21:20:16.127-04:00  INFO 18100 --- [ms-historial-reserva] [http-nio-8086-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-21T21:20:16.134-04:00  INFO 18100 --- [ms-historial-reserva] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-21T21:20:16.185-04:00  INFO 18100 --- [ms-historial-reserva] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 50 ms
+2026-06-21T21:20:16.313-04:00  INFO 18100 --- [ms-historial-reserva] [http-nio-8086-exec-1] c.R.m.service.HistorialReservaService    : Obteniendo todos los historiales de reservas
+2026-06-21T21:20:46.131-04:00  INFO 18100 --- [ms-historial-reserva] [http-nio-8086-exec-2] c.R.m.service.HistorialReservaService    : Obteniendo todos los historiales de reservas
+2026-06-21T21:22:21.128-04:00  INFO 18100 --- [ms-historial-reserva] [http-nio-8086-exec-4] c.R.m.service.HistorialReservaService    : Validando reserva ID: 1
+2026-06-21T21:22:21.128-04:00  INFO 18100 --- [ms-historial-reserva] [http-nio-8086-exec-4] c.R.m.service.HistorialReservaService    : Creando historial para reserva ID: 1
+2026-06-21T21:22:41.575-04:00  INFO 18100 --- [ms-historial-reserva] [http-nio-8086-exec-5] c.R.m.service.HistorialReservaService    : Validando reserva ID: 3
+2026-06-21T21:22:41.575-04:00  INFO 18100 --- [ms-historial-reserva] [http-nio-8086-exec-5] c.R.m.service.HistorialReservaService    : Creando historial para reserva ID: 3
+2026-06-21T21:23:07.715-04:00  INFO 18100 --- [ms-historial-reserva] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-21T21:23:32.669-04:00  INFO 18100 --- [ms-historial-reserva] [http-nio-8086-exec-6] c.R.m.service.HistorialReservaService    : Validando reserva ID: 7
+2026-06-21T21:23:32.669-04:00  INFO 18100 --- [ms-historial-reserva] [http-nio-8086-exec-6] c.R.m.service.HistorialReservaService    : Creando historial para reserva ID: 7
+2026-06-21T21:25:03.945-04:00  INFO 18100 --- [ms-historial-reserva] [http-nio-8086-exec-8] c.R.m.service.HistorialReservaService    : Actualizando historial de reserva ID: 1
+2026-06-21T21:25:03.980-04:00  INFO 18100 --- [ms-historial-reserva] [http-nio-8086-exec-8] c.R.m.service.HistorialReservaService    : Validando reserva ID: 1
+2026-06-21T21:25:47.288-04:00  INFO 18100 --- [ms-historial-reserva] [http-nio-8086-exec-9] c.R.m.service.HistorialReservaService    : Eliminando historial de reserva ID: 1
+2026-06-21T21:25:47.847-04:00  INFO 18100 --- [ms-historial-reserva] [http-nio-8086-exec-9] c.R.m.service.HistorialReservaService    : Historial eliminado correctamente ID: 1
+2026-06-21T21:26:15.049-04:00  INFO 18100 --- [ms-historial-reserva] [http-nio-8086-exec-10] c.R.m.service.HistorialReservaService    : Obteniendo todos los historiales de reservas
+2026-06-21T21:27:58.719-04:00  INFO 18100 --- [ms-historial-reserva] [http-nio-8086-exec-10] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 387 ms
+2026-06-21T21:28:07.730-04:00  INFO 18100 --- [ms-historial-reserva] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-21T21:29:16.350-04:00  INFO 18100 --- [ms-historial-reserva] [http-nio-8086-exec-7] c.R.m.service.HistorialReservaService    : Eliminando historial de reserva ID: 1
+2026-06-21T21:29:16.370-04:00  WARN 18100 --- [ms-historial-reserva] [http-nio-8086-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.ReservaPro.ms_historial_reserva.exception.HistorialReservaNoEncontradaException: No se ha encontrado el historial de reserva con el id: 1]
+2026-06-21T21:29:47.238-04:00  INFO 18100 --- [ms-historial-reserva] [http-nio-8086-exec-5] c.R.m.service.HistorialReservaService    : Buscando historial de reserva con ID: 4
+2026-06-21T21:33:07.741-04:00  INFO 18100 --- [ms-historial-reserva] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-21T21:38:07.786-04:00  INFO 18100 --- [ms-historial-reserva] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-21T21:43:07.821-04:00  INFO 18100 --- [ms-historial-reserva] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-21T21:48:07.855-04:00  INFO 18100 --- [ms-historial-reserva] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-21T21:53:07.870-04:00  INFO 18100 --- [ms-historial-reserva] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-21T21:58:07.913-04:00  INFO 18100 --- [ms-historial-reserva] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-21T22:03:07.941-04:00  INFO 18100 --- [ms-historial-reserva] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration

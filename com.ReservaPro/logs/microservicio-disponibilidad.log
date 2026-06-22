@@ -950,3 +950,175 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 2026-06-21T19:16:13.300-04:00  INFO 12636 --- [ms-disponibilidad] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
 2026-06-21T19:16:13.338-04:00  INFO 12636 --- [ms-disponibilidad] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-DISPONIBILIDAD/DESKTOP-TVVBNLB:ms-disponibilidad:8085 - deregister  status: 200
 2026-06-21T19:16:13.343-04:00  INFO 12636 --- [ms-disponibilidad] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2026-06-21T21:30:46.199-04:00  INFO 21548 --- [ms-disponibilidad] [main] c.R.m.MsDisponibilidadApplication        : Starting MsDisponibilidadApplication using Java 17.0.19 with PID 21548 (C:\Users\maldo\Desktop\Evaluacion-Semestral\com.ReservaPro\ms-disponibilidad\target\classes started by maldo in C:\Users\maldo\Desktop\Evaluacion-Semestral\com.ReservaPro)
+2026-06-21T21:30:46.203-04:00  INFO 21548 --- [ms-disponibilidad] [main] c.R.m.MsDisponibilidadApplication        : No active profile set, falling back to 1 default profile: "default"
+2026-06-21T21:30:47.631-04:00  INFO 21548 --- [ms-disponibilidad] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-21T21:30:47.868-04:00  INFO 21548 --- [ms-disponibilidad] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 226 ms. Found 1 JPA repository interface.
+2026-06-21T21:30:48.293-04:00  INFO 21548 --- [ms-disponibilidad] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=fe54f0a8-8616-3cbd-8234-ee0a88032429
+2026-06-21T21:30:48.908-04:00  INFO 21548 --- [ms-disponibilidad] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8085 (http)
+2026-06-21T21:30:48.929-04:00  INFO 21548 --- [ms-disponibilidad] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-21T21:30:48.930-04:00  INFO 21548 --- [ms-disponibilidad] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2026-06-21T21:30:49.058-04:00  INFO 21548 --- [ms-disponibilidad] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-21T21:30:49.059-04:00  INFO 21548 --- [ms-disponibilidad] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2787 ms
+2026-06-21T21:30:49.466-04:00  INFO 21548 --- [ms-disponibilidad] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-21T21:30:50.926-04:00  WARN 21548 --- [ms-disponibilidad] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Unknown database 'ms-disponibilidad'
+-------------------------------------------------------------------------------
+SQL State  : 42000
+Error Code : 1049
+Message    : Unknown database 'ms-disponibilidad'
+
+2026-06-21T21:30:50.931-04:00  INFO 21548 --- [ms-disponibilidad] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-06-21T21:30:50.954-04:00  INFO 21548 --- [ms-disponibilidad] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-21T21:30:50.979-04:00 ERROR 21548 --- [ms-disponibilidad] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Unknown database 'ms-disponibilidad'
+-------------------------------------------------------------------------------
+SQL State  : 42000
+Error Code : 1049
+Message    : Unknown database 'ms-disponibilidad'
+
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:328) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.11.jar:6.2.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.11.jar:6.2.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.6.jar:3.5.6]
+	at com.ReservaPro.ms_disponibilidad.MsDisponibilidadApplication.main(MsDisponibilidadApplication.java:14) ~[classes/:na]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Unknown database 'ms-disponibilidad'
+-------------------------------------------------------------------------------
+SQL State  : 42000
+Error Code : 1049
+Message    : Unknown database 'ms-disponibilidad'
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-6.2.11.jar:6.2.11]
+	... 10 common frames omitted
+Caused by: org.flywaydb.core.internal.exception.FlywaySqlException: Unable to obtain connection from database: Unknown database 'ms-disponibilidad'
+-------------------------------------------------------------------------------
+SQL State  : 42000
+Error Code : 1049
+Message    : Unknown database 'ms-disponibilidad'
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:71) ~[flyway-core-11.7.2.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:76) ~[flyway-core-11.7.2.jar:na]
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:136) ~[flyway-core-11.7.2.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:188) ~[flyway-core-11.7.2.jar:na]
+	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:66) ~[spring-boot-autoconfigure-3.5.6.jar:3.5.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.11.jar:6.2.11]
+	... 17 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'ms-disponibilidad'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:839) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:415) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:370) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:207) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-6.3.3.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:59) ~[flyway-core-11.7.2.jar:na]
+	... 23 common frames omitted
+
+2026-06-21T21:31:35.653-04:00  INFO 22612 --- [ms-disponibilidad] [main] c.R.m.MsDisponibilidadApplication        : Starting MsDisponibilidadApplication using Java 17.0.19 with PID 22612 (C:\Users\maldo\Desktop\Evaluacion-Semestral\com.ReservaPro\ms-disponibilidad\target\classes started by maldo in C:\Users\maldo\Desktop\Evaluacion-Semestral\com.ReservaPro)
+2026-06-21T21:31:35.656-04:00  INFO 22612 --- [ms-disponibilidad] [main] c.R.m.MsDisponibilidadApplication        : No active profile set, falling back to 1 default profile: "default"
+2026-06-21T21:31:36.909-04:00  INFO 22612 --- [ms-disponibilidad] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-21T21:31:37.134-04:00  INFO 22612 --- [ms-disponibilidad] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 214 ms. Found 1 JPA repository interface.
+2026-06-21T21:31:37.506-04:00  INFO 22612 --- [ms-disponibilidad] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=fe54f0a8-8616-3cbd-8234-ee0a88032429
+2026-06-21T21:31:38.072-04:00  INFO 22612 --- [ms-disponibilidad] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8085 (http)
+2026-06-21T21:31:38.094-04:00  INFO 22612 --- [ms-disponibilidad] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-21T21:31:38.094-04:00  INFO 22612 --- [ms-disponibilidad] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2026-06-21T21:31:38.225-04:00  INFO 22612 --- [ms-disponibilidad] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-21T21:31:38.225-04:00  INFO 22612 --- [ms-disponibilidad] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2498 ms
+2026-06-21T21:31:38.590-04:00  INFO 22612 --- [ms-disponibilidad] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-21T21:31:39.063-04:00  INFO 22612 --- [ms-disponibilidad] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@70ee9d31
+2026-06-21T21:31:39.066-04:00  INFO 22612 --- [ms-disponibilidad] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-21T21:31:39.133-04:00  INFO 22612 --- [ms-disponibilidad] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/ms-disponibilidad (MySQL 8.4)
+2026-06-21T21:31:39.166-04:00  WARN 22612 --- [ms-disponibilidad] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: MySQL 8.4 is newer than this version of Flyway and support has not been tested. The latest supported version of MySQL is 8.1.
+2026-06-21T21:31:39.219-04:00  INFO 22612 --- [ms-disponibilidad] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `ms-disponibilidad`.`flyway_schema_history` does not exist yet
+2026-06-21T21:31:39.225-04:00  INFO 22612 --- [ms-disponibilidad] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.039s)
+2026-06-21T21:31:39.288-04:00  INFO 22612 --- [ms-disponibilidad] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `ms-disponibilidad`.`flyway_schema_history` ...
+2026-06-21T21:31:39.483-04:00  INFO 22612 --- [ms-disponibilidad] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `ms-disponibilidad`: << Empty Schema >>
+2026-06-21T21:31:39.504-04:00  INFO 22612 --- [ms-disponibilidad] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `ms-disponibilidad` to version "1 - crear tabla"
+2026-06-21T21:31:39.575-04:00  WARN 22612 --- [ms-disponibilidad] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+2026-06-21T21:31:39.575-04:00  WARN 22612 --- [ms-disponibilidad] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+2026-06-21T21:31:39.576-04:00  WARN 22612 --- [ms-disponibilidad] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: 'utf8' is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous. (SQL State: HY000 - Error Code: 3719)
+2026-06-21T21:31:39.576-04:00  WARN 22612 --- [ms-disponibilidad] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: 'utf8mb3_unicode_ci' is a collation of the deprecated character set UTF8MB3. Please consider using UTF8MB4 with an appropriate collation instead. (SQL State: HY000 - Error Code: 3778)
+2026-06-21T21:31:39.726-04:00  WARN 22612 --- [ms-disponibilidad] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+2026-06-21T21:31:39.792-04:00  INFO 22612 --- [ms-disponibilidad] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `ms-disponibilidad` to version "2 - insert disponibilidad"
+2026-06-21T21:31:39.831-04:00  INFO 22612 --- [ms-disponibilidad] [main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema `ms-disponibilidad`, now at version v2 (execution time 00:00.237s)
+2026-06-21T21:31:39.963-04:00  INFO 22612 --- [ms-disponibilidad] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-21T21:31:40.048-04:00  INFO 22612 --- [ms-disponibilidad] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2026-06-21T21:31:40.100-04:00  INFO 22612 --- [ms-disponibilidad] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-21T21:31:40.507-04:00  INFO 22612 --- [ms-disponibilidad] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-21T21:31:40.625-04:00  INFO 22612 --- [ms-disponibilidad] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-21T21:31:41.812-04:00  INFO 22612 --- [ms-disponibilidad] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-21T21:31:41.905-04:00  INFO 22612 --- [ms-disponibilidad] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-21T21:31:42.444-04:00  WARN 22612 --- [ms-disponibilidad] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-21T21:31:43.397-04:00  INFO 22612 --- [ms-disponibilidad] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-06-21T21:31:43.444-04:00  WARN 22612 --- [ms-disponibilidad] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-06-21T21:31:43.494-04:00  INFO 22612 --- [ms-disponibilidad] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-06-21T21:31:43.524-04:00  INFO 22612 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-06-21T21:31:43.529-04:00  INFO 22612 --- [ms-disponibilidad] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-21T21:31:43.540-04:00  INFO 22612 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-06-21T21:31:43.540-04:00  INFO 22612 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-06-21T21:31:43.540-04:00  INFO 22612 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-06-21T21:31:43.540-04:00  INFO 22612 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-06-21T21:31:43.541-04:00  INFO 22612 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-06-21T21:31:43.541-04:00  INFO 22612 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-06-21T21:31:43.541-04:00  INFO 22612 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-06-21T21:31:44.052-04:00  INFO 22612 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-06-21T21:31:44.055-04:00  INFO 22612 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-06-21T21:31:44.058-04:00  INFO 22612 --- [ms-disponibilidad] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-06-21T21:31:44.060-04:00  INFO 22612 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1782091904059 with initial instances count: 3
+2026-06-21T21:31:44.065-04:00  INFO 22612 --- [ms-disponibilidad] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MS-DISPONIBILIDAD with eureka with status UP
+2026-06-21T21:31:44.066-04:00  INFO 22612 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1782091904066, current=UP, previous=STARTING]
+2026-06-21T21:31:44.069-04:00  INFO 22612 --- [ms-disponibilidad] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-DISPONIBILIDAD/DESKTOP-TVVBNLB:ms-disponibilidad:8085: registering service...
+2026-06-21T21:31:44.109-04:00  INFO 22612 --- [ms-disponibilidad] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8085 (http) with context path '/'
+2026-06-21T21:31:44.111-04:00  INFO 22612 --- [ms-disponibilidad] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8085
+2026-06-21T21:31:44.172-04:00  INFO 22612 --- [ms-disponibilidad] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-DISPONIBILIDAD/DESKTOP-TVVBNLB:ms-disponibilidad:8085 - registration status: 204
+2026-06-21T21:31:44.270-04:00  INFO 22612 --- [ms-disponibilidad] [main] c.R.m.MsDisponibilidadApplication        : Started MsDisponibilidadApplication in 9.672 seconds (process running for 10.915)
+2026-06-21T21:32:52.888-04:00  INFO 22612 --- [ms-disponibilidad] [http-nio-8085-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-21T21:32:52.890-04:00  INFO 22612 --- [ms-disponibilidad] [http-nio-8085-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-21T21:32:52.904-04:00  INFO 22612 --- [ms-disponibilidad] [http-nio-8085-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
+2026-06-21T21:32:54.174-04:00  INFO 22612 --- [ms-disponibilidad] [http-nio-8085-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 547 ms
+2026-06-21T21:33:54.576-04:00  INFO 22612 --- [ms-disponibilidad] [http-nio-8085-exec-6] c.R.m.service.DisponibilidadService      : Listando todas las disponibilidades
+2026-06-21T21:36:43.562-04:00  INFO 22612 --- [ms-disponibilidad] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-21T21:38:05.538-04:00  INFO 22612 --- [ms-disponibilidad] [http-nio-8085-exec-3] c.R.m.service.DisponibilidadService      : Listando todas las disponibilidades
+2026-06-21T21:41:43.591-04:00  INFO 22612 --- [ms-disponibilidad] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-21T21:44:22.763-04:00  INFO 22612 --- [ms-disponibilidad] [http-nio-8085-exec-4] c.R.m.service.DisponibilidadService      : Creando disponibilidad para la fecha 2026-06-21
+2026-06-21T21:45:03.751-04:00  INFO 22612 --- [ms-disponibilidad] [http-nio-8085-exec-8] c.R.m.service.DisponibilidadService      : Creando disponibilidad para la fecha 2026-06-21
+2026-06-21T21:45:33.028-04:00  INFO 22612 --- [ms-disponibilidad] [http-nio-8085-exec-7] c.R.m.service.DisponibilidadService      : Creando disponibilidad para la fecha 2026-06-21
+2026-06-21T21:46:43.619-04:00  INFO 22612 --- [ms-disponibilidad] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-21T21:47:02.563-04:00  INFO 22612 --- [ms-disponibilidad] [http-nio-8085-exec-3] c.R.m.service.DisponibilidadService      : Actualizando disponibilidad con ID 1
+2026-06-21T21:49:44.499-04:00  INFO 22612 --- [ms-disponibilidad] [http-nio-8085-exec-8] c.R.m.service.DisponibilidadService      : Eliminando disponibilidad con ID 2
+2026-06-21T21:49:54.211-04:00  INFO 22612 --- [ms-disponibilidad] [http-nio-8085-exec-9] c.R.m.service.DisponibilidadService      : Listando todas las disponibilidades
+2026-06-21T21:50:22.303-04:00  INFO 22612 --- [ms-disponibilidad] [http-nio-8085-exec-1] c.R.m.service.DisponibilidadService      : Eliminando disponibilidad con ID 1
+2026-06-21T21:50:35.943-04:00  INFO 22612 --- [ms-disponibilidad] [http-nio-8085-exec-3] c.R.m.service.DisponibilidadService      : Eliminando disponibilidad con ID 1
+2026-06-21T21:50:46.959-04:00  INFO 22612 --- [ms-disponibilidad] [http-nio-8085-exec-6] c.R.m.service.DisponibilidadService      : Listando todas las disponibilidades
+2026-06-21T21:51:43.627-04:00  INFO 22612 --- [ms-disponibilidad] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-21T21:56:43.645-04:00  INFO 22612 --- [ms-disponibilidad] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-21T22:01:43.677-04:00  INFO 22612 --- [ms-disponibilidad] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration

@@ -62,9 +62,10 @@ public class CancelacionService {
 
         validarCancelacion(cancelacionRequest);
 
-        reservaClient.obtenerReservaPorId(
-                cancelacionRequest.getIdReserva()
-        );
+        // Temporalmente desactivado hasta tener ms-reserva funcionando
+        // reservaClient.obtenerReservaPorId(
+        //         cancelacionRequest.getIdReserva()
+        // );
 
         Cancelacion cancelacion =
                 cancelacionMapper.toEntity(cancelacionRequest);
@@ -98,9 +99,10 @@ public class CancelacionService {
 
         validarCancelacion(cancelacionRequest);
 
-        reservaClient.obtenerReservaPorId(
-                cancelacionRequest.getIdReserva()
-        );
+        // Temporalmente desactivado hasta tener ms-reserva funcionando
+        // reservaClient.obtenerReservaPorId(
+        //         cancelacionRequest.getIdReserva()
+        // );
 
         cancelacionExistente.setIdReserva(
                 cancelacionRequest.getIdReserva()
@@ -162,11 +164,25 @@ public class CancelacionService {
             );
         }
 
+        if (request.getFechaCancelacion() == null) {
+
+            throw new ReglaNegocioException(
+                    "La fecha de cancelación es obligatoria"
+            );
+        }
+
         if (request.getFechaCancelacion()
                 .isAfter(LocalDate.now())) {
 
             throw new ReglaNegocioException(
                     "La fecha de cancelación no puede ser futura"
+            );
+        }
+
+        if (request.getIdReserva() == null) {
+
+            throw new ReglaNegocioException(
+                    "El idReserva es obligatorio"
             );
         }
     }

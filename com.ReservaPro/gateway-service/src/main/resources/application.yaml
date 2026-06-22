@@ -11,22 +11,22 @@ spring:
         webmvc:
           routes:
             - id: notificacion
-              uri: lb://ms-notificacion
+              uri: lb://MS-NOTIFICACION
               predicates:
                 - Path=/api/v1/notificaciones/**
 
             - id: cancelacion
-              uri: lb://ms-cancelacion
+              uri: lb://MS-CANCELACION
               predicates:
                 - Path=/api/v1/cancelaciones/**
 
             - id: disponibilidad
-              uri: lb://ms-disponibilidad
+              uri: lb://MS-DISPONIBILIDAD
               predicates:
                 - Path=/api/v1/disponibilidades/**
 
             - id: historial-reserva
-              uri: lb://ms-historial-reserva
+              uri: lb://MS-HISTORIAL-RESERVA
               predicates:
                 - Path=/api/v1/historial-reservas/**
 
