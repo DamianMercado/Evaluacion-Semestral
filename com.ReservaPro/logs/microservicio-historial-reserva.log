@@ -589,3 +589,19 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 2026-06-21T21:53:07.870-04:00  INFO 18100 --- [ms-historial-reserva] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2026-06-21T21:58:07.913-04:00  INFO 18100 --- [ms-historial-reserva] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2026-06-21T22:03:07.941-04:00  INFO 18100 --- [ms-historial-reserva] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-21T22:08:07.956-04:00  INFO 18100 --- [ms-historial-reserva] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-21T22:13:07.985-04:00  INFO 18100 --- [ms-historial-reserva] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-21T22:18:08.008-04:00  INFO 18100 --- [ms-historial-reserva] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-21T22:22:07.760-04:00  INFO 18100 --- [ms-historial-reserva] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application MS-HISTORIAL-RESERVA with eureka with status DOWN
+2026-06-21T22:22:07.763-04:00  INFO 18100 --- [ms-historial-reserva] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1782094927763, current=DOWN, previous=UP]
+2026-06-21T22:22:07.767-04:00  INFO 18100 --- [ms-historial-reserva] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-HISTORIAL-RESERVA/DESKTOP-TVVBNLB:ms-historial-reserva:8086: registering service...
+2026-06-21T22:22:07.924-04:00  INFO 18100 --- [ms-historial-reserva] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-21T22:22:07.949-04:00  INFO 18100 --- [ms-historial-reserva] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-HISTORIAL-RESERVA/DESKTOP-TVVBNLB:ms-historial-reserva:8086 - registration status: 204
+2026-06-21T22:22:08.246-04:00  INFO 18100 --- [ms-historial-reserva] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-21T22:22:08.348-04:00  INFO 18100 --- [ms-historial-reserva] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-21T22:22:08.537-04:00  INFO 18100 --- [ms-historial-reserva] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-21T22:22:08.612-04:00  INFO 18100 --- [ms-historial-reserva] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-21T22:22:08.618-04:00  INFO 18100 --- [ms-historial-reserva] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2026-06-21T22:22:11.623-04:00  INFO 18100 --- [ms-historial-reserva] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2026-06-21T22:22:11.685-04:00  INFO 18100 --- [ms-historial-reserva] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-HISTORIAL-RESERVA/DESKTOP-TVVBNLB:ms-historial-reserva:8086 - deregister  status: 200
+2026-06-21T22:22:11.688-04:00  INFO 18100 --- [ms-historial-reserva] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

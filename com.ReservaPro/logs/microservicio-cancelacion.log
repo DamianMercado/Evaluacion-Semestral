@@ -1306,3 +1306,19 @@ com.ReservaPro.ms_cancelacion.exception.ReglaNegocioException: La fecha de cance
 2026-06-21T21:54:24.930-04:00  INFO 22956 --- [ms-cancelacion] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2026-06-21T21:59:24.975-04:00  INFO 22956 --- [ms-cancelacion] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2026-06-21T22:04:25.016-04:00  INFO 22956 --- [ms-cancelacion] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-21T22:09:25.043-04:00  INFO 22956 --- [ms-cancelacion] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-21T22:14:25.093-04:00  INFO 22956 --- [ms-cancelacion] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-21T22:19:25.140-04:00  INFO 22956 --- [ms-cancelacion] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-21T22:22:09.073-04:00  INFO 22956 --- [ms-cancelacion] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application MS-CANCELACION with eureka with status DOWN
+2026-06-21T22:22:09.093-04:00  INFO 22956 --- [ms-cancelacion] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1782094929093, current=DOWN, previous=UP]
+2026-06-21T22:22:09.097-04:00  INFO 22956 --- [ms-cancelacion] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CANCELACION/DESKTOP-TVVBNLB:ms-cancelacion:8082: registering service...
+2026-06-21T22:22:09.201-04:00  INFO 22956 --- [ms-cancelacion] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CANCELACION/DESKTOP-TVVBNLB:ms-cancelacion:8082 - registration status: 204
+2026-06-21T22:22:09.799-04:00  INFO 22956 --- [ms-cancelacion] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-21T22:22:10.257-04:00  INFO 22956 --- [ms-cancelacion] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-21T22:22:10.413-04:00  INFO 22956 --- [ms-cancelacion] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-21T22:22:10.585-04:00  INFO 22956 --- [ms-cancelacion] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-21T22:22:10.660-04:00  INFO 22956 --- [ms-cancelacion] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-21T22:22:10.669-04:00  INFO 22956 --- [ms-cancelacion] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2026-06-21T22:22:13.682-04:00  INFO 22956 --- [ms-cancelacion] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2026-06-21T22:22:13.777-04:00  INFO 22956 --- [ms-cancelacion] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CANCELACION/DESKTOP-TVVBNLB:ms-cancelacion:8082 - deregister  status: 200
+2026-06-21T22:22:13.780-04:00  INFO 22956 --- [ms-cancelacion] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
