@@ -19,7 +19,7 @@
         <module name="ms-promocion" />
         <module name="ms-pago" />
       </profile>
-      <profile name="Annotation profile for ms-usuario" enabled="true">
+      <profile name="Annotation profile for ms-notificacion" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -30,14 +30,19 @@
         </processorPath>
         <module name="ms-usuario (1)" />
         <module name="ms-usuario (2)" />
+        <module name="ms-historial-reserva" />
         <module name="ms-reserva" />
-        <module name="ms-usuario" />
         <module name="ms-notificacion" />
+        <module name="ms-usuario" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ms-autentificacion" options="-parameters" />
+      <module name="ms-calificacion" options="-parameters" />
+      <module name="ms-gestion-servicio" options="-parameters" />
+      <module name="ms-historial-reserva" options="-parameters" />
       <module name="ms-notificacion" options="-parameters" />
       <module name="ms-pago" options="-parameters" />
       <module name="ms-promocion" options="-parameters" />
