@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class GestionServicioResponse {
 
-    private Long idServicio;
+    private Long id;
     private String nombre;
     private Double precioBase;
     private Integer duracionMinuto;

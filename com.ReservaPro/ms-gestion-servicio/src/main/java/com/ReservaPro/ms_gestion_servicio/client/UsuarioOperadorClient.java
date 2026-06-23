@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @FeignClient(name = "ms-usuario", url = "http://localhost:8082")
-public interface UsuarioOperador {
+public interface UsuarioOperadorClient {
 
     @GetMapping("/usuarios/{id}/validar-operador")
     Boolean esOperadorServicio(@PathVariable("id") Long id);
