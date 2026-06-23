@@ -118,6 +118,43 @@ services:
       - reservapro-net
     restart: unless-stopped
 
+  ms-pago:
+    build:
+      context: ./ms-pago
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    container_name: reservapro-pago
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    depends_on:
+      mysql-reservapro:
+        condition: service_healthy
+      eureka-server:
+        condition: service_started
+    networks:
+      - reservapro-net
+    restart: unless-stopped
+
+  ms-promocion:
+    build:
+      context: ./ms-promocion
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    container_name: reservapro-pago
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    depends_on:
+      mysql-reservapro:
+        condition: service_healthy
+      eureka-server:
+        condition: service_started
+    networks:
+      - reservapro-net
+    restart: unless-stopped
+
+
 networks:
   reservapro-net:
     driver: bridge
