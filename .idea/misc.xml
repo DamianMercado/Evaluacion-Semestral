@@ -13,8 +13,12 @@
         <option value="$PROJECT_DIR$/com.ReservaPro/ms-pago/pom.xml" />
         <option value="$PROJECT_DIR$/com.ReservaPro/ms-promocion/pom.xml" />
         <option value="$PROJECT_DIR$/com.ReservaPro/ms-autentificacion/pom.xml" />
-        <option value="$PROJECT_DIR$/com.ReservaPro/ms-calificacion/pom.xml" />
         <option value="$PROJECT_DIR$/com.ReservaPro/ms-historial-reserva/pom.xml" />
+        <option value="$PROJECT_DIR$/com.ReservaPro/ms-disponibilidad/pom.xml" />
+        <option value="$PROJECT_DIR$/com.ReservaPro/ms-cancelacion/pom.xml" />
+        <option value="$PROJECT_DIR$/com.ReservaPro/gateway-service/pom.xml" />
+        <option value="$PROJECT_DIR$/com.ReservaPro/eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/com.ReservaPro/ms-calificacion/pom.xml" />
       </list>
     </option>
   </component>

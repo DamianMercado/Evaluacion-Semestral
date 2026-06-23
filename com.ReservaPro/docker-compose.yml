@@ -1,15 +1,23 @@
 services:
+# Agregar estas variables de entorno
+#        - SPRING_PROFILES_ACTIVE=${SPRING_PROFILES_ACTIVE}
+#        - EUREKA_URL=${EUREKA_URL}
+#        - DB_URL=${DB_USUARIO_URL}
+#        - DB_USERNAME=${DB_USERNAME}
+#        - DB_PASSWORD=${DB_PASSWORD}
 
-  mysql-reservapro:
+  mysql-usuario:
     image: mysql:8.0
-    container_name: reservapro-mysql
+    container_name: reservapro-mysql-usuario
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: gestion_servicio
+      MYSQL_DATABASE: ms_usuario
+      MYSQL_CHARACTER_SET_SERVER: utf8mb4
+      MYSQL_COLLATION_SERVER: utf8mb4_unicode_ci
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
-      - mysql_reservapro_data:/var/lib/mysql
+      - mysql_usuario_data:/var/lib/mysql
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
       interval: 10s
@@ -19,6 +27,218 @@ services:
     networks:
       - reservapro-net
 
+  mysql-autentificacion:
+    image: mysql:8.0
+    container_name: reservapro-mysql-autentificacion
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ms_autentificacion
+      MYSQL_CHARACTER_SET_SERVER: utf8mb4
+      MYSQL_COLLATION_SERVER: utf8mb4_unicode_ci
+    ports:
+      - "3308:3306"
+    volumes:
+      - mysql_autentificacion_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    networks:
+      - reservapro-net
+
+  mysql-reserva:
+    image: mysql:8.0
+    container_name: reservapro-mysql-reserva
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ms_reserva
+      MYSQL_CHARACTER_SET_SERVER: utf8mb4
+      MYSQL_COLLATION_SERVER: utf8mb4_unicode_ci
+    ports:
+      - "3309:3306"
+    volumes:
+      - mysql_reserva_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    networks:
+      - reservapro-net
+
+  mysql-pago:
+    image: mysql:8.0
+    container_name: reservapro-mysql-pago
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ms_pago
+      MYSQL_CHARACTER_SET_SERVER: utf8mb4
+      MYSQL_COLLATION_SERVER: utf8mb4_unicode_ci
+    ports:
+      - "3310:3306"
+    volumes:
+      - mysql_pago_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    networks:
+      - reservapro-net
+
+  mysql-calificacion:
+    image: mysql:8.0
+    container_name: reservapro-mysql-calificacion
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ms_calificacion
+      MYSQL_CHARACTER_SET_SERVER: utf8mb4
+      MYSQL_COLLATION_SERVER: utf8mb4_unicode_ci
+    ports:
+      - "3311:3306"
+    volumes:
+      - mysql_calificacion_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    networks:
+      - reservapro-net
+
+  mysql-cancelacion:
+    image: mysql:8.0
+    container_name: reservapro-mysql-cancelacion
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ms_cancelacion
+      MYSQL_CHARACTER_SET_SERVER: utf8mb4
+      MYSQL_COLLATION_SERVER: utf8mb4_unicode_ci
+    ports:
+      - "3312:3306"
+    volumes:
+      - mysql_cancelacion_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    networks:
+      - reservapro-net
+
+  mysql-promocion:
+    image: mysql:8.0
+    container_name: reservapro-mysql-promocion
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ms_promocion
+      MYSQL_CHARACTER_SET_SERVER: utf8mb4
+      MYSQL_COLLATION_SERVER: utf8mb4_unicode_ci
+    ports:
+      - "3313:3306"
+    volumes:
+      - mysql_promocion_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    networks:
+      - reservapro-net
+
+  mysql-gestion-servicio:
+    image: mysql:8.0
+    container_name: reservapro-mysql-gestion-servicio
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ms_gestion_servicio
+      MYSQL_CHARACTER_SET_SERVER: utf8mb4
+      MYSQL_COLLATION_SERVER: utf8mb4_unicode_ci
+    ports:
+      - "3314:3306"
+    volumes:
+      - mysql_gestion_servicio_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    networks:
+      - reservapro-net
+
+  mysql-notificacion:
+    image: mysql:8.0
+    container_name: reservapro-mysql-notificacion
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ms_notificacion
+      MYSQL_CHARACTER_SET_SERVER: utf8mb4
+      MYSQL_COLLATION_SERVER: utf8mb4_unicode_ci
+    ports:
+      - "3315:3306"
+    volumes:
+      - mysql_notificacion_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    networks:
+      - reservapro-net
+
+  mysql-disponibilidad:
+    image: mysql:8.0
+    container_name: reservapro-mysql-disponibilidad
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ms_disponibilidad
+      MYSQL_CHARACTER_SET_SERVER: utf8mb4
+      MYSQL_COLLATION_SERVER: utf8mb4_unicode_ci
+    ports:
+      - "3316:3306"
+    volumes:
+      - mysql_disponibilidad_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    networks:
+      - reservapro-net
+
+  mysql-historial-reserva:
+    image: mysql:8.0
+    container_name: reservapro-mysql-historial-reserva
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ms_historial_reserva
+      MYSQL_CHARACTER_SET_SERVER: utf8mb4
+      MYSQL_COLLATION_SERVER: utf8mb4_unicode_ci
+    ports:
+      - "3317:3306"
+    volumes:
+      - mysql_historial_reserva_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    networks:
+      - reservapro-net
+
+  # ==================== SERVICIOS ====================
+
   eureka-server:
     build:
       context: ./eureka-server
@@ -26,6 +246,8 @@ services:
     container_name: reservapro-eureka
     ports:
       - "8761:8761"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
     networks:
       - reservapro-net
     restart: unless-stopped
@@ -38,8 +260,194 @@ services:
     ports:
       - "8080:8080"
     environment:
-      EUREKA_URL: http://eureka-server:8761/eureka
+      SPRING_PROFILES_ACTIVE: docker
+      EUREKA_URL: http://eureka-server:8761/eureka/
     depends_on:
+      eureka-server:
+        condition: service_started
+    networks:
+      - reservapro-net
+    restart: unless-stopped
+
+  # ==================== MICROSERVICIOS ====================
+
+  ms-usuario:
+    build:
+      context: ./ms-usuario
+      dockerfile: Dockerfile
+    container_name: reservapro-usuario
+    ports:
+      - "8084:8084"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      EUREKA_URL: http://eureka-server:8761/eureka/
+      DB_URL: jdbc:mysql://mysql-usuario:3306/ms_usuario
+      DB_USERNAME: root
+      DB_PASSWORD: root
+    depends_on:
+      mysql-usuario:
+        condition: service_healthy
+      eureka-server:
+        condition: service_started
+    networks:
+      - reservapro-net
+    restart: unless-stopped
+
+  ms-auth:
+    build:
+      context: ./ms-auth
+      dockerfile: Dockerfile
+    container_name: reservapro-auth
+    ports:
+      - "8085:8085"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      EUREKA_URL: http://eureka-server:8761/eureka/
+      DB_URL: jdbc:mysql://mysql-auth:3306/ms_auth
+      DB_USERNAME: root
+      DB_PASSWORD: root
+      USUARIO_URL: http://ms-usuario:8084
+    depends_on:
+      mysql-auth:
+        condition: service_healthy
+      eureka-server:
+        condition: service_started
+      ms-usuario:
+        condition: service_started
+    networks:
+      - reservapro-net
+    restart: unless-stopped
+
+  ms-reserva:
+    build:
+      context: ./ms-reserva
+      dockerfile: Dockerfile
+    container_name: reservapro-reserva
+    ports:
+      - "8086:8086"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      EUREKA_URL: http://eureka-server:8761/eureka/
+      DB_URL: jdbc:mysql://mysql-reserva:3306/ms_reserva
+      DB_USERNAME: root
+      DB_PASSWORD: root
+    depends_on:
+      mysql-reserva:
+        condition: service_healthy
+      eureka-server:
+        condition: service_started
+      ms-usuario:
+        condition: service_started
+      ms-auth:
+        condition: service_started
+    networks:
+      - reservapro-net
+    restart: unless-stopped
+
+  ms-pago:
+    build:
+      context: ./ms-pago
+      dockerfile: Dockerfile
+    container_name: reservapro-pago
+    ports:
+      - "8087:8087"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      EUREKA_URL: http://eureka-server:8761/eureka/
+      DB_URL: jdbc:mysql://mysql-pago:3306/ms_pago
+      DB_USERNAME: root
+      DB_PASSWORD: root
+    depends_on:
+      mysql-pago:
+        condition: service_healthy
+      eureka-server:
+        condition: service_started
+    networks:
+      - reservapro-net
+    restart: unless-stopped
+
+  ms-calificacion:
+    build:
+      context: ./ms-calificacion
+      dockerfile: Dockerfile
+    container_name: reservapro-calificacion
+    ports:
+      - "8088:8088"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      EUREKA_URL: http://eureka-server:8761/eureka/
+      DB_URL: jdbc:mysql://mysql-calificacion:3306/ms_calificacion
+      DB_USERNAME: root
+      DB_PASSWORD: root
+    depends_on:
+      mysql-calificacion:
+        condition: service_healthy
+      eureka-server:
+        condition: service_started
+    networks:
+      - reservapro-net
+    restart: unless-stopped
+
+  ms-cancelacion:
+    build:
+      context: ./ms-cancelacion
+      dockerfile: Dockerfile
+    container_name: reservapro-cancelacion
+    ports:
+      - "8089:8089"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      EUREKA_URL: http://eureka-server:8761/eureka/
+      DB_URL: jdbc:mysql://mysql-cancelacion:3306/ms_cancelacion
+      DB_USERNAME: root
+      DB_PASSWORD: root
+    depends_on:
+      mysql-cancelacion:
+        condition: service_healthy
+      eureka-server:
+        condition: service_started
+    networks:
+      - reservapro-net
+    restart: unless-stopped
+
+  ms-promocion:
+    build:
+      context: ./ms-promocion
+      dockerfile: Dockerfile
+    container_name: reservapro-promocion
+    ports:
+      - "8090:8090"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      EUREKA_URL: http://eureka-server:8761/eureka/
+      DB_URL: jdbc:mysql://mysql-promocion:3306/ms_promocion
+      DB_USERNAME: root
+      DB_PASSWORD: root
+    depends_on:
+      mysql-promocion:
+        condition: service_healthy
+      eureka-server:
+        condition: service_started
+    networks:
+      - reservapro-net
+    restart: unless-stopped
+
+  ms-gestion-servicio:
+    build:
+      context: ./ms-gestion-servicio
+      dockerfile: Dockerfile
+    container_name: reservapro-gestion-servicio
+    ports:
+      - "8091:8091"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      EUREKA_URL: http://eureka-server:8761/eureka/
+      DB_URL: jdbc:mysql://mysql-gestion-servicio:3306/ms_gestion_servicio
+      DB_USERNAME: root
+      DB_PASSWORD: root
+    depends_on:
+      mysql-gestion-servicio:
+        condition: service_healthy
       eureka-server:
         condition: service_started
     networks:
@@ -52,29 +460,15 @@ services:
       dockerfile: Dockerfile
     container_name: reservapro-notificacion
     ports:
-      - "8083:8083"
+      - "8092:8092"
     environment:
       SPRING_PROFILES_ACTIVE: docker
+      EUREKA_URL: http://eureka-server:8761/eureka/
+      DB_URL: jdbc:mysql://mysql-notificacion:3306/ms_notificacion
+      DB_USERNAME: root
+      DB_PASSWORD: root
     depends_on:
-      mysql-reservapro:
-        condition: service_healthy
-      eureka-server:
-        condition: service_started
-    networks:
-      - reservapro-net
-    restart: unless-stopped
-
-  ms-cancelacion:
-    build:
-      context: ./ms-cancelacion
-      dockerfile: Dockerfile
-    ports:
-      - "8082:8082"
-    container_name: reservapro-cancelacion
-    environment:
-      SPRING_PROFILES_ACTIVE: docker
-    depends_on:
-      mysql-reservapro:
+      mysql-notificacion:
         condition: service_healthy
       eureka-server:
         condition: service_started
@@ -88,11 +482,15 @@ services:
       dockerfile: Dockerfile
     container_name: reservapro-disponibilidad
     ports:
-      - "8085:8085"
+      - "8093:8093"
     environment:
       SPRING_PROFILES_ACTIVE: docker
+      EUREKA_URL: http://eureka-server:8761/eureka/
+      DB_URL: jdbc:mysql://mysql-disponibilidad:3306/ms_disponibilidad
+      DB_USERNAME: root
+      DB_PASSWORD: root
     depends_on:
-      mysql-reservapro:
+      mysql-disponibilidad:
         condition: service_healthy
       eureka-server:
         condition: service_started
@@ -104,60 +502,38 @@ services:
     build:
       context: ./ms-historial-reserva
       dockerfile: Dockerfile
-    container_name: reservapro-historial
+    container_name: reservapro-historial-reserva
     ports:
-      - "8086:8086"
+      - "8094:8094"
     environment:
       SPRING_PROFILES_ACTIVE: docker
+      EUREKA_URL: http://eureka-server:8761/eureka/
+      DB_URL: jdbc:mysql://mysql-historial-reserva:3306/ms_historial_reserva
+      DB_USERNAME: root
+      DB_PASSWORD: root
     depends_on:
-      mysql-reservapro:
+      mysql-historial-reserva:
         condition: service_healthy
       eureka-server:
         condition: service_started
     networks:
       - reservapro-net
     restart: unless-stopped
-
-  ms-pago:
-    build:
-      context: ./ms-pago
-      dockerfile: Dockerfile
-    ports:
-      - "8080:8080"
-    container_name: reservapro-pago
-    environment:
-      SPRING_PROFILES_ACTIVE: docker
-    depends_on:
-      mysql-reservapro:
-        condition: service_healthy
-      eureka-server:
-        condition: service_started
-    networks:
-      - reservapro-net
-    restart: unless-stopped
-
-  ms-promocion:
-    build:
-      context: ./ms-promocion
-      dockerfile: Dockerfile
-    ports:
-      - "8081:8081"
-    container_name: reservapro-pago
-    environment:
-      SPRING_PROFILES_ACTIVE: docker
-    depends_on:
-      mysql-reservapro:
-        condition: service_healthy
-      eureka-server:
-        condition: service_started
-    networks:
-      - reservapro-net
-    restart: unless-stopped
-
 
 networks:
   reservapro-net:
     driver: bridge
 
 volumes:
+  mysql_usuario_data:
+  mysql_auth_data:
+  mysql_reserva_data:
+  mysql_pago_data:
+  mysql_calificacion_data:
+  mysql_cancelacion_data:
+  mysql_promocion_data:
+  mysql_gestion_servicio_data:
+  mysql_notificacion_data:
+  mysql_disponibilidad_data:
+  mysql_historial_reserva_data:
   mysql_reservapro_data:

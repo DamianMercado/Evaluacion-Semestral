@@ -1,0 +1,63 @@
+2026-06-14T18:15:08.540-04:00  INFO 14432 --- [ms-usuario] [main] c.R.ms_usuario.MsUsuarioApplication      : Starting MsUsuarioApplication using Java 17.0.19 with PID 14432 (C:\Users\maldo\Desktop\Evaluacion-Semestral\com.ReservaPro\ms-usuario\target\classes started by maldo in C:\Users\maldo\Desktop\Evaluacion-Semestral\com.ReservaPro\ms-usuario)
+2026-06-14T18:15:08.543-04:00  INFO 14432 --- [ms-usuario] [main] c.R.ms_usuario.MsUsuarioApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-06-14T18:15:10.275-04:00  INFO 14432 --- [ms-usuario] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-14T18:15:10.528-04:00  INFO 14432 --- [ms-usuario] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 240 ms. Found 1 JPA repository interface.
+2026-06-14T18:15:10.973-04:00  INFO 14432 --- [ms-usuario] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=7f6af8d8-6e8c-3424-8cb5-d57bcc8d7c94
+2026-06-14T18:15:11.644-04:00  INFO 14432 --- [ms-usuario] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8084 (http)
+2026-06-14T18:15:11.670-04:00  INFO 14432 --- [ms-usuario] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-14T18:15:11.671-04:00  INFO 14432 --- [ms-usuario] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2026-06-14T18:15:11.809-04:00  INFO 14432 --- [ms-usuario] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-14T18:15:11.810-04:00  INFO 14432 --- [ms-usuario] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3176 ms
+2026-06-14T18:15:12.078-04:00  INFO 14432 --- [ms-usuario] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-14T18:15:12.205-04:00  INFO 14432 --- [ms-usuario] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2026-06-14T18:15:12.287-04:00  INFO 14432 --- [ms-usuario] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-14T18:15:12.729-04:00  INFO 14432 --- [ms-usuario] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-14T18:15:12.787-04:00  INFO 14432 --- [ms-usuario] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-14T18:15:13.355-04:00  INFO 14432 --- [ms-usuario] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4f7ef948
+2026-06-14T18:15:13.358-04:00  INFO 14432 --- [ms-usuario] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-14T18:15:13.501-04:00  INFO 14432 --- [ms-usuario] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-14T18:15:14.675-04:00  INFO 14432 --- [ms-usuario] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-14T18:15:14.999-04:00  INFO 14432 --- [ms-usuario] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-14T18:15:15.408-04:00  WARN 14432 --- [ms-usuario] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-14T18:15:16.343-04:00  INFO 14432 --- [ms-usuario] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-06-14T18:15:16.382-04:00  WARN 14432 --- [ms-usuario] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'compositeCompatibilityVerifier' defined in class path resource [org/springframework/cloud/configuration/CompatibilityVerifierAutoConfiguration.class]: Failed to instantiate [org.springframework.cloud.configuration.CompositeCompatibilityVerifier]: Factory method 'compositeCompatibilityVerifier' threw exception with message: Spring Cloud/ Spring Boot version compatibility checks have failed: [[VerificationResult@5545137d description = 'Spring Boot [3.5.6] is not compatible with this Spring Cloud release train', action = 'Change Spring Boot version to one of the following versions [3.4.x] .
+You can find the latest Spring Boot versions here [https://spring.io/projects/spring-boot#learn]. 
+If you want to learn more about the Spring Cloud Release train compatibility, you can visit this page [https://spring.io/projects/spring-cloud#overview] and check the [Release Trains] section.
+If you want to disable this check, just set the property [spring.cloud.compatibility-verifier.enabled=false]']]
+2026-06-14T18:15:16.384-04:00  INFO 14432 --- [ms-usuario] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-14T18:15:16.388-04:00  INFO 14432 --- [ms-usuario] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-14T18:15:16.402-04:00  INFO 14432 --- [ms-usuario] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-14T18:15:16.405-04:00  INFO 14432 --- [ms-usuario] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-06-14T18:15:16.423-04:00  INFO 14432 --- [ms-usuario] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-14T18:15:16.448-04:00 ERROR 14432 --- [ms-usuario] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Your project setup is incompatible with our requirements due to following reasons:
+
+- Spring Boot [3.5.6] is not compatible with this Spring Cloud release train
+
+
+Action:
+
+Consider applying the following actions:
+
+- Change Spring Boot version to one of the following versions [3.4.x] .
+You can find the latest Spring Boot versions here [https://spring.io/projects/spring-boot#learn]. 
+If you want to learn more about the Spring Cloud Release train compatibility, you can visit this page [https://spring.io/projects/spring-cloud#overview] and check the [Release Trains] section.
+If you want to disable this check, just set the property [spring.cloud.compatibility-verifier.enabled=false]
+
+
