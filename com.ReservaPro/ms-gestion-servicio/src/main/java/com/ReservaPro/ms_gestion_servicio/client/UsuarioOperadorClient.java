@@ -6,6 +6,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 @FeignClient(name = "ms-usuario")
 public interface UsuarioOperadorClient {
 
-    @GetMapping("/usuarios/{id}/validar-operador")
+    @GetMapping("/api/v1/usuarios/{id}/validar-operador")
     Boolean esOperadorServicio(@PathVariable("id") Long id);
 }
