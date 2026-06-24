@@ -1,0 +1,34 @@
+INSERT INTO pago (
+    id_reserva,
+    monto_original,
+    monto,
+    metodo,
+    banco,
+    estado,
+    fecha,
+    aplica_descuento,
+    codigo_promocion
+)
+VALUES
+    (
+        1,
+        100.00,
+        90.00,
+        'CREDITO',
+        'SANTANDER',
+        'PAGADO',
+        CURRENT_DATE,
+        TRUE,
+        'DESCUENTO10'
+    ),
+    (
+        2,
+        50.00,
+        50.00,
+        'DEBITO',
+        'CHILE',
+        'PENDIENTE',
+        CURRENT_DATE,
+        FALSE,
+        NULL
+    );

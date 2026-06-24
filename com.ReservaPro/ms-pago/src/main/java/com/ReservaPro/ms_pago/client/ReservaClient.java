@@ -1,14 +1,17 @@
 package com.ReservaPro.ms_pago.client;
 
-import com.ReservaPro.ms_reserva.dto.request.ReservaRequest;
-import com.ReservaPro.ms_reserva.dto.response.ReservaResponse;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import com.ReservaPro.ms_pago.dto.request.ReservaPagoRequest;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient(name = "ms-reserva", url = "http://localhost:8084")
+@FeignClient(name = "ms-reserva")
 public interface ReservaClient {
-    @PutMapping("/api/v1/reservas/{id}")
-    ReservaResponse actualizarReserva(@PathVariable Long id, @RequestBody ReservaRequest request);
+
+    @PatchMapping("/api/v1/reservas/{id}/pagar")
+    Object confirmarPagoReserva(
+            @PathVariable("id") Long idReserva,
+            @RequestBody ReservaPagoRequest request
+    );
 }

@@ -1,9 +1,10 @@
 package com.ReservaPro.ms_gestion_servicio.enums;
 
 public enum EstadoServicio {
-    ACTIVO("ACTIVO"),
+    ACTIVADO("ACTIVADO"),
+    DESACTIVADO("DESACTIVADO"),
     MANTENIMIENTO("MANTENIMIENTO"),
-    INACTIVO("INACTIVO");
+    ELIMINADO("ELIMINADO");
 
     private final String valor;
 

@@ -1,31 +1,26 @@
 package com.ReservaPro.ms_reserva.dto.response;
 
 import com.ReservaPro.ms_reserva.enums.EstadoReserva;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
-import java.time.LocalDate;
-
+import java.time.LocalDateTime;
 
 @Data
 public class ReservaResponse {
 
-//Id Reserva
-
     private Long id;
-
-//Datos otros ms
-
     private Long idUsuario;
     private Long idGestionServicio;
     private Long idPromocion;
-    private Long idPago;
     private Long idCalificacion;
+    private Long idPago;
 
-//Datos Reserva
-
-    private LocalDate fechaReserva;
+    private LocalDateTime fechaReserva;
     private Double precioReserva;
     private Double descuentoAplicado;
     private Double precioFinal;
-    private EstadoReserva estadoReserva;
+    private String estadoReserva;
+    private LocalDateTime fechaCreacion;
+    private LocalDateTime fechaActualizacion;
 }

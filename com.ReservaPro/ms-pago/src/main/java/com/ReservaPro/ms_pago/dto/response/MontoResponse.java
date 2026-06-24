@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class MontoResponse {
-    private Long idPago;
+    private Long id;
     private Double montoPago;
 }

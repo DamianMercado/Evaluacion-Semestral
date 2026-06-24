@@ -1,47 +1,54 @@
 package com.ReservaPro.ms_reserva.dto.request;
 
-import com.ReservaPro.ms_reserva.enums.EstadoReserva;
-import jakarta.validation.constraints.NotBlank;
+import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
-
-
+import jakarta.validation.constraints.Positive;
 import lombok.Data;
 
 import java.time.LocalDateTime;
 
 @Data
+@Schema(description = "Datos para crear o actualizar una reserva")
 public class ReservaRequest {
 
-    //Campos de otros ms
+    @Schema(description = "ID del usuario", example = "1")
     @NotNull(message = "El idUsuario es obligatorio")
+    @Min(value = 1, message = "El idUsuario debe ser mayor o igual a 1")
     private Long idUsuario;
 
+    @Schema(description = "ID del servicio", example = "1")
     @NotNull(message = "El idGestionServicio es obligatorio")
+    @Min(value = 1, message = "El idGestionServicio debe ser mayor o igual a 1")
     private Long idGestionServicio;
 
-    @NotBlank(message = "El idPromocion puede ser 0")//Puede no tener promocion
+    @Schema(description = "ID de la promoción (puede ser null)", example = "1")
+    @Min(value = 0, message = "El idPromocion debe ser mayor o igual a 0")
     private Long idPromocion;
 
-    @NotNull(message = "El idCalificacion es obligatorio")
+    @Schema(description = "ID de la calificación", example = "1")
+    @Min(value = 0, message = "El idCalificacion debe ser mayor o igual a 0")
     private Long idCalificacion;
 
-    @NotNull(message = "El idPago es obligatorio")
+    @Schema(description = "ID del pago (se asigna después de pagar)", example = "1")
+    @Min(value = 0, message = "El idPago debe ser mayor o igual a 0")
     private Long idPago;
 
-    //Campos de este ms
-
-    @NotNull(message = "La fecha de fecha de la reserva es obligatoria")
+    @Schema(description = "Fecha de la reserva", example = "2026-06-24T10:00:00")
+    @NotNull(message = "La fecha de reserva es obligatoria")
     private LocalDateTime fechaReserva;
 
-    @NotNull(message = "El Precio de la reserva es obligatoria")
+    @Schema(description = "Precio original de la reserva", example = "1000")
+    @NotNull(message = "El precioReserva es obligatorio")
+    @Positive(message = "El precioReserva debe ser mayor a 0")
     private Double precioReserva;
 
-    @NotBlank(message = "El descuento aplicado puede ser 0")
+    @Schema(description = "Descuento aplicado (puede ser 0)", example = "0")
+    @Min(value = 0, message = "El descuentoAplicado debe ser mayor o igual a 0")
     private Double descuentoAplicado;
 
-    @NotNull(message = "El precio final es obligatorio")
+    @Schema(description = "Precio final después del descuento", example = "1000")
+    @NotNull(message = "El precioFinal es obligatorio")
+    @Positive(message = "El precioFinal debe ser mayor a 0")
     private Double precioFinal;
-
-    @NotNull(message = "El estado de la reserva es obligatorio")
-    private EstadoReserva estadoReserva;
 }

@@ -1,53 +1,69 @@
 package com.ReservaPro.ms_gestion_servicio.model;
 
+import com.ReservaPro.ms_gestion_servicio.enums.EstadoServicio;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "servicio") // Buena práctica: nombres de tablas en minúscula
+@Table(name = "gestion_servicio")
 public class GestionServicio {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_servicio")
+    @Column(name = "id_gestion_servicio")
     private Long id;
 
-    @Column(name = "nombre", length = 100, nullable = false)
+    @Column(name = "nombre", nullable = false, length = 100)
     private String nombre;
 
-    // CORRECCIÓN: Cambiado de precioPromocion a precioBase. El ms-servicio maneja el costo estándar.
     @Column(name = "precio_servicio", nullable = false)
     private Double precioServicio;
 
-    // CORRECCIÓN: Se eliminó el length innecesario para un Integer
     @Column(name = "duracion_minuto", nullable = false)
     private Integer duracionMinuto;
 
-    // Estado ("ACTIVO", "MANTENIMIENTO", "INACTIVO")
-    @Column(name = "estado_servicio", length = 50, nullable = false)
-    private String estadoServicio;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "estado_servicio", nullable = false, length = 30)
+    private EstadoServicio estadoServicio;
 
-    // Direccion
-    @Column(name = "ubicacion", length = 150, nullable = false)
+    @Column(name = "ubicacion", nullable = false, length = 200)
     private String ubicacion;
 
-    // Capacidad de personas en el servicio
     @Column(name = "capacidad", nullable = false)
     private Integer capacidad;
 
-    // Las condiciones suelen ser textos largos
-    @Column(name = "condiciones", length = 500, nullable = false)
+    @Column(name = "condiciones", nullable = false, length = 500)
     private String condiciones;
 
-    // REQUERIMIENTO DEL CASO: El sistema menciona que los "proveedores de servicios deben poder registrar..."
-    // Guardamos el ID del proveedor (que vendría de un ms-usuario) para saber a quién pertenece este servicio.
     @Column(name = "proveedor_id", nullable = false)
     private Long proveedorId;
+
+    @Column(name = "fecha_creacion")
+    private LocalDateTime fechaCreacion;
+
+    @Column(name = "fecha_actualizacion")
+    private LocalDateTime fechaActualizacion;
+
+    @PrePersist
+    protected void onCreate() {
+        fechaCreacion = LocalDateTime.now();
+        fechaActualizacion = LocalDateTime.now();
+        if (estadoServicio == null) {
+            estadoServicio = EstadoServicio.ACTIVADO;
+        }
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        fechaActualizacion = LocalDateTime.now();
+    }
 }

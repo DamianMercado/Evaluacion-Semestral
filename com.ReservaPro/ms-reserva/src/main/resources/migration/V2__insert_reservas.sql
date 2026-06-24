@@ -1,0 +1,49 @@
+INSERT INTO reserva (
+    id_usuario,
+    id_gestion_servicio,
+    id_promocion,
+    id_calificacion,
+    id_pago,
+    fecha_reserva,
+    precio_reserva,
+    descuento_aplicado,
+    precio_final,
+    estado_reserva
+)
+VALUES
+    (
+        1,
+        1,
+        1,
+        NULL,
+        NULL,
+        '2026-06-24 10:00:00',
+        100.00,
+        10.00,
+        90.00,
+        'PENDIENTE_PAGO'
+    ),
+    (
+        2,
+        2,
+        NULL,
+        NULL,
+        1,
+        '2026-06-25 15:00:00',
+        50.00,
+        0.00,
+        50.00,
+        'PAGADO'
+    ),
+    (
+        1,
+        3,
+        2,
+        1,
+        2,
+        '2026-06-26 09:00:00',
+        200.00,
+        20.00,
+        180.00,
+        'CONFIRMADA'
+    );

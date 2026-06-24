@@ -4,7 +4,6 @@ import lombok.Data;
 
 @Data
 public class EstadoResponse {
-    private Long idEstado;
+    private Long id;
     private String estadoPago;
-
 }

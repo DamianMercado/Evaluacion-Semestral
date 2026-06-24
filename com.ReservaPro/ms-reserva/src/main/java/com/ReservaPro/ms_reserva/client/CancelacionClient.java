@@ -4,15 +4,9 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-
-@FeignClient(
-        name = "ms-cancelacion",
-        url = "http://localhost:8081"
-)
+@FeignClient(name = "ms-cancelacion")
 public interface CancelacionClient {
 
-    @GetMapping("/api/v1/cancelacion/{id}")
-    Object obtenerCancelacionPorId(
-            @PathVariable("id") Long id
-    );
+    @GetMapping("/api/v1/cancelaciones/{id}")
+    Object obtenerCancelacionPorId(@PathVariable("id") Long id);
 }

@@ -10,14 +10,11 @@ public class SwaggerConfig {
 
     @Bean
     public OpenAPI customOpenAPI() {
-
         return new OpenAPI()
-                .info(
-                        new Info()
-                                .title("API 2026 ReservaPro - Servicio")
-                                .version("1.0")
-                                .description("Documentación de la API del microservicio de Gestion Servicio")
+                .info(new Info()
+                        .title("API ReservaPro - Gestión de Servicios")
+                        .version("1.0")
+                        .description("Documentación de la API del microservicio de Gestión de Servicios")
                 );
     }
 }
-

@@ -6,9 +6,9 @@ import com.ReservaPro.ms_pago.dto.response.CalcularDescuentoResponse;
 import com.ReservaPro.ms_pago.dto.response.PagoResponse;
 import com.ReservaPro.ms_pago.exception.PagoNoEncontradoException;
 import com.ReservaPro.ms_pago.mapper.PagoMapper;
-import com.ReservaPro.ms_pago.model.Estado;
+import com.ReservaPro.ms_pago.enums.Estado;
 import com.ReservaPro.ms_pago.model.Pago;
-import com.ReservaPro.ms_pago.model.TipoBanco;
+import com.ReservaPro.ms_pago.enums.TipoBanco;
 import com.ReservaPro.ms_pago.repository.PagoRepository;
 
 import org.junit.jupiter.api.Test;
