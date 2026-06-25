@@ -62,7 +62,7 @@ public class ReservaService {
 
         Reserva reserva = reservaMapper.toEntity(request);
 
-        // 🔥 CRÍTICO: Siempre se crea como PENDIENTE_PAGO
+        //Siempre se crea como PENDIENTE_PAGO
         reserva.setEstadoReserva(EstadoReserva.PENDIENTE_PAGO);
 
         // Validar precios
@@ -130,7 +130,7 @@ public class ReservaService {
         log.info("Reserva eliminada correctamente con ID: {}", id);
     }
 
-    // ========== FLUJO DE PAGO ==========
+    //FLUJO DE PAGO
 
     @Transactional
     public ReservaResponse confirmarPago(Long id, ReservaPagoRequest request) {
@@ -233,7 +233,7 @@ public class ReservaService {
         return reservaMapper.toResponse(actualizada);
     }
 
-    // ========== MÉTODOS DE CONSULTA ==========
+    //MÉTODOS DE CONSULTA
 
     @Transactional(readOnly = true)
     public List<ReservaResponse> obtenerPorUsuario(Long idUsuario) {
@@ -293,7 +293,7 @@ public class ReservaService {
         return response;
     }
 
-    // ========== MÉTODOS DE VALIDACIÓN ==========
+    //MÉTODOS DE VALIDACIÓN
 
     private void validarUsuario(Long idUsuario) {
         try {

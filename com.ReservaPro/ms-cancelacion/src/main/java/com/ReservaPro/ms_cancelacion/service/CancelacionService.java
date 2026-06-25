@@ -62,10 +62,10 @@ public class CancelacionService {
 
         validarCancelacion(cancelacionRequest);
 
-        // Temporalmente desactivado hasta tener ms-reserva funcionando
-        // reservaClient.obtenerReservaPorId(
-        //         cancelacionRequest.getIdReserva()
-        // );
+
+        reservaClient.obtenerReservaPorId(
+        cancelacionRequest.getIdReserva()
+        );
 
         Cancelacion cancelacion =
                 cancelacionMapper.toEntity(cancelacionRequest);
@@ -99,10 +99,10 @@ public class CancelacionService {
 
         validarCancelacion(cancelacionRequest);
 
-        // Temporalmente desactivado hasta tener ms-reserva funcionando
-        // reservaClient.obtenerReservaPorId(
-        //         cancelacionRequest.getIdReserva()
-        // );
+        //Temporalmente desactivado hasta tener ms-reserva funcionando
+        reservaClient.obtenerReservaPorId(
+                 cancelacionRequest.getIdReserva()
+         );
 
         cancelacionExistente.setIdReserva(
                 cancelacionRequest.getIdReserva()
@@ -138,10 +138,7 @@ public class CancelacionService {
         Cancelacion cancelacion =
                 cancelacionRepository.findById(id)
                         .orElseThrow(() -> {
-                            log.error(
-                                    "No se encontró la cancelación con ID: {}",
-                                    id
-                            );
+                            log.error("No se encontró la cancelación con ID: {}", id);
                             return new CancelacionNotFoundException(id);
                         });
 
