@@ -11,16 +11,17 @@ import java.util.Map;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
-
+// este  sirve para capturara errores de el microservicio
+    //
     @ExceptionHandler(NotificacionNoEncontradaException.class)
     public ResponseEntity<?> handleNotificacionNoEncontrada(NotificacionNoEncontradaException ex) {
 
         Map<String, Object> response = new HashMap<>();
 
-        response.put("timestamp", LocalDateTime.now());
-        response.put("status", 404);
-        response.put("error", ex.getMessage());
+        response.put("timestamp", LocalDateTime.now());//guarda fecha hora del error
+        response.put("status", 404);//guarda codigo http no encontrado
+        response.put("error", ex.getMessage());// guarda mensaje del error
 
         return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
     }
-}
+}             // devuelve la respuesta al cliente

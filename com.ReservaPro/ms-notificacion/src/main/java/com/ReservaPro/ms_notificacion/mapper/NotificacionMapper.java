@@ -11,8 +11,8 @@ import java.util.List;
 public interface NotificacionMapper {
 
     Notificacion toEntity(NotificacionRequest notificacionRequest);
-
+     //convierte dto auna entidas
     NotificacionResponse toResponse(Notificacion notificacion);
-
+// covierte la entidad de la base datos en dto resp.
     List<NotificacionResponse> toResponseList(List<Notificacion> notificacionList);
-}
+}   //esta trae la lista  mapper solo comvierte los datos del dto

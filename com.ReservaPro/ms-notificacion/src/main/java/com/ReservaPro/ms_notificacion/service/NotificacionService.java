@@ -22,16 +22,15 @@ import java.util.List;
 public class NotificacionService {
 
     private static final Logger log =
-            LoggerFactory.getLogger(NotificacionService.class);
+            LoggerFactory.getLogger(NotificacionService.class);// sirve para mostrar msn en consola por ej crea nuscar ect
 
-    private final NotificacionRepository notificacionRepository;
+    private final NotificacionRepository notificacionRepository;// trabaja con la base datos
     private final NotificacionMapper notificacionMapper;
-    private final CancelacionClient cancelacionClient;
+    private final CancelacionClient cancelacionClient;// comunica con otro microservicio
 
     public List<NotificacionResponse> obtener() {
 
         log.info("Obteniendo todas las notificaciones");
-
         return notificacionMapper.toResponseList(
                 notificacionRepository.findAll()
         );
@@ -76,6 +75,7 @@ public class NotificacionService {
                 notificacionRepository.findById(id)
                         .orElseThrow(() ->
                                 new NotificacionNoEncontradaException(id));
+                                   //si lo encuentra lo devuelve si no lansa exepcion
 
         validarNotificacion(request);
 
@@ -114,7 +114,7 @@ public class NotificacionService {
 
         if (!notificacionRepository.existsById(id)) {
             throw new NotificacionNoEncontradaException(id);
-        }
+        }    //verifica si exite elimanar si no lanza exepcion
 
         notificacionRepository.deleteById(id);
 
@@ -125,7 +125,8 @@ public class NotificacionService {
     }
 
     private void validarNotificacion(
-            NotificacionRequest request) {
+            NotificacionRequest request) {  //metodo privado para validar negocio
+        //revisa mensaje no venga vacio
 
         if (request.getMensaje() == null
                 || request.getMensaje().isBlank()) {
@@ -136,7 +137,7 @@ public class NotificacionService {
         }
 
         if (request.getTipo() == null
-                || request.getTipo().isBlank()) {
+                || request.getTipo().isBlank()) {//revisa que no venga vacio
 
             throw new ReglaNegocioException(
                     "El tipo de la notificación es obligatorio"
@@ -144,7 +145,7 @@ public class NotificacionService {
         }
 
         if (request.getIdReserva() == null
-                && request.getIdCancelacion() == null) {
+                && request.getIdCancelacion() == null) { //revisa notificacion este asocida  notificacion o una reserva
 
             throw new ReglaNegocioException(
                     "La notificación debe estar asociada a una reserva o cancelación"
