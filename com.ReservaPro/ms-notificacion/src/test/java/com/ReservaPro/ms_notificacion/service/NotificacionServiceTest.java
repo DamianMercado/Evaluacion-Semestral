@@ -155,6 +155,6 @@ class NotificacionServiceTest { // Clase de pruebas
         response.setTipo("RESERVA"); // Tipo
         response.setLeida(false); // Estado
 
-        return response; // Retorna el DTO
+        return response; // Retorna el DTOe
     }
 }
