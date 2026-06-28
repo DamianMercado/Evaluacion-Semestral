@@ -1,5 +1,6 @@
 package com.ReservaPro.ms_notificacion.service;
 
+import com.ReservaPro.ms_notificacion.client.CancelacionClient;
 import com.ReservaPro.ms_notificacion.dto.request.NotificacionRequest;
 import com.ReservaPro.ms_notificacion.dto.response.NotificacionResponse;
 import com.ReservaPro.ms_notificacion.exception.NotificacionNoEncontradaException;
@@ -25,6 +26,7 @@ public class NotificacionService {
 
     private final NotificacionRepository notificacionRepository;
     private final NotificacionMapper notificacionMapper;
+    private final CancelacionClient cancelacionClient;
 
     public List<NotificacionResponse> obtener() {
 

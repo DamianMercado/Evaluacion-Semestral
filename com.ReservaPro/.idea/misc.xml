@@ -5,10 +5,8 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/ms-calificacion/pom.xml" />
-        <option value="$PROJECT_DIR$/ms-cancelacion/pom.xml" />
         <option value="$PROJECT_DIR$/ms-disponibilidad/pom.xml" />
         <option value="$PROJECT_DIR$/ms-gestion-servicio/pom.xml" />
-        <option value="$PROJECT_DIR$/ms-notificacion/pom.xml" />
         <option value="$PROJECT_DIR$/ms-pago/pom.xml" />
         <option value="$PROJECT_DIR$/ms-promocion/pom.xml" />
         <option value="$PROJECT_DIR$/ms-reserva/pom.xml" />
@@ -17,6 +15,8 @@
         <option value="$PROJECT_DIR$/gateway-service/pom.xml" />
         <option value="$PROJECT_DIR$/ms-historial-reserva/pom.xml" />
         <option value="$PROJECT_DIR$/ms-autentificacion/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-notificacion/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-cancelacion/pom.xml" />
       </list>
     </option>
   </component>
