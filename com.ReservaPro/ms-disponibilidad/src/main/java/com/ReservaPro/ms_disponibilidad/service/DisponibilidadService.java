@@ -1,5 +1,6 @@
 package com.ReservaPro.ms_disponibilidad.service;
 
+import com.ReservaPro.ms_disponibilidad.client.ReservaClient;
 import com.ReservaPro.ms_disponibilidad.dto.request.DisponibilidadRequest;
 import com.ReservaPro.ms_disponibilidad.dto.response.DisponibilidadResponse;
 import com.ReservaPro.ms_disponibilidad.exception.DisponibilidadNotFoundException;
@@ -27,6 +28,7 @@ public class DisponibilidadService {
 
     private final DisponibilidadRepository disponibilidadRepository;
     private final DisponibilidadMapper disponibilidadMapper;
+    private final ReservaClient reservaClient;
 
     public List<DisponibilidadResponse> obtener() {
 
@@ -82,41 +84,15 @@ public class DisponibilidadService {
 
         validarDisponibilidad(request);
 
-        disponibilidadExistente.setIdServicio(
-                request.getIdServicio()
-        );
-
-        disponibilidadExistente.setFecha(
-                request.getFecha()
-        );
-
-        disponibilidadExistente.setHoraInicio(
-                request.getHoraInicio()
-        );
-
-        disponibilidadExistente.setHoraFin(
-                request.getHoraFin()
-        );
-
-        disponibilidadExistente.setCuposDisponibles(
-                request.getCuposDisponibles()
-        );
-
-        disponibilidadExistente.setCuposTotales(
-                request.getCuposTotales()
-        );
-
-        disponibilidadExistente.setEstado(
-                request.getEstado()
-        );
-
-        disponibilidadExistente.setObservacion(
-                request.getObservacion()
-        );
-
-        disponibilidadExistente.setActivo(
-                request.getActivo()
-        );
+        disponibilidadExistente.setIdServicio(request.getIdServicio());
+        disponibilidadExistente.setFecha(request.getFecha());
+        disponibilidadExistente.setHoraInicio(request.getHoraInicio());
+        disponibilidadExistente.setHoraFin(request.getHoraFin());
+        disponibilidadExistente.setCuposDisponibles(request.getCuposDisponibles());
+        disponibilidadExistente.setCuposTotales(request.getCuposTotales());
+        disponibilidadExistente.setEstado(request.getEstado());
+        disponibilidadExistente.setObservacion(request.getObservacion());
+        disponibilidadExistente.setActivo(request.getActivo());
 
         return disponibilidadMapper.toResponse(
                 disponibilidadRepository.save(disponibilidadExistente)
@@ -167,6 +143,16 @@ public class DisponibilidadService {
         return disponibilidadMapper.toResponseList(
                 disponibilidadRepository.findByEstado(estado)
         );
+    }
+
+    public Object obtenerReservaPorId(Long idReserva) {
+
+        log.info(
+                "Consultando reserva ID {} desde ms-reserva",
+                idReserva
+        );
+
+        return reservaClient.obtenerReservaPorId(idReserva);
     }
 
     private void validarDisponibilidad(
