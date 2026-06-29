@@ -2,6 +2,7 @@ package com.ReservaPro.ms_disponibilidad.controller;
 
 import com.ReservaPro.ms_disponibilidad.dto.request.DisponibilidadRequest;
 import com.ReservaPro.ms_disponibilidad.dto.response.DisponibilidadResponse;
+import com.ReservaPro.ms_disponibilidad.model.EstadoDisponibilidad;
 import com.ReservaPro.ms_disponibilidad.service.DisponibilidadService;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -38,10 +39,10 @@ public class DisponibilidadController {
             summary = "Obtener todas las disponibilidades",
             description = "Retorna una lista de todas las disponibilidades"
     )
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200",
-                    description = "Lista obtenida correctamente")
-    })
+    @ApiResponse(
+            responseCode = "200",
+            description = "Lista obtenida correctamente"
+    )
     public ResponseEntity<List<DisponibilidadResponse>> obtenerDisponibilidades() {
 
         return ResponseEntity.ok(
@@ -55,10 +56,14 @@ public class DisponibilidadController {
             description = "Obtiene una disponibilidad según su identificador"
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200",
-                    description = "Disponibilidad encontrada"),
-            @ApiResponse(responseCode = "404",
-                    description = "Disponibilidad no encontrada")
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Disponibilidad encontrada"
+            ),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "Disponibilidad no encontrada"
+            )
     })
     public ResponseEntity<DisponibilidadResponse> obtenerDisponibilidad(
 
@@ -78,10 +83,10 @@ public class DisponibilidadController {
             summary = "Obtener disponibilidades por fecha",
             description = "Obtiene disponibilidades según una fecha"
     )
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200",
-                    description = "Disponibilidades encontradas")
-    })
+    @ApiResponse(
+            responseCode = "200",
+            description = "Disponibilidades encontradas"
+    )
     public ResponseEntity<List<DisponibilidadResponse>> obtenerPorFecha(
 
             @Parameter(
@@ -103,14 +108,37 @@ public class DisponibilidadController {
             summary = "Obtener disponibilidades activas",
             description = "Obtiene todas las disponibilidades activas"
     )
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200",
-                    description = "Disponibilidades activas encontradas")
-    })
+    @ApiResponse(
+            responseCode = "200",
+            description = "Disponibilidades activas encontradas"
+    )
     public ResponseEntity<List<DisponibilidadResponse>> obtenerActivas() {
 
         return ResponseEntity.ok(
                 disponibilidadService.obtenerActivas()
+        );
+    }
+
+    @GetMapping("/estado/{estado}")
+    @Operation(
+            summary = "Obtener disponibilidades por estado",
+            description = "Obtiene disponibilidades según su estado"
+    )
+    @ApiResponse(
+            responseCode = "200",
+            description = "Disponibilidades encontradas"
+    )
+    public ResponseEntity<List<DisponibilidadResponse>> obtenerPorEstado(
+
+            @Parameter(
+                    description = "Estado de la disponibilidad",
+                    example = "DISPONIBLE",
+                    required = true
+            )
+            @PathVariable EstadoDisponibilidad estado) {
+
+        return ResponseEntity.ok(
+                disponibilidadService.obtenerPorEstado(estado)
         );
     }
 
@@ -120,10 +148,14 @@ public class DisponibilidadController {
             description = "Crea una nueva disponibilidad en el sistema"
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "201",
-                    description = "Disponibilidad creada correctamente"),
-            @ApiResponse(responseCode = "400",
-                    description = "Datos inválidos")
+            @ApiResponse(
+                    responseCode = "201",
+                    description = "Disponibilidad creada correctamente"
+            ),
+            @ApiResponse(
+                    responseCode = "400",
+                    description = "Datos inválidos"
+            )
     })
     public ResponseEntity<DisponibilidadResponse> crearDisponibilidad(
 
@@ -145,10 +177,14 @@ public class DisponibilidadController {
             description = "Actualiza una disponibilidad existente por su ID"
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200",
-                    description = "Disponibilidad actualizada"),
-            @ApiResponse(responseCode = "404",
-                    description = "Disponibilidad no encontrada")
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Disponibilidad actualizada"
+            ),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "Disponibilidad no encontrada"
+            )
     })
     public ResponseEntity<DisponibilidadResponse> actualizarDisponibilidad(
 
@@ -177,10 +213,14 @@ public class DisponibilidadController {
             description = "Elimina una disponibilidad por su ID"
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "204",
-                    description = "Disponibilidad eliminada"),
-            @ApiResponse(responseCode = "404",
-                    description = "Disponibilidad no encontrada")
+            @ApiResponse(
+                    responseCode = "204",
+                    description = "Disponibilidad eliminada"
+            ),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "Disponibilidad no encontrada"
+            )
     })
     public ResponseEntity<Void> eliminarDisponibilidad(
 

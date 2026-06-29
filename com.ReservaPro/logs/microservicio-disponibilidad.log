@@ -1,0 +1,135 @@
+2026-06-28T23:06:03.643-04:00  INFO 19432 --- [ms-disponibilidad] [main] c.R.m.MsDisponibilidadApplication        : Starting MsDisponibilidadApplication using Java 17.0.19 with PID 19432 (C:\Users\maldo\Desktop\Evaluacion-Semestral\com.ReservaPro\ms-disponibilidad\target\classes started by maldo in C:\Users\maldo\Desktop\Evaluacion-Semestral\com.ReservaPro)
+2026-06-28T23:06:03.654-04:00  INFO 19432 --- [ms-disponibilidad] [main] c.R.m.MsDisponibilidadApplication        : No active profile set, falling back to 1 default profile: "default"
+2026-06-28T23:06:06.738-04:00  INFO 19432 --- [ms-disponibilidad] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-28T23:06:07.328-04:00  INFO 19432 --- [ms-disponibilidad] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 541 ms. Found 1 JPA repository interface.
+2026-06-28T23:06:08.217-04:00  INFO 19432 --- [ms-disponibilidad] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=fe54f0a8-8616-3cbd-8234-ee0a88032429
+2026-06-28T23:06:09.351-04:00  INFO 19432 --- [ms-disponibilidad] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8093 (http)
+2026-06-28T23:06:09.393-04:00  INFO 19432 --- [ms-disponibilidad] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-28T23:06:09.394-04:00  INFO 19432 --- [ms-disponibilidad] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2026-06-28T23:06:09.623-04:00  INFO 19432 --- [ms-disponibilidad] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-28T23:06:09.625-04:00  INFO 19432 --- [ms-disponibilidad] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5766 ms
+2026-06-28T23:06:10.588-04:00  INFO 19432 --- [ms-disponibilidad] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-28T23:06:11.654-04:00  INFO 19432 --- [ms-disponibilidad] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@39514976
+2026-06-28T23:06:11.660-04:00  INFO 19432 --- [ms-disponibilidad] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-28T23:06:11.803-04:00  INFO 19432 --- [ms-disponibilidad] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/ms-disponibilidad (MySQL 8.4)
+2026-06-28T23:06:11.871-04:00  WARN 19432 --- [ms-disponibilidad] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: MySQL 8.4 is newer than this version of Flyway and support has not been tested. The latest supported version of MySQL is 8.1.
+2026-06-28T23:06:12.018-04:00  INFO 19432 --- [ms-disponibilidad] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `ms-disponibilidad`.`flyway_schema_history` does not exist yet
+2026-06-28T23:06:12.031-04:00  INFO 19432 --- [ms-disponibilidad] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.103s)
+2026-06-28T23:06:12.136-04:00  INFO 19432 --- [ms-disponibilidad] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `ms-disponibilidad`.`flyway_schema_history` ...
+2026-06-28T23:06:12.422-04:00  INFO 19432 --- [ms-disponibilidad] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `ms-disponibilidad`: << Empty Schema >>
+2026-06-28T23:06:12.454-04:00  INFO 19432 --- [ms-disponibilidad] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `ms-disponibilidad` to version "1 - crear tabla"
+2026-06-28T23:06:12.551-04:00  WARN 19432 --- [ms-disponibilidad] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+2026-06-28T23:06:12.552-04:00  WARN 19432 --- [ms-disponibilidad] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+2026-06-28T23:06:12.552-04:00  WARN 19432 --- [ms-disponibilidad] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: 'utf8' is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous. (SQL State: HY000 - Error Code: 3719)
+2026-06-28T23:06:12.552-04:00  WARN 19432 --- [ms-disponibilidad] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: 'utf8mb3_unicode_ci' is a collation of the deprecated character set UTF8MB3. Please consider using UTF8MB4 with an appropriate collation instead. (SQL State: HY000 - Error Code: 3778)
+2026-06-28T23:06:12.719-04:00  WARN 19432 --- [ms-disponibilidad] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+2026-06-28T23:06:12.825-04:00  INFO 19432 --- [ms-disponibilidad] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `ms-disponibilidad` to version "2 - insert disponibilidad"
+2026-06-28T23:06:12.941-04:00  INFO 19432 --- [ms-disponibilidad] [main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema `ms-disponibilidad`, now at version v2 (execution time 00:00.297s)
+2026-06-28T23:06:13.231-04:00  INFO 19432 --- [ms-disponibilidad] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-28T23:06:13.409-04:00  INFO 19432 --- [ms-disponibilidad] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2026-06-28T23:06:13.539-04:00  INFO 19432 --- [ms-disponibilidad] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-28T23:06:14.368-04:00  INFO 19432 --- [ms-disponibilidad] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-28T23:06:14.532-04:00  WARN 19432 --- [ms-disponibilidad] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-28T23:06:14.577-04:00  INFO 19432 --- [ms-disponibilidad] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-28T23:06:17.311-04:00  INFO 19432 --- [ms-disponibilidad] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-28T23:06:17.474-04:00  INFO 19432 --- [ms-disponibilidad] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-28T23:06:18.820-04:00  WARN 19432 --- [ms-disponibilidad] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-28T23:06:21.545-04:00  INFO 19432 --- [ms-disponibilidad] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-06-28T23:06:21.672-04:00  WARN 19432 --- [ms-disponibilidad] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'compositeCompatibilityVerifier' defined in class path resource [org/springframework/cloud/configuration/CompatibilityVerifierAutoConfiguration.class]: Failed to instantiate [org.springframework.cloud.configuration.CompositeCompatibilityVerifier]: Factory method 'compositeCompatibilityVerifier' threw exception with message: Spring Cloud/ Spring Boot version compatibility checks have failed: [[VerificationResult@497ccf3 description = 'Spring Boot [3.5.6] is not compatible with this Spring Cloud release train', action = 'Change Spring Boot version to one of the following versions [3.4.x] .
+You can find the latest Spring Boot versions here [https://spring.io/projects/spring-boot#learn]. 
+If you want to learn more about the Spring Cloud Release train compatibility, you can visit this page [https://spring.io/projects/spring-cloud#overview] and check the [Release Trains] section.
+If you want to disable this check, just set the property [spring.cloud.compatibility-verifier.enabled=false]']]
+2026-06-28T23:06:21.678-04:00  INFO 19432 --- [ms-disponibilidad] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-28T23:06:21.687-04:00  INFO 19432 --- [ms-disponibilidad] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-28T23:06:21.718-04:00  INFO 19432 --- [ms-disponibilidad] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-28T23:06:21.728-04:00  INFO 19432 --- [ms-disponibilidad] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-06-28T23:06:21.786-04:00  INFO 19432 --- [ms-disponibilidad] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-28T23:06:21.878-04:00 ERROR 19432 --- [ms-disponibilidad] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Your project setup is incompatible with our requirements due to following reasons:
+
+- Spring Boot [3.5.6] is not compatible with this Spring Cloud release train
+
+
+Action:
+
+Consider applying the following actions:
+
+- Change Spring Boot version to one of the following versions [3.4.x] .
+You can find the latest Spring Boot versions here [https://spring.io/projects/spring-boot#learn]. 
+If you want to learn more about the Spring Cloud Release train compatibility, you can visit this page [https://spring.io/projects/spring-cloud#overview] and check the [Release Trains] section.
+If you want to disable this check, just set the property [spring.cloud.compatibility-verifier.enabled=false]
+
+
+2026-06-28T23:14:30.071-04:00  INFO 17972 --- [ms-disponibilidad] [main] c.R.m.MsDisponibilidadApplication        : Starting MsDisponibilidadApplication using Java 17.0.19 with PID 17972 (C:\Users\maldo\Desktop\Evaluacion-Semestral\com.ReservaPro\ms-disponibilidad\target\classes started by maldo in C:\Users\maldo\Desktop\Evaluacion-Semestral\com.ReservaPro)
+2026-06-28T23:14:30.082-04:00  INFO 17972 --- [ms-disponibilidad] [main] c.R.m.MsDisponibilidadApplication        : No active profile set, falling back to 1 default profile: "default"
+2026-06-28T23:14:32.558-04:00  INFO 17972 --- [ms-disponibilidad] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-28T23:14:32.951-04:00  INFO 17972 --- [ms-disponibilidad] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 371 ms. Found 1 JPA repository interface.
+2026-06-28T23:14:33.621-04:00  INFO 17972 --- [ms-disponibilidad] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=35dbfcc9-defe-3d4a-94f0-369bf601bed6
+2026-06-28T23:14:34.583-04:00  INFO 17972 --- [ms-disponibilidad] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8093 (http)
+2026-06-28T23:14:34.616-04:00  INFO 17972 --- [ms-disponibilidad] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-28T23:14:34.617-04:00  INFO 17972 --- [ms-disponibilidad] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2026-06-28T23:14:34.825-04:00  INFO 17972 --- [ms-disponibilidad] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-28T23:14:34.827-04:00  INFO 17972 --- [ms-disponibilidad] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4568 ms
+2026-06-28T23:14:35.396-04:00  INFO 17972 --- [ms-disponibilidad] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-28T23:14:36.127-04:00  INFO 17972 --- [ms-disponibilidad] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@26865b57
+2026-06-28T23:14:36.132-04:00  INFO 17972 --- [ms-disponibilidad] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-28T23:14:36.253-04:00  INFO 17972 --- [ms-disponibilidad] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/ms-disponibilidad (MySQL 8.4)
+2026-06-28T23:14:36.320-04:00  WARN 17972 --- [ms-disponibilidad] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: MySQL 8.4 is newer than this version of Flyway and support has not been tested. The latest supported version of MySQL is 8.1.
+2026-06-28T23:14:36.481-04:00  INFO 17972 --- [ms-disponibilidad] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.115s)
+2026-06-28T23:14:36.535-04:00  INFO 17972 --- [ms-disponibilidad] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `ms-disponibilidad`: 2
+2026-06-28T23:14:36.545-04:00  INFO 17972 --- [ms-disponibilidad] [main] o.f.core.internal.command.DbMigrate      : Schema `ms-disponibilidad` is up to date. No migration necessary.
+2026-06-28T23:14:36.780-04:00  INFO 17972 --- [ms-disponibilidad] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-28T23:14:36.952-04:00  INFO 17972 --- [ms-disponibilidad] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.2.Final
+2026-06-28T23:14:37.047-04:00  INFO 17972 --- [ms-disponibilidad] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-28T23:14:37.683-04:00  INFO 17972 --- [ms-disponibilidad] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-28T23:14:37.823-04:00  WARN 17972 --- [ms-disponibilidad] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-28T23:14:37.858-04:00  INFO 17972 --- [ms-disponibilidad] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-28T23:14:39.858-04:00  INFO 17972 --- [ms-disponibilidad] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-28T23:14:39.996-04:00  INFO 17972 --- [ms-disponibilidad] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-28T23:14:41.141-04:00  WARN 17972 --- [ms-disponibilidad] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-28T23:14:43.089-04:00  INFO 17972 --- [ms-disponibilidad] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-06-28T23:14:43.187-04:00  WARN 17972 --- [ms-disponibilidad] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-06-28T23:14:43.310-04:00  INFO 17972 --- [ms-disponibilidad] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-06-28T23:14:43.383-04:00  INFO 17972 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-06-28T23:14:43.391-04:00  INFO 17972 --- [ms-disponibilidad] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-28T23:14:43.412-04:00  INFO 17972 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-06-28T23:14:43.413-04:00  INFO 17972 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-06-28T23:14:43.413-04:00  INFO 17972 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-06-28T23:14:43.413-04:00  INFO 17972 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-06-28T23:14:43.413-04:00  INFO 17972 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-06-28T23:14:43.413-04:00  INFO 17972 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-06-28T23:14:43.414-04:00  INFO 17972 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-06-28T23:14:44.254-04:00  INFO 17972 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-06-28T23:14:44.260-04:00  INFO 17972 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-06-28T23:14:44.266-04:00  INFO 17972 --- [ms-disponibilidad] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-06-28T23:14:44.270-04:00  INFO 17972 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1782702884269 with initial instances count: 1
+2026-06-28T23:14:44.279-04:00  INFO 17972 --- [ms-disponibilidad] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MS-DISPONIBILIDAD with eureka with status UP
+2026-06-28T23:14:44.281-04:00  INFO 17972 --- [ms-disponibilidad] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1782702884281, current=UP, previous=STARTING]
+2026-06-28T23:14:44.285-04:00  INFO 17972 --- [ms-disponibilidad] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-DISPONIBILIDAD/DESKTOP-TVVBNLB:ms-disponibilidad:8093: registering service...
+2026-06-28T23:14:44.332-04:00  INFO 17972 --- [ms-disponibilidad] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8093 (http) with context path '/'
+2026-06-28T23:14:44.334-04:00  INFO 17972 --- [ms-disponibilidad] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8093
+2026-06-28T23:14:44.388-04:00  INFO 17972 --- [ms-disponibilidad] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-DISPONIBILIDAD/DESKTOP-TVVBNLB:ms-disponibilidad:8093 - registration status: 204
+2026-06-28T23:14:44.565-04:00  INFO 17972 --- [ms-disponibilidad] [main] c.R.m.MsDisponibilidadApplication        : Started MsDisponibilidadApplication in 16.376 seconds (process running for 18.892)

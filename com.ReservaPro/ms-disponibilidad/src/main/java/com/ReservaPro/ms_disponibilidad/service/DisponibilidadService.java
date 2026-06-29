@@ -6,6 +6,7 @@ import com.ReservaPro.ms_disponibilidad.exception.DisponibilidadNotFoundExceptio
 import com.ReservaPro.ms_disponibilidad.exception.ReglaNegocioException;
 import com.ReservaPro.ms_disponibilidad.mapper.DisponibilidadMapper;
 import com.ReservaPro.ms_disponibilidad.model.Disponibilidad;
+import com.ReservaPro.ms_disponibilidad.model.EstadoDisponibilidad;
 import com.ReservaPro.ms_disponibilidad.repository.DisponibilidadRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -136,7 +137,10 @@ public class DisponibilidadService {
     public List<DisponibilidadResponse> obtenerPorFecha(
             LocalDate fecha) {
 
-        log.info("Buscando disponibilidades para la fecha {}", fecha);
+        log.info(
+                "Buscando disponibilidades para la fecha {}",
+                fecha
+        );
 
         return disponibilidadMapper.toResponseList(
                 disponibilidadRepository.findByFecha(fecha)
@@ -149,6 +153,19 @@ public class DisponibilidadService {
 
         return disponibilidadMapper.toResponseList(
                 disponibilidadRepository.findByActivo(true)
+        );
+    }
+
+    public List<DisponibilidadResponse> obtenerPorEstado(
+            EstadoDisponibilidad estado) {
+
+        log.info(
+                "Buscando disponibilidades con estado {}",
+                estado
+        );
+
+        return disponibilidadMapper.toResponseList(
+                disponibilidadRepository.findByEstado(estado)
         );
     }
 

@@ -1,140 +1,149 @@
-package com.ReservaPro.ms_disponibilidad.service;
+package com.ReservaPro.ms_disponibilidad.service; // Define el paquete donde se encuentra la clase de prueba
 
-import com.ReservaPro.ms_disponibilidad.dto.response.DisponibilidadResponse;
-import com.ReservaPro.ms_disponibilidad.exception.DisponibilidadNotFoundException;
-import com.ReservaPro.ms_disponibilidad.mapper.DisponibilidadMapper;
-import com.ReservaPro.ms_disponibilidad.model.Disponibilidad;
-import com.ReservaPro.ms_disponibilidad.model.EstadoDisponibilidad;
-import com.ReservaPro.ms_disponibilidad.repository.DisponibilidadRepository;
+import com.ReservaPro.ms_disponibilidad.dto.response.DisponibilidadResponse; // Importa el DTO Response
+import com.ReservaPro.ms_disponibilidad.exception.DisponibilidadNotFoundException; // Importa la excepción personalizada
+import com.ReservaPro.ms_disponibilidad.mapper.DisponibilidadMapper; // Importa el Mapper
+import com.ReservaPro.ms_disponibilidad.model.Disponibilidad; // Importa la entidad Disponibilidad
+import com.ReservaPro.ms_disponibilidad.model.EstadoDisponibilidad; // Importa el Enum EstadoDisponibilidad
+import com.ReservaPro.ms_disponibilidad.repository.DisponibilidadRepository; // Importa el Repository
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.api.Test; // Permite crear métodos de prueba
+import org.junit.jupiter.api.extension.ExtendWith; // Permite agregar extensiones a JUnit
 
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.InjectMocks; // Crea el Service real e inyecta los mocks
+import org.mockito.Mock; // Crea objetos simulados (Mocks)
+import org.mockito.junit.jupiter.MockitoExtension; // Activa Mockito
 
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.util.Optional;
+import java.time.LocalDate; // Permite manejar fechas
+import java.time.LocalTime; // Permite manejar horas
+import java.util.Optional; // Permite manejar valores opcionales
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.*; // Importa las validaciones de JUnit
+import static org.mockito.Mockito.*; // Importa funciones de Mockito
 
-@ExtendWith(MockitoExtension.class)
-class DisponibilidadServiceTests {
+@ExtendWith(MockitoExtension.class) // Activa Mockito para toda la clase
+class DisponibilidadServiceTests { // Clase de pruebas unitarias
 
-    @Mock
+    @Mock // Crea un repositorio falso
     private DisponibilidadRepository disponibilidadRepository;
 
-    @Mock
+    @Mock // Crea un mapper falso
     private DisponibilidadMapper disponibilidadMapper;
 
-    @InjectMocks
+    @InjectMocks // Crea el Service real e inyecta los mocks
     private DisponibilidadService disponibilidadService;
 
-    @Test
+    @Test // Indica que este método es una prueba
     void obtenerPorId_cuandoExiste_retornaDisponibilidad() {
 
-        Long id = 1L;
-        Disponibilidad disponibilidad = crearDisponibilidad(id);
-        DisponibilidadResponse response = crearResponse(id);
+        Long id = 1L; // ID de prueba
 
-        when(disponibilidadRepository.findById(id))
-                .thenReturn(Optional.of(disponibilidad));
+        Disponibilidad disponibilidad =
+                crearDisponibilidad(id); // Crea entidad simulada
 
-        when(disponibilidadMapper.toResponse(disponibilidad))
-                .thenReturn(response);
+        DisponibilidadResponse response =
+                crearResponse(id); // Crea DTO Response simulado
+
+        when(disponibilidadRepository.findById(id)) // Simula búsqueda en BD
+                .thenReturn(Optional.of(disponibilidad)); // Retorna la entidad simulada
+
+        when(disponibilidadMapper.toResponse(disponibilidad)) // Simula el Mapper
+                .thenReturn(response); // Retorna el DTO simulado
 
         DisponibilidadResponse resultado =
-                disponibilidadService.obtenerPorId(id);
+                disponibilidadService.obtenerPorId(id); // Ejecuta el método real
 
-        assertNotNull(resultado);
-        assertEquals(id, resultado.getIdDisponibilidad());
+        assertNotNull(resultado); // Verifica que el resultado no sea nulo
+
+        assertEquals(id,
+                resultado.getIdDisponibilidad()); // Verifica el ID
+
         assertEquals(
                 EstadoDisponibilidad.DISPONIBLE,
                 resultado.getEstado()
-        );
+        ); // Verifica el estado
     }
 
-    @Test
+    @Test // Nueva prueba
     void obtenerPorId_cuandoNoExiste_lanzaException() {
 
-        Long id = 99L;
+        Long id = 99L; // ID inexistente
 
-        when(disponibilidadRepository.findById(id))
-                .thenReturn(Optional.empty());
+        when(disponibilidadRepository.findById(id)) // Simula búsqueda
+                .thenReturn(Optional.empty()); // No encuentra datos
 
-        assertThrows(
+        assertThrows( // Verifica que lance la excepción
                 DisponibilidadNotFoundException.class,
                 () -> disponibilidadService.obtenerPorId(id)
         );
     }
 
-    @Test
+    @Test // Nueva prueba
     void eliminar_cuandoExiste_eliminaDisponibilidad() {
 
-        Long id = 1L;
+        Long id = 1L; // ID de prueba
 
-        when(disponibilidadRepository.existsById(id))
+        when(disponibilidadRepository.existsById(id)) // Simula que existe
                 .thenReturn(true);
 
-        disponibilidadService.eliminar(id);
+        disponibilidadService.eliminar(id); // Ejecuta eliminar
 
-        verify(disponibilidadRepository)
+        verify(disponibilidadRepository) // Verifica que se eliminó
                 .deleteById(id);
     }
 
-    @Test
+    @Test // Nueva prueba
     void eliminar_cuandoNoExiste_lanzaException() {
 
-        Long id = 50L;
+        Long id = 50L; // ID inexistente
 
         when(disponibilidadRepository.existsById(id))
-                .thenReturn(false);
+                .thenReturn(false); // Simula que no existe
 
-        assertThrows(
+        assertThrows( // Verifica que lance excepción
                 DisponibilidadNotFoundException.class,
                 () -> disponibilidadService.eliminar(id)
         );
 
-        verify(disponibilidadRepository, never())
+        verify(disponibilidadRepository, never()) // Verifica que nunca eliminó
                 .deleteById(id);
     }
 
-    private Disponibilidad crearDisponibilidad(Long id) {
+    private Disponibilidad crearDisponibilidad(Long id) { // Método auxiliar
 
         Disponibilidad disponibilidad =
-                new Disponibilidad();
+                new Disponibilidad(); // Crea entidad simulada
 
-        disponibilidad.setIdDisponibilidad(id);
-        disponibilidad.setFecha(LocalDate.now());
-        disponibilidad.setHoraInicio(LocalTime.of(9, 0));
-        disponibilidad.setHoraFin(LocalTime.of(18, 0));
-        disponibilidad.setCuposDisponibles(5);
-        disponibilidad.setCuposTotales(10);
+        disponibilidad.setIdDisponibilidad(id); // Asigna ID
+        disponibilidad.setFecha(LocalDate.now()); // Asigna fecha actual
+        disponibilidad.setHoraInicio(LocalTime.of(9, 0)); // Hora inicio
+        disponibilidad.setHoraFin(LocalTime.of(18, 0)); // Hora término
+        disponibilidad.setCuposDisponibles(5); // Cupos disponibles
+        disponibilidad.setCuposTotales(10); // Cupos totales
+
         disponibilidad.setEstado(
                 EstadoDisponibilidad.DISPONIBLE
-        );
+        ); // Asigna estado
 
-        return disponibilidad;
+        return disponibilidad; // Retorna la entidad
     }
 
-    private DisponibilidadResponse crearResponse(Long id) {
+    private DisponibilidadResponse crearResponse(Long id) { // Método auxiliar
 
         DisponibilidadResponse response =
-                new DisponibilidadResponse();
+                new DisponibilidadResponse(); // Crea DTO Response
 
-        response.setIdDisponibilidad(id);
-        response.setFecha(LocalDate.now());
-        response.setHoraInicio(LocalTime.of(9, 0));
-        response.setHoraFin(LocalTime.of(18, 0));
-        response.setCuposDisponibles(5);
-        response.setCuposTotales(10);
+        response.setIdDisponibilidad(id); // Asigna ID
+        response.setFecha(LocalDate.now()); // Asigna fecha actual
+        response.setHoraInicio(LocalTime.of(9, 0)); // Hora inicio
+        response.setHoraFin(LocalTime.of(18, 0)); // Hora término
+        response.setCuposDisponibles(5); // Cupos disponibles
+        response.setCuposTotales(10); // Cupos totales
+
         response.setEstado(
                 EstadoDisponibilidad.DISPONIBLE
-        );
+        ); // Asigna estado
 
-        return response;
+        return response; // Retorna el DTO
     }
 }
