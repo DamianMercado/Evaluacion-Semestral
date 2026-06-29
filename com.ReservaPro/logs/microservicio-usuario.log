@@ -137,3 +137,16 @@ If you want to disable this check, just set the property [spring.cloud.compatibi
 2026-06-29T01:28:27.996-04:00  INFO 10160 --- [ms-usuario] [http-nio-8084-exec-2] c.R.ms_usuario.service.UsuarioService    : Buscando usuario con ID: 2
 2026-06-29T01:31:06.511-04:00  INFO 10160 --- [ms-usuario] [http-nio-8084-exec-7] c.R.ms_usuario.service.UsuarioService    : Obteniendo todos los usuarios
 2026-06-29T01:31:16.813-04:00  INFO 10160 --- [ms-usuario] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-29T01:32:38.691-04:00  INFO 10160 --- [ms-usuario] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application MS-USUARIO with eureka with status DOWN
+2026-06-29T01:32:38.695-04:00  INFO 10160 --- [ms-usuario] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1782711158695, current=DOWN, previous=UP]
+2026-06-29T01:32:38.697-04:00  INFO 10160 --- [ms-usuario] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-USUARIO/DESKTOP-TVVBNLB:ms-usuario:8084: registering service...
+2026-06-29T01:32:38.723-04:00  INFO 10160 --- [ms-usuario] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-USUARIO/DESKTOP-TVVBNLB:ms-usuario:8084 - registration status: 204
+2026-06-29T01:32:38.736-04:00  INFO 10160 --- [ms-usuario] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-29T01:32:39.221-04:00  INFO 10160 --- [ms-usuario] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-29T01:32:39.269-04:00  INFO 10160 --- [ms-usuario] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-29T01:32:39.326-04:00  INFO 10160 --- [ms-usuario] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-29T01:32:39.416-04:00  INFO 10160 --- [ms-usuario] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-29T01:32:39.426-04:00  INFO 10160 --- [ms-usuario] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2026-06-29T01:32:42.435-04:00  INFO 10160 --- [ms-usuario] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2026-06-29T01:32:42.485-04:00  INFO 10160 --- [ms-usuario] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-USUARIO/DESKTOP-TVVBNLB:ms-usuario:8084 - deregister  status: 200
+2026-06-29T01:32:42.486-04:00  INFO 10160 --- [ms-usuario] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
