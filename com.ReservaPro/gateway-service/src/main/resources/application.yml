@@ -55,7 +55,7 @@ spring:
         - id: ms-disponibilidad
           uri: lb://ms-disponibilidad
           predicates:
-            - Path=/api/v1/disponibilidad/**
+            - Path=/api/v1/disponibilidades/**
 
         - id: ms-historial-reserva
           uri: lb://ms-historial-reserva

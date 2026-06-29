@@ -22,15 +22,16 @@ import java.util.List;
 public class NotificacionService {
 
     private static final Logger log =
-            LoggerFactory.getLogger(NotificacionService.class);// sirve para mostrar msn en consola por ej crea nuscar ect
+            LoggerFactory.getLogger(NotificacionService.class);
 
-    private final NotificacionRepository notificacionRepository;// trabaja con la base datos
+    private final NotificacionRepository notificacionRepository;
     private final NotificacionMapper notificacionMapper;
-    private final CancelacionClient cancelacionClient;// comunica con otro microservicio
+    private final CancelacionClient cancelacionClient;
 
     public List<NotificacionResponse> obtener() {
 
         log.info("Obteniendo todas las notificaciones");
+
         return notificacionMapper.toResponseList(
                 notificacionRepository.findAll()
         );
@@ -75,7 +76,6 @@ public class NotificacionService {
                 notificacionRepository.findById(id)
                         .orElseThrow(() ->
                                 new NotificacionNoEncontradaException(id));
-                                   //si lo encuentra lo devuelve si no lansa exepcion
 
         validarNotificacion(request);
 
@@ -114,7 +114,7 @@ public class NotificacionService {
 
         if (!notificacionRepository.existsById(id)) {
             throw new NotificacionNoEncontradaException(id);
-        }    //verifica si exite elimanar si no lanza exepcion
+        }
 
         notificacionRepository.deleteById(id);
 
@@ -124,9 +124,47 @@ public class NotificacionService {
         );
     }
 
+    public List<NotificacionResponse> obtenerPorUsuario(
+            Long idUsuario) {
+
+        log.info(
+                "Buscando notificaciones por usuario ID: {}",
+                idUsuario
+        );
+
+        return notificacionMapper.toResponseList(
+                notificacionRepository.findByIdUsuario(idUsuario)
+        );
+    }
+
+    public List<NotificacionResponse> obtenerPorReserva(
+            Long idReserva) {
+
+        log.info(
+                "Buscando notificaciones por reserva ID: {}",
+                idReserva
+        );
+
+        return notificacionMapper.toResponseList(
+                notificacionRepository.findByIdReserva(idReserva)
+        );
+    }
+
+    public List<NotificacionResponse> obtenerPorLeida(
+            Boolean leida) {
+
+        log.info(
+                "Buscando notificaciones leídas: {}",
+                leida
+        );
+
+        return notificacionMapper.toResponseList(
+                notificacionRepository.findByLeida(leida)
+        );
+    }
+
     private void validarNotificacion(
-            NotificacionRequest request) {  //metodo privado para validar negocio
-        //revisa mensaje no venga vacio
+            NotificacionRequest request) {
 
         if (request.getMensaje() == null
                 || request.getMensaje().isBlank()) {
@@ -137,7 +175,7 @@ public class NotificacionService {
         }
 
         if (request.getTipo() == null
-                || request.getTipo().isBlank()) {//revisa que no venga vacio
+                || request.getTipo().isBlank()) {
 
             throw new ReglaNegocioException(
                     "El tipo de la notificación es obligatorio"
@@ -145,7 +183,7 @@ public class NotificacionService {
         }
 
         if (request.getIdReserva() == null
-                && request.getIdCancelacion() == null) { //revisa notificacion este asocida  notificacion o una reserva
+                && request.getIdCancelacion() == null) {
 
             throw new ReglaNegocioException(
                     "La notificación debe estar asociada a una reserva o cancelación"

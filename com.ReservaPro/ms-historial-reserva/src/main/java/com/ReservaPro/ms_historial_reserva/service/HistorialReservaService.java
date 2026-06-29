@@ -6,6 +6,7 @@ import com.ReservaPro.ms_historial_reserva.dto.response.HistorialReservaResponse
 import com.ReservaPro.ms_historial_reserva.exception.HistorialReservaNoEncontradaException;
 import com.ReservaPro.ms_historial_reserva.exception.ReglaNegocioException;
 import com.ReservaPro.ms_historial_reserva.mapper.HistorialReservaMapper;
+import com.ReservaPro.ms_historial_reserva.model.EstadoReserva;
 import com.ReservaPro.ms_historial_reserva.model.HistorialReserva;
 import com.ReservaPro.ms_historial_reserva.repository.HistorialReservaRepository;
 
@@ -15,6 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -50,7 +52,8 @@ public class HistorialReservaService {
         );
     }
 
-    public HistorialReservaResponse crear(HistorialReservaRequest request) {
+    public HistorialReservaResponse crear(
+            HistorialReservaRequest request) {
 
         log.info("Validando reserva ID: {}", request.getIdReserva());
 
@@ -142,6 +145,51 @@ public class HistorialReservaService {
 
         return historialReservaMapper.toResponseList(
                 historialReservaRepository.findByIdReserva(idReserva)
+        );
+    }
+
+    public List<HistorialReservaResponse> obtenerPorEstadoAnterior(
+            EstadoReserva estadoAnterior) {
+
+        log.info(
+                "Obteniendo historiales con estado anterior: {}",
+                estadoAnterior
+        );
+
+        return historialReservaMapper.toResponseList(
+                historialReservaRepository.findByEstadoAnterior(
+                        estadoAnterior
+                )
+        );
+    }
+
+    public List<HistorialReservaResponse> obtenerPorEstadoNuevo(
+            EstadoReserva estadoNuevo) {
+
+        log.info(
+                "Obteniendo historiales con estado nuevo: {}",
+                estadoNuevo
+        );
+
+        return historialReservaMapper.toResponseList(
+                historialReservaRepository.findByEstadoNuevo(
+                        estadoNuevo
+                )
+        );
+    }
+
+    public List<HistorialReservaResponse> obtenerPorFechaCambio(
+            LocalDateTime fechaCambio) {
+
+        log.info(
+                "Obteniendo historiales por fecha de cambio: {}",
+                fechaCambio
+        );
+
+        return historialReservaMapper.toResponseList(
+                historialReservaRepository.findByFechaCambio(
+                        fechaCambio
+                )
         );
     }
 

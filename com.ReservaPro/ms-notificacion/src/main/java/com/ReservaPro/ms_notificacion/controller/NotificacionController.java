@@ -36,10 +36,10 @@ public class NotificacionController {
             summary = "Obtener todas las notificaciones",
             description = "Retorna una lista de todas las notificaciones"
     )
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200",
-                    description = "Lista obtenida correctamente")
-    })
+    @ApiResponse(
+            responseCode = "200",
+            description = "Lista obtenida correctamente"
+    )
     public ResponseEntity<List<NotificacionResponse>> obtenerNotificaciones() {
 
         return ResponseEntity.ok()
@@ -52,10 +52,14 @@ public class NotificacionController {
             description = "Obtiene una notificación según su identificador"
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200",
-                    description = "Notificación encontrada"),
-            @ApiResponse(responseCode = "404",
-                    description = "Notificación no encontrada")
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Notificación encontrada"
+            ),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "Notificación no encontrada"
+            )
     })
     public ResponseEntity<NotificacionResponse> obtenerNotificacion(
 
@@ -69,16 +73,86 @@ public class NotificacionController {
                 .body(notificacionService.obtenerPorId(id));
     }
 
+    @GetMapping("/usuario/{idUsuario}")
+    @Operation(
+            summary = "Obtener notificaciones por usuario",
+            description = "Obtiene todas las notificaciones asociadas a un usuario"
+    )
+    @ApiResponse(
+            responseCode = "200",
+            description = "Notificaciones encontradas"
+    )
+    public ResponseEntity<List<NotificacionResponse>> obtenerPorUsuario(
+
+            @Parameter(
+                    description = "ID del usuario",
+                    example = "10",
+                    required = true
+            )
+            @PathVariable Long idUsuario) {
+
+        return ResponseEntity.ok()
+                .body(notificacionService.obtenerPorUsuario(idUsuario));
+    }
+
+    @GetMapping("/reserva/{idReserva}")
+    @Operation(
+            summary = "Obtener notificaciones por reserva",
+            description = "Obtiene todas las notificaciones asociadas a una reserva"
+    )
+    @ApiResponse(
+            responseCode = "200",
+            description = "Notificaciones encontradas"
+    )
+    public ResponseEntity<List<NotificacionResponse>> obtenerPorReserva(
+
+            @Parameter(
+                    description = "ID de la reserva",
+                    example = "5",
+                    required = true
+            )
+            @PathVariable Long idReserva) {
+
+        return ResponseEntity.ok()
+                .body(notificacionService.obtenerPorReserva(idReserva));
+    }
+
+    @GetMapping("/leida/{leida}")
+    @Operation(
+            summary = "Obtener notificaciones por estado de lectura",
+            description = "Obtiene las notificaciones leídas o no leídas"
+    )
+    @ApiResponse(
+            responseCode = "200",
+            description = "Notificaciones encontradas"
+    )
+    public ResponseEntity<List<NotificacionResponse>> obtenerPorLeida(
+
+            @Parameter(
+                    description = "Estado de lectura",
+                    example = "false",
+                    required = true
+            )
+            @PathVariable Boolean leida) {
+
+        return ResponseEntity.ok()
+                .body(notificacionService.obtenerPorLeida(leida));
+    }
+
     @PostMapping
     @Operation(
             summary = "Crear una notificación",
             description = "Crea una nueva notificación en el sistema"
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "201",
-                    description = "Notificación creada correctamente"),
-            @ApiResponse(responseCode = "400",
-                    description = "Datos inválidos")
+            @ApiResponse(
+                    responseCode = "201",
+                    description = "Notificación creada correctamente"
+            ),
+            @ApiResponse(
+                    responseCode = "400",
+                    description = "Datos inválidos"
+            )
     })
     public ResponseEntity<NotificacionResponse> crearNotificacion(
 
@@ -100,10 +174,14 @@ public class NotificacionController {
             description = "Actualiza una notificación existente por su ID"
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200",
-                    description = "Notificación actualizada"),
-            @ApiResponse(responseCode = "404",
-                    description = "Notificación no encontrada")
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Notificación actualizada"
+            ),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "Notificación no encontrada"
+            )
     })
     public ResponseEntity<NotificacionResponse> actualizarNotificacion(
 
@@ -131,10 +209,14 @@ public class NotificacionController {
             description = "Elimina una notificación por su ID"
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "204",
-                    description = "Notificación eliminada"),
-            @ApiResponse(responseCode = "404",
-                    description = "Notificación no encontrada")
+            @ApiResponse(
+                    responseCode = "204",
+                    description = "Notificación eliminada"
+            ),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "Notificación no encontrada"
+            )
     })
     public ResponseEntity<Void> eliminarNotificacion(
 
