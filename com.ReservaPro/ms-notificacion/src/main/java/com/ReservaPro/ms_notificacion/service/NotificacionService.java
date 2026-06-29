@@ -79,29 +79,12 @@ public class NotificacionService {
 
         validarNotificacion(request);
 
-        notificacionExistente.setIdUsuario(
-                request.getIdUsuario()
-        );
-
-        notificacionExistente.setIdReserva(
-                request.getIdReserva()
-        );
-
-        notificacionExistente.setIdCancelacion(
-                request.getIdCancelacion()
-        );
-
-        notificacionExistente.setMensaje(
-                request.getMensaje()
-        );
-
-        notificacionExistente.setTipo(
-                request.getTipo()
-        );
-
-        notificacionExistente.setLeida(
-                request.getLeida()
-        );
+        notificacionExistente.setIdUsuario(request.getIdUsuario());
+        notificacionExistente.setIdReserva(request.getIdReserva());
+        notificacionExistente.setIdCancelacion(request.getIdCancelacion());
+        notificacionExistente.setMensaje(request.getMensaje());
+        notificacionExistente.setTipo(request.getTipo());
+        notificacionExistente.setLeida(request.getLeida());
 
         return notificacionMapper.toResponse(
                 notificacionRepository.save(notificacionExistente)
@@ -124,47 +107,34 @@ public class NotificacionService {
         );
     }
 
-    public List<NotificacionResponse> obtenerPorUsuario(
-            Long idUsuario) {
+    public List<NotificacionResponse> obtenerPorUsuario(Long idUsuario) {
 
-        log.info(
-                "Buscando notificaciones por usuario ID: {}",
-                idUsuario
-        );
+        log.info("Buscando notificaciones por usuario ID: {}", idUsuario);
 
         return notificacionMapper.toResponseList(
                 notificacionRepository.findByIdUsuario(idUsuario)
         );
     }
 
-    public List<NotificacionResponse> obtenerPorReserva(
-            Long idReserva) {
+    public List<NotificacionResponse> obtenerPorReserva(Long idReserva) {
 
-        log.info(
-                "Buscando notificaciones por reserva ID: {}",
-                idReserva
-        );
+        log.info("Buscando notificaciones por reserva ID: {}", idReserva);
 
         return notificacionMapper.toResponseList(
                 notificacionRepository.findByIdReserva(idReserva)
         );
     }
 
-    public List<NotificacionResponse> obtenerPorLeida(
-            Boolean leida) {
+    public List<NotificacionResponse> obtenerPorLeida(Boolean leida) {
 
-        log.info(
-                "Buscando notificaciones leídas: {}",
-                leida
-        );
+        log.info("Buscando notificaciones leídas: {}", leida);
 
         return notificacionMapper.toResponseList(
                 notificacionRepository.findByLeida(leida)
         );
     }
 
-    private void validarNotificacion(
-            NotificacionRequest request) {
+    private void validarNotificacion(NotificacionRequest request) {
 
         if (request.getMensaje() == null
                 || request.getMensaje().isBlank()) {
@@ -187,6 +157,18 @@ public class NotificacionService {
 
             throw new ReglaNegocioException(
                     "La notificación debe estar asociada a una reserva o cancelación"
+            );
+        }
+
+        if (request.getIdCancelacion() != null) {
+
+            log.info(
+                    "Validando cancelación ID: {}",
+                    request.getIdCancelacion()
+            );
+
+            cancelacionClient.obtenerCancelacionPorId(
+                    request.getIdCancelacion()
             );
         }
     }
