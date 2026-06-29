@@ -133,3 +133,21 @@ If you want to disable this check, just set the property [spring.cloud.compatibi
 2026-06-28T23:14:44.334-04:00  INFO 17972 --- [ms-disponibilidad] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8093
 2026-06-28T23:14:44.388-04:00  INFO 17972 --- [ms-disponibilidad] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-DISPONIBILIDAD/DESKTOP-TVVBNLB:ms-disponibilidad:8093 - registration status: 204
 2026-06-28T23:14:44.565-04:00  INFO 17972 --- [ms-disponibilidad] [main] c.R.m.MsDisponibilidadApplication        : Started MsDisponibilidadApplication in 16.376 seconds (process running for 18.892)
+2026-06-28T23:16:39.740-04:00  INFO 17972 --- [ms-disponibilidad] [http-nio-8093-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-28T23:16:39.742-04:00  INFO 17972 --- [ms-disponibilidad] [http-nio-8093-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-28T23:16:39.760-04:00  INFO 17972 --- [ms-disponibilidad] [http-nio-8093-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 18 ms
+2026-06-28T23:16:41.857-04:00  INFO 17972 --- [ms-disponibilidad] [http-nio-8093-exec-10] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 1044 ms
+2026-06-28T23:19:02.112-04:00  INFO 17972 --- [ms-disponibilidad] [http-nio-8093-exec-8] c.R.m.service.DisponibilidadService      : Buscando disponibilidad con ID 1
+2026-06-28T23:19:27.494-04:00  INFO 17972 --- [ms-disponibilidad] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application MS-DISPONIBILIDAD with eureka with status DOWN
+2026-06-28T23:19:27.495-04:00  INFO 17972 --- [ms-disponibilidad] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1782703167495, current=DOWN, previous=UP]
+2026-06-28T23:19:27.496-04:00  INFO 17972 --- [ms-disponibilidad] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-DISPONIBILIDAD/DESKTOP-TVVBNLB:ms-disponibilidad:8093: registering service...
+2026-06-28T23:19:27.504-04:00  INFO 17972 --- [ms-disponibilidad] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-28T23:19:27.533-04:00  INFO 17972 --- [ms-disponibilidad] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-DISPONIBILIDAD/DESKTOP-TVVBNLB:ms-disponibilidad:8093 - registration status: 204
+2026-06-28T23:19:27.990-04:00  INFO 17972 --- [ms-disponibilidad] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-28T23:19:28.022-04:00  INFO 17972 --- [ms-disponibilidad] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-28T23:19:28.057-04:00  INFO 17972 --- [ms-disponibilidad] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-28T23:19:28.101-04:00  INFO 17972 --- [ms-disponibilidad] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-28T23:19:28.106-04:00  INFO 17972 --- [ms-disponibilidad] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2026-06-28T23:19:31.125-04:00  INFO 17972 --- [ms-disponibilidad] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2026-06-28T23:19:31.230-04:00  INFO 17972 --- [ms-disponibilidad] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-DISPONIBILIDAD/DESKTOP-TVVBNLB:ms-disponibilidad:8093 - deregister  status: 200
+2026-06-28T23:19:31.232-04:00  INFO 17972 --- [ms-disponibilidad] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

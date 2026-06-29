@@ -7,6 +7,7 @@ import com.ReservaPro.ms_cancelacion.exception.CancelacionNotFoundException;
 import com.ReservaPro.ms_cancelacion.exception.ReglaNegocioException;
 import com.ReservaPro.ms_cancelacion.mapper.CancelacionMapper;
 import com.ReservaPro.ms_cancelacion.model.Cancelacion;
+import com.ReservaPro.ms_cancelacion.model.EstadoReembolso;
 import com.ReservaPro.ms_cancelacion.repository.CancelacionRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -62,9 +63,8 @@ public class CancelacionService {
 
         validarCancelacion(cancelacionRequest);
 
-
         reservaClient.obtenerReservaPorId(
-        cancelacionRequest.getIdReserva()
+                cancelacionRequest.getIdReserva()
         );
 
         Cancelacion cancelacion =
@@ -99,10 +99,9 @@ public class CancelacionService {
 
         validarCancelacion(cancelacionRequest);
 
-        //Temporalmente desactivado hasta tener ms-reserva funcionando
         reservaClient.obtenerReservaPorId(
-                 cancelacionRequest.getIdReserva()
-         );
+                cancelacionRequest.getIdReserva()
+        );
 
         cancelacionExistente.setIdReserva(
                 cancelacionRequest.getIdReserva()
@@ -138,7 +137,10 @@ public class CancelacionService {
         Cancelacion cancelacion =
                 cancelacionRepository.findById(id)
                         .orElseThrow(() -> {
-                            log.error("No se encontró la cancelación con ID: {}", id);
+                            log.error(
+                                    "No se encontró la cancelación con ID: {}",
+                                    id
+                            );
                             return new CancelacionNotFoundException(id);
                         });
 
@@ -147,6 +149,45 @@ public class CancelacionService {
         log.info(
                 "Cancelación eliminada correctamente con ID: {}",
                 id
+        );
+    }
+
+    public List<CancelacionResponse> obtenerPorReserva(
+            Long idReserva) {
+
+        log.info(
+                "Buscando cancelaciones por reserva ID: {}",
+                idReserva
+        );
+
+        return cancelacionMapper.toResponseList(
+                cancelacionRepository.findByIdReserva(idReserva)
+        );
+    }
+
+    public List<CancelacionResponse> obtenerPorEstado(
+            EstadoReembolso estadoReembolso) {
+
+        log.info(
+                "Buscando cancelaciones por estado de reembolso: {}",
+                estadoReembolso
+        );
+
+        return cancelacionMapper.toResponseList(
+                cancelacionRepository.findByEstadoReembolso(estadoReembolso)
+        );
+    }
+
+    public List<CancelacionResponse> obtenerPorFecha(
+            LocalDate fechaCancelacion) {
+
+        log.info(
+                "Buscando cancelaciones por fecha: {}",
+                fechaCancelacion
+        );
+
+        return cancelacionMapper.toResponseList(
+                cancelacionRepository.findByFechaCancelacion(fechaCancelacion)
         );
     }
 
