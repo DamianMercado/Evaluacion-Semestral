@@ -54,8 +54,7 @@ public class HistorialReservaService {
 
         log.info("Validando reserva ID: {}", request.getIdReserva());
 
-        // Temporalmente desactivado hasta tener ms-reserva funcionando
-        // reservaClient.obtenerReservaPorId(request.getIdReserva());
+        reservaClient.obtenerReservaPorId(request.getIdReserva());
 
         validarEstados(
                 request.getEstadoAnterior(),
@@ -89,8 +88,7 @@ public class HistorialReservaService {
 
         log.info("Validando reserva ID: {}", request.getIdReserva());
 
-        // Temporalmente desactivado hasta tener ms-reserva funcionando
-        // reservaClient.obtenerReservaPorId(request.getIdReserva());
+        reservaClient.obtenerReservaPorId(request.getIdReserva());
 
         validarEstados(
                 request.getEstadoAnterior(),

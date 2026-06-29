@@ -1,95 +1,74 @@
-package com.ReservaPro.ms_historial_reserva.controller;
+package com.ReservaPro.ms_historial_reserva.controller; // Paquete del controller
 
-import com.ReservaPro.ms_historial_reserva.dto.request.HistorialReservaRequest;
-import com.ReservaPro.ms_historial_reserva.dto.response.HistorialReservaResponse;
-import com.ReservaPro.ms_historial_reserva.service.HistorialReservaService;
+import com.ReservaPro.ms_historial_reserva.dto.request.HistorialReservaRequest; // DTO que recibe datos
+import com.ReservaPro.ms_historial_reserva.dto.response.HistorialReservaResponse; // DTO que devuelve datos
+import com.ReservaPro.ms_historial_reserva.service.HistorialReservaService; // Service con lógica de negocio
 
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.v3.oas.annotations.Operation; // Documenta cada endpoint
+import io.swagger.v3.oas.annotations.Parameter; // Documenta parámetros
+import io.swagger.v3.oas.annotations.parameters.RequestBody; // Documenta el body en Swagger
+import io.swagger.v3.oas.annotations.responses.ApiResponse; // Documenta una respuesta HTTP
+import io.swagger.v3.oas.annotations.responses.ApiResponses; // Agrupa respuestas HTTP
+import io.swagger.v3.oas.annotations.tags.Tag; // Agrupa endpoints en Swagger
 
-import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
+import jakarta.validation.Valid; // Activa validaciones del Request
+import lombok.RequiredArgsConstructor; // Crea constructor automático
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.http.HttpStatus; // Permite usar códigos HTTP
+import org.springframework.http.ResponseEntity; // Permite devolver respuesta HTTP
+import org.springframework.web.bind.annotation.*; // Importa anotaciones REST
 
-import java.util.List;
+import java.util.List; // Permite usar listas
 
-@RestController
-@RequestMapping("/api/v1/historial-reservas")
-@RequiredArgsConstructor
+@RestController // Indica que esta clase es un controlador REST
+@RequestMapping("/api/v1/historial_reservas") // Ruta base del microservicio
+@RequiredArgsConstructor // Inyecta el Service por constructor
 @Tag(
-        name = "Historial de Reservas",
-        description = "Operaciones relacionadas con el historial de reservas"
+        name = "Historial de Reservas", // Nombre del grupo en Swagger
+        description = "Operaciones relacionadas con el historial de reservas" // Descripción Swagger
 )
 public class HistorialReservaController {
 
-    private final HistorialReservaService historialReservaService;
+    private final HistorialReservaService historialReservaService; // Service usado por el controller
 
-    @GetMapping
+    @GetMapping // GET /api/v1/historial-reservas
     @Operation(
-            summary = "Obtener todos los historiales",
-            description = "Retorna una lista de todos los historiales de reservas"
+            summary = "Obtener todos los historiales", // Título Swagger
+            description = "Retorna una lista de todos los historiales de reservas" // Descripción
     )
     @ApiResponses(value = {
             @ApiResponse(
-                    responseCode = "200",
+                    responseCode = "200", // Código HTTP exitoso
                     description = "Lista obtenida correctamente")
     })
     public ResponseEntity<List<HistorialReservaResponse>> obtenerHistoriales() {
 
-        return ResponseEntity.ok(
-                historialReservaService.obtener()
+        return ResponseEntity.ok( // Devuelve HTTP 200
+                historialReservaService.obtener() // Llama al service
         );
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{id}") // GET /api/v1/historial-reservas/{id}
     @Operation(
             summary = "Obtener historial por ID",
             description = "Obtiene un historial según su identificador"
     )
     @ApiResponses(value = {
-            @ApiResponse(
-                    responseCode = "200",
-                    description = "Historial encontrado"),
-            @ApiResponse(
-                    responseCode = "404",
-                    description = "Historial no encontrado")
+            @ApiResponse(responseCode = "200", description = "Historial encontrado"),
+            @ApiResponse(responseCode = "404", description = "Historial no encontrado")
     })
     public ResponseEntity<HistorialReservaResponse> obtenerHistorial(
 
-            @Parameter(
-                    description = "ID del historial",
-                    required = true
-            )
-            @PathVariable Long id) {
+            @Parameter(description = "ID del historial", required = true)
+            @PathVariable Long id) { // Recibe el ID desde la URL
 
         return ResponseEntity.ok(
                 historialReservaService.obtenerPorId(id)
         );
     }
 
-    @GetMapping("/reserva/{idReserva}")
-    @Operation(
-            summary = "Obtener historial por reserva",
-            description = "Obtiene todos los historiales asociados a una reserva"
-    )
-    @ApiResponses(value = {
-            @ApiResponse(
-                    responseCode = "200",
-                    description = "Historiales encontrados")
-    })
+    @GetMapping("/reserva/{idReserva}") // GET /api/v1/historial-reservas/reserva/{idReserva}
     public ResponseEntity<List<HistorialReservaResponse>> obtenerPorReserva(
-
-            @Parameter(
-                    description = "ID de la reserva",
-                    required = true
-            )
             @PathVariable Long idReserva) {
 
         return ResponseEntity.ok(
@@ -97,58 +76,20 @@ public class HistorialReservaController {
         );
     }
 
-    @PostMapping
-    @Operation(
-            summary = "Crear un historial",
-            description = "Crea un nuevo historial de reserva"
-    )
-    @ApiResponses(value = {
-            @ApiResponse(
-                    responseCode = "201",
-                    description = "Historial creado correctamente"),
-            @ApiResponse(
-                    responseCode = "400",
-                    description = "Datos inválidos")
-    })
+    @PostMapping // POST /api/v1/historial-reservas
     public ResponseEntity<HistorialReservaResponse> crearHistorial(
-
-            @RequestBody(
-                    description = "Datos del historial a crear",
-                    required = true
-            )
+            @RequestBody(description = "Datos del historial a crear", required = true)
             @Valid
             @org.springframework.web.bind.annotation.RequestBody
             HistorialReservaRequest request) {
 
-        return ResponseEntity.status(HttpStatus.CREATED)
+        return ResponseEntity.status(HttpStatus.CREATED) // Devuelve 201
                 .body(historialReservaService.crear(request));
     }
 
-    @PutMapping("/{id}")
-    @Operation(
-            summary = "Actualizar un historial",
-            description = "Actualiza un historial existente por su ID"
-    )
-    @ApiResponses(value = {
-            @ApiResponse(
-                    responseCode = "200",
-                    description = "Historial actualizado"),
-            @ApiResponse(
-                    responseCode = "404",
-                    description = "Historial no encontrado")
-    })
+    @PutMapping("/{id}") // PUT /api/v1/historial-reservas/{id}
     public ResponseEntity<HistorialReservaResponse> actualizarHistorial(
-
-            @Parameter(
-                    description = "ID del historial",
-                    required = true
-            )
             @PathVariable Long id,
-
-            @RequestBody(
-                    description = "Datos actualizados del historial",
-                    required = true
-            )
             @Valid
             @org.springframework.web.bind.annotation.RequestBody
             HistorialReservaRequest request) {
@@ -158,29 +99,11 @@ public class HistorialReservaController {
         );
     }
 
-    @DeleteMapping("/{id}")
-    @Operation(
-            summary = "Eliminar un historial",
-            description = "Elimina un historial por su ID"
-    )
-    @ApiResponses(value = {
-            @ApiResponse(
-                    responseCode = "204",
-                    description = "Historial eliminado"),
-            @ApiResponse(
-                    responseCode = "404",
-                    description = "Historial no encontrado")
-    })
-    public ResponseEntity<Void> eliminarHistorial(
+    @DeleteMapping("/{id}") // DELETE /api/v1/historial-reservas/{id}
+    public ResponseEntity<Void> eliminarHistorial(@PathVariable Long id) {
 
-            @Parameter(
-                    description = "ID del historial",
-                    required = true
-            )
-            @PathVariable Long id) {
+        historialReservaService.eliminar(id); // Elimina desde el service
 
-        historialReservaService.eliminar(id);
-
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.noContent().build(); // Devuelve 204 sin cuerpo
     }
 }
