@@ -155,3 +155,16 @@ Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-valid
 2026-06-29T02:58:01.299-04:00  INFO 9672 --- [ms-reserva] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2026-06-29T02:58:01.305-04:00  INFO 9672 --- [ms-reserva] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
 2026-06-29T02:58:02.955-04:00  INFO 9672 --- [ms-reserva] [http-nio-8086-exec-3] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 1085 ms
+2026-06-29T02:59:33.214-04:00  INFO 9672 --- [ms-reserva] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application MS-RESERVA with eureka with status DOWN
+2026-06-29T02:59:33.215-04:00  INFO 9672 --- [ms-reserva] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1782716373214, current=DOWN, previous=UP]
+2026-06-29T02:59:33.215-04:00  INFO 9672 --- [ms-reserva] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-RESERVA/DESKTOP-TVVBNLB:ms-reserva:8086: registering service...
+2026-06-29T02:59:33.229-04:00  INFO 9672 --- [ms-reserva] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-29T02:59:33.244-04:00  INFO 9672 --- [ms-reserva] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-RESERVA/DESKTOP-TVVBNLB:ms-reserva:8086 - registration status: 204
+2026-06-29T02:59:33.718-04:00  INFO 9672 --- [ms-reserva] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-29T02:59:33.765-04:00  INFO 9672 --- [ms-reserva] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-29T02:59:33.813-04:00  INFO 9672 --- [ms-reserva] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-29T02:59:33.889-04:00  INFO 9672 --- [ms-reserva] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-29T02:59:33.892-04:00  INFO 9672 --- [ms-reserva] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2026-06-29T02:59:36.900-04:00  INFO 9672 --- [ms-reserva] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2026-06-29T02:59:36.932-04:00  INFO 9672 --- [ms-reserva] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-RESERVA/DESKTOP-TVVBNLB:ms-reserva:8086 - deregister  status: 200
+2026-06-29T02:59:36.936-04:00  INFO 9672 --- [ms-reserva] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
