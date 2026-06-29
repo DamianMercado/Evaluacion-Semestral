@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.*; // Importa anotaciones REST
 import java.util.List; // Permite usar listas
 
 @RestController // Indica que esta clase es un controlador REST
-@RequestMapping("/api/v1/historial_reservas") // Ruta base del microservicio
+@RequestMapping("/api/v1/historial-reservas") // Ruta base del microservicio
 @RequiredArgsConstructor // Inyecta el Service por constructor
 @Tag(
         name = "Historial de Reservas", // Nombre del grupo en Swagger

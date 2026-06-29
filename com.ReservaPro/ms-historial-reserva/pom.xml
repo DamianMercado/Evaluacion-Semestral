@@ -13,7 +13,7 @@
 	</parent>
 
 	<groupId>com.ReservaPro</groupId>
-	<artifactId>ms_historial_reserva</artifactId>
+	<artifactId>ms-historial-reserva</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ms-historial-reserva</name>
 	<description>Microservicio historial de reserva</description>
