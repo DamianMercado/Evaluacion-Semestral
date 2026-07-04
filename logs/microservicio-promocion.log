@@ -1,0 +1,331 @@
+2026-07-03T20:08:29.363-04:00  INFO 4068 --- [ms-promocion] [main] c.R.ms_promocion.MsPromocionApplication  : Starting MsPromocionApplication using Java 21.0.9 with PID 4068 (C:\Users\va-alumno\Desktop\Evaluacion-Semestral\com.ReservaPro\ms-promocion\target\classes started by VA-Alumno in C:\Users\va-alumno\Desktop\Evaluacion-Semestral)
+2026-07-03T20:08:29.365-04:00  INFO 4068 --- [ms-promocion] [main] c.R.ms_promocion.MsPromocionApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-07-03T20:08:30.252-04:00  INFO 4068 --- [ms-promocion] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-03T20:08:30.425-04:00  INFO 4068 --- [ms-promocion] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 155 ms. Found 1 JPA repository interface.
+2026-07-03T20:08:30.666-04:00  INFO 4068 --- [ms-promocion] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=b0049b99-73e7-38d6-8414-1bd7edefb9f9
+2026-07-03T20:08:30.998-04:00  INFO 4068 --- [ms-promocion] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8090 (http)
+2026-07-03T20:08:31.011-04:00  INFO 4068 --- [ms-promocion] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-03T20:08:31.011-04:00  INFO 4068 --- [ms-promocion] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2026-07-03T20:08:31.105-04:00  INFO 4068 --- [ms-promocion] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-07-03T20:08:31.106-04:00  INFO 4068 --- [ms-promocion] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1693 ms
+2026-07-03T20:08:31.294-04:00  INFO 18632 --- [ms-promocion] [main] c.R.ms_promocion.MsPromocionApplication  : Starting MsPromocionApplication using Java 21.0.9 with PID 18632 (C:\Users\va-alumno\Desktop\Evaluacion-Semestral\com.ReservaPro\ms-promocion\target\classes started by VA-Alumno in C:\Users\va-alumno\Desktop\Evaluacion-Semestral)
+2026-07-03T20:08:31.296-04:00  INFO 18632 --- [ms-promocion] [main] c.R.ms_promocion.MsPromocionApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-07-03T20:08:31.338-04:00  INFO 4068 --- [ms-promocion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-07-03T20:08:31.650-04:00  INFO 4068 --- [ms-promocion] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7b598d05
+2026-07-03T20:08:31.652-04:00  INFO 4068 --- [ms-promocion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-07-03T20:08:31.698-04:00  INFO 4068 --- [ms-promocion] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/ms_promocion (MySQL 8.4)
+2026-07-03T20:08:31.711-04:00  WARN 4068 --- [ms-promocion] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: MySQL 8.4 is newer than this version of Flyway and support has not been tested. The latest supported version of MySQL is 8.1.
+2026-07-03T20:08:31.739-04:00  INFO 4068 --- [ms-promocion] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `ms_promocion`.`flyway_schema_history` does not exist yet
+2026-07-03T20:08:31.742-04:00  INFO 4068 --- [ms-promocion] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.021s)
+2026-07-03T20:08:31.766-04:00  INFO 4068 --- [ms-promocion] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `ms_promocion`.`flyway_schema_history` ...
+2026-07-03T20:08:31.866-04:00  INFO 4068 --- [ms-promocion] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `ms_promocion`: << Empty Schema >>
+2026-07-03T20:08:31.878-04:00  INFO 4068 --- [ms-promocion] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `ms_promocion` to version "1 - crear tabla promociones"
+2026-07-03T20:08:32.100-04:00  INFO 18632 --- [ms-promocion] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-03T20:08:32.237-04:00  INFO 18632 --- [ms-promocion] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 128 ms. Found 1 JPA repository interface.
+2026-07-03T20:08:32.317-04:00  WARN 4068 --- [ms-promocion] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+2026-07-03T20:08:32.317-04:00  WARN 4068 --- [ms-promocion] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: 'utf8' is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous. (SQL State: HY000 - Error Code: 3719)
+2026-07-03T20:08:32.317-04:00  WARN 4068 --- [ms-promocion] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: 'utf8mb3_unicode_ci' is a collation of the deprecated character set UTF8MB3. Please consider using UTF8MB4 with an appropriate collation instead. (SQL State: HY000 - Error Code: 3778)
+2026-07-03T20:08:32.429-04:00  WARN 4068 --- [ms-promocion] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+2026-07-03T20:08:32.462-04:00  INFO 4068 --- [ms-promocion] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `ms_promocion` to version "2 - insertar promociones"
+2026-07-03T20:08:32.488-04:00  INFO 4068 --- [ms-promocion] [main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema `ms_promocion`, now at version v2 (execution time 00:00.560s)
+2026-07-03T20:08:32.493-04:00  INFO 18632 --- [ms-promocion] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=b0049b99-73e7-38d6-8414-1bd7edefb9f9
+2026-07-03T20:08:32.572-04:00  INFO 4068 --- [ms-promocion] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-07-03T20:08:32.626-04:00  INFO 4068 --- [ms-promocion] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.2.Final
+2026-07-03T20:08:32.661-04:00  INFO 4068 --- [ms-promocion] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-07-03T20:08:32.843-04:00  INFO 18632 --- [ms-promocion] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8090 (http)
+2026-07-03T20:08:32.856-04:00  INFO 18632 --- [ms-promocion] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-03T20:08:32.856-04:00  INFO 18632 --- [ms-promocion] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2026-07-03T20:08:32.913-04:00  INFO 4068 --- [ms-promocion] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-03T20:08:32.972-04:00  WARN 4068 --- [ms-promocion] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-07-03T20:08:32.974-04:00  INFO 18632 --- [ms-promocion] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-07-03T20:08:32.974-04:00  INFO 18632 --- [ms-promocion] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1637 ms
+2026-07-03T20:08:32.985-04:00  INFO 4068 --- [ms-promocion] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-03T20:08:33.204-04:00  INFO 18632 --- [ms-promocion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-07-03T20:08:33.507-04:00  INFO 18632 --- [ms-promocion] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7b598d05
+2026-07-03T20:08:33.509-04:00  INFO 18632 --- [ms-promocion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-07-03T20:08:33.553-04:00  INFO 18632 --- [ms-promocion] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/ms_promocion (MySQL 8.4)
+2026-07-03T20:08:33.567-04:00  WARN 18632 --- [ms-promocion] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: MySQL 8.4 is newer than this version of Flyway and support has not been tested. The latest supported version of MySQL is 8.1.
+2026-07-03T20:08:33.608-04:00  INFO 18632 --- [ms-promocion] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.030s)
+2026-07-03T20:08:33.627-04:00  INFO 18632 --- [ms-promocion] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `ms_promocion`: 2
+2026-07-03T20:08:33.632-04:00  INFO 18632 --- [ms-promocion] [main] o.f.core.internal.command.DbMigrate      : Schema `ms_promocion` is up to date. No migration necessary.
+2026-07-03T20:08:33.709-04:00  INFO 18632 --- [ms-promocion] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-07-03T20:08:33.767-04:00  INFO 4068 --- [ms-promocion] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-03T20:08:33.768-04:00  INFO 18632 --- [ms-promocion] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.2.Final
+2026-07-03T20:08:33.801-04:00  INFO 4068 --- [ms-promocion] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-03T20:08:33.807-04:00  INFO 18632 --- [ms-promocion] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-07-03T20:08:34.080-04:00  INFO 18632 --- [ms-promocion] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-03T20:08:34.137-04:00  WARN 18632 --- [ms-promocion] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-07-03T20:08:34.152-04:00  INFO 18632 --- [ms-promocion] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-03T20:08:34.220-04:00  WARN 4068 --- [ms-promocion] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-03T20:08:34.922-04:00  INFO 18632 --- [ms-promocion] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-03T20:08:34.949-04:00  INFO 18632 --- [ms-promocion] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-03T20:08:35.319-04:00  WARN 18632 --- [ms-promocion] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-03T20:08:35.757-04:00  INFO 4068 --- [ms-promocion] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-07-03T20:08:36.801-04:00  INFO 4068 --- [ms-promocion] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-07-03T20:08:36.816-04:00  INFO 18632 --- [ms-promocion] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-07-03T20:08:36.817-04:00  INFO 4068 --- [ms-promocion] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-07-03T20:08:36.849-04:00  WARN 4068 --- [ms-promocion] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-07-03T20:08:36.888-04:00  INFO 4068 --- [ms-promocion] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-07-03T20:08:36.908-04:00  INFO 4068 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-07-03T20:08:36.912-04:00  INFO 4068 --- [ms-promocion] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-07-03T20:08:36.919-04:00  INFO 4068 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-07-03T20:08:36.920-04:00  INFO 4068 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-07-03T20:08:36.920-04:00  INFO 4068 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-07-03T20:08:36.920-04:00  INFO 4068 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-07-03T20:08:36.920-04:00  INFO 4068 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-07-03T20:08:36.920-04:00  INFO 4068 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-07-03T20:08:36.920-04:00  INFO 4068 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-07-03T20:08:37.184-04:00  INFO 4068 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-07-03T20:08:37.187-04:00  INFO 4068 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-07-03T20:08:37.189-04:00  INFO 4068 --- [ms-promocion] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-07-03T20:08:37.190-04:00  INFO 4068 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1783123717190 with initial instances count: 8
+2026-07-03T20:08:37.194-04:00  INFO 4068 --- [ms-promocion] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MS-PROMOCION with eureka with status UP
+2026-07-03T20:08:37.195-04:00  INFO 4068 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1783123717195, current=UP, previous=STARTING]
+2026-07-03T20:08:37.197-04:00  INFO 4068 --- [ms-promocion] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-PROMOCION/localhost:ms-promocion:8090: registering service...
+2026-07-03T20:08:37.202-04:00  INFO 4068 --- [ms-promocion] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application MS-PROMOCION with eureka with status DOWN
+2026-07-03T20:08:37.202-04:00  INFO 4068 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1783123717202, current=DOWN, previous=UP]
+2026-07-03T20:08:37.202-04:00  WARN 4068 --- [ms-promocion] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-07-03T20:08:37.204-04:00  INFO 4068 --- [ms-promocion] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-03T20:08:37.207-04:00  INFO 4068 --- [ms-promocion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-07-03T20:08:37.217-04:00  INFO 4068 --- [ms-promocion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-07-03T20:08:37.217-04:00  INFO 4068 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2026-07-03T20:08:37.224-04:00  INFO 4068 --- [ms-promocion] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-PROMOCION/localhost:ms-promocion:8090 - registration status: 204
+2026-07-03T20:08:37.225-04:00  INFO 4068 --- [ms-promocion] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-PROMOCION/localhost:ms-promocion:8090: registering service...
+2026-07-03T20:08:37.229-04:00  INFO 4068 --- [ms-promocion] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-PROMOCION/localhost:ms-promocion:8090 - registration status: 204
+2026-07-03T20:08:37.229-04:00  INFO 4068 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2026-07-03T20:08:37.234-04:00  INFO 4068 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-PROMOCION/localhost:ms-promocion:8090 - deregister  status: 200
+2026-07-03T20:08:37.235-04:00  INFO 4068 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2026-07-03T20:08:37.246-04:00  INFO 4068 --- [ms-promocion] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-07-03T20:08:37.261-04:00 ERROR 4068 --- [ms-promocion] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8090 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8090 or configure this application to listen on another port.
+
+2026-07-03T20:08:37.845-04:00  INFO 18632 --- [ms-promocion] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-07-03T20:08:37.863-04:00  INFO 18632 --- [ms-promocion] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-07-03T20:08:37.890-04:00  WARN 18632 --- [ms-promocion] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-07-03T20:08:37.924-04:00  INFO 18632 --- [ms-promocion] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-07-03T20:08:37.950-04:00  INFO 18632 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-07-03T20:08:37.953-04:00  INFO 18632 --- [ms-promocion] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-07-03T20:08:37.960-04:00  INFO 18632 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-07-03T20:08:37.961-04:00  INFO 18632 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-07-03T20:08:37.961-04:00  INFO 18632 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-07-03T20:08:37.961-04:00  INFO 18632 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-07-03T20:08:37.961-04:00  INFO 18632 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-07-03T20:08:37.961-04:00  INFO 18632 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-07-03T20:08:37.961-04:00  INFO 18632 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-07-03T20:08:38.232-04:00  INFO 18632 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-07-03T20:08:38.236-04:00  INFO 18632 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-07-03T20:08:38.238-04:00  INFO 18632 --- [ms-promocion] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-07-03T20:08:38.240-04:00  INFO 18632 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1783123718240 with initial instances count: 8
+2026-07-03T20:08:38.244-04:00  INFO 18632 --- [ms-promocion] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MS-PROMOCION with eureka with status UP
+2026-07-03T20:08:38.244-04:00  INFO 18632 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1783123718244, current=UP, previous=STARTING]
+2026-07-03T20:08:38.246-04:00  INFO 18632 --- [ms-promocion] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-PROMOCION/localhost:ms-promocion:8090: registering service...
+2026-07-03T20:08:38.252-04:00  INFO 18632 --- [ms-promocion] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application MS-PROMOCION with eureka with status DOWN
+2026-07-03T20:08:38.253-04:00  INFO 18632 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1783123718253, current=DOWN, previous=UP]
+2026-07-03T20:08:38.253-04:00  WARN 18632 --- [ms-promocion] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-07-03T20:08:38.256-04:00  INFO 18632 --- [ms-promocion] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-03T20:08:38.258-04:00  INFO 18632 --- [ms-promocion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-07-03T20:08:38.269-04:00  INFO 18632 --- [ms-promocion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-07-03T20:08:38.269-04:00  INFO 18632 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2026-07-03T20:08:38.277-04:00  INFO 18632 --- [ms-promocion] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-PROMOCION/localhost:ms-promocion:8090 - registration status: 204
+2026-07-03T20:08:38.278-04:00  INFO 18632 --- [ms-promocion] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-PROMOCION/localhost:ms-promocion:8090: registering service...
+2026-07-03T20:08:38.281-04:00  INFO 18632 --- [ms-promocion] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-PROMOCION/localhost:ms-promocion:8090 - registration status: 204
+2026-07-03T20:08:38.281-04:00  INFO 18632 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2026-07-03T20:08:38.286-04:00  INFO 18632 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-PROMOCION/localhost:ms-promocion:8090 - deregister  status: 200
+2026-07-03T20:08:38.286-04:00  INFO 18632 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2026-07-03T20:08:38.297-04:00  INFO 18632 --- [ms-promocion] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-07-03T20:08:38.311-04:00 ERROR 18632 --- [ms-promocion] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8090 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8090 or configure this application to listen on another port.
+
+2026-07-03T20:15:50.991-04:00  INFO 20132 --- [ms-promocion] [main] c.R.ms_promocion.MsPromocionApplication  : Starting MsPromocionApplication using Java 21.0.9 with PID 20132 (C:\Users\va-alumno\Desktop\Evaluacion-Semestral\com.ReservaPro\ms-promocion\target\classes started by VA-Alumno in C:\Users\va-alumno\Desktop\Evaluacion-Semestral)
+2026-07-03T20:15:50.993-04:00  INFO 20132 --- [ms-promocion] [main] c.R.ms_promocion.MsPromocionApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-07-03T20:15:51.759-04:00  INFO 20132 --- [ms-promocion] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-03T20:15:51.893-04:00  INFO 20132 --- [ms-promocion] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 120 ms. Found 1 JPA repository interface.
+2026-07-03T20:15:52.114-04:00  INFO 20132 --- [ms-promocion] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=b0049b99-73e7-38d6-8414-1bd7edefb9f9
+2026-07-03T20:15:52.449-04:00  INFO 20132 --- [ms-promocion] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8090 (http)
+2026-07-03T20:15:52.462-04:00  INFO 20132 --- [ms-promocion] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-03T20:15:52.462-04:00  INFO 20132 --- [ms-promocion] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2026-07-03T20:15:52.559-04:00  INFO 20132 --- [ms-promocion] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-07-03T20:15:52.560-04:00  INFO 20132 --- [ms-promocion] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1525 ms
+2026-07-03T20:15:52.773-04:00  INFO 20132 --- [ms-promocion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-07-03T20:15:53.040-04:00  INFO 20132 --- [ms-promocion] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2ec5cc14
+2026-07-03T20:15:53.042-04:00  INFO 20132 --- [ms-promocion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-07-03T20:15:53.083-04:00  INFO 20132 --- [ms-promocion] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/ms_promocion (MySQL 8.4)
+2026-07-03T20:15:53.097-04:00  WARN 20132 --- [ms-promocion] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: MySQL 8.4 is newer than this version of Flyway and support has not been tested. The latest supported version of MySQL is 8.1.
+2026-07-03T20:15:53.121-04:00  INFO 20132 --- [ms-promocion] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `ms_promocion`.`flyway_schema_history` does not exist yet
+2026-07-03T20:15:53.124-04:00  INFO 20132 --- [ms-promocion] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.018s)
+2026-07-03T20:15:53.141-04:00  INFO 20132 --- [ms-promocion] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `ms_promocion`.`flyway_schema_history` ...
+2026-07-03T20:15:53.223-04:00  INFO 20132 --- [ms-promocion] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `ms_promocion`: << Empty Schema >>
+2026-07-03T20:15:53.235-04:00  INFO 20132 --- [ms-promocion] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `ms_promocion` to version "1 - crear tabla promociones"
+2026-07-03T20:15:53.649-04:00  WARN 20132 --- [ms-promocion] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+2026-07-03T20:15:53.649-04:00  WARN 20132 --- [ms-promocion] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: 'utf8' is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous. (SQL State: HY000 - Error Code: 3719)
+2026-07-03T20:15:53.651-04:00  WARN 20132 --- [ms-promocion] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: 'utf8mb3_unicode_ci' is a collation of the deprecated character set UTF8MB3. Please consider using UTF8MB4 with an appropriate collation instead. (SQL State: HY000 - Error Code: 3778)
+2026-07-03T20:15:53.742-04:00  WARN 20132 --- [ms-promocion] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+2026-07-03T20:15:53.773-04:00  INFO 20132 --- [ms-promocion] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `ms_promocion` to version "2 - insertar promociones"
+2026-07-03T20:15:53.797-04:00  INFO 20132 --- [ms-promocion] [main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema `ms_promocion`, now at version v2 (execution time 00:00.515s)
+2026-07-03T20:15:53.867-04:00  INFO 20132 --- [ms-promocion] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-07-03T20:15:53.920-04:00  INFO 20132 --- [ms-promocion] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.2.Final
+2026-07-03T20:15:53.951-04:00  INFO 20132 --- [ms-promocion] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-07-03T20:15:54.187-04:00  INFO 20132 --- [ms-promocion] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-03T20:15:54.234-04:00  WARN 20132 --- [ms-promocion] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-07-03T20:15:54.246-04:00  INFO 20132 --- [ms-promocion] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-03T20:15:54.940-04:00  INFO 20132 --- [ms-promocion] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-03T20:15:54.967-04:00  INFO 20132 --- [ms-promocion] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-03T20:15:55.318-04:00  WARN 20132 --- [ms-promocion] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-03T20:15:56.745-04:00  INFO 20132 --- [ms-promocion] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-07-03T20:15:57.787-04:00  INFO 20132 --- [ms-promocion] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-07-03T20:15:57.805-04:00  INFO 20132 --- [ms-promocion] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-07-03T20:15:57.835-04:00  WARN 20132 --- [ms-promocion] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-07-03T20:15:57.873-04:00  INFO 20132 --- [ms-promocion] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-07-03T20:15:57.894-04:00  INFO 20132 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-07-03T20:15:57.898-04:00  INFO 20132 --- [ms-promocion] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-07-03T20:15:57.906-04:00  INFO 20132 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-07-03T20:15:57.907-04:00  INFO 20132 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-07-03T20:15:57.907-04:00  INFO 20132 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-07-03T20:15:57.907-04:00  INFO 20132 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-07-03T20:15:57.907-04:00  INFO 20132 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-07-03T20:15:57.908-04:00  INFO 20132 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-07-03T20:15:57.908-04:00  INFO 20132 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-07-03T20:15:58.170-04:00  INFO 20132 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-07-03T20:15:58.172-04:00  INFO 20132 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-07-03T20:15:58.174-04:00  INFO 20132 --- [ms-promocion] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-07-03T20:15:58.176-04:00  INFO 20132 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1783124158176 with initial instances count: 8
+2026-07-03T20:15:58.179-04:00  INFO 20132 --- [ms-promocion] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MS-PROMOCION with eureka with status UP
+2026-07-03T20:15:58.181-04:00  INFO 20132 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1783124158181, current=UP, previous=STARTING]
+2026-07-03T20:15:58.182-04:00  INFO 20132 --- [ms-promocion] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-PROMOCION/localhost:ms-promocion:8090: registering service...
+2026-07-03T20:15:58.187-04:00  INFO 20132 --- [ms-promocion] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application MS-PROMOCION with eureka with status DOWN
+2026-07-03T20:15:58.187-04:00  INFO 20132 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1783124158187, current=DOWN, previous=UP]
+2026-07-03T20:15:58.188-04:00  WARN 20132 --- [ms-promocion] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-07-03T20:15:58.190-04:00  INFO 20132 --- [ms-promocion] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-03T20:15:58.193-04:00  INFO 20132 --- [ms-promocion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-07-03T20:15:58.202-04:00  INFO 20132 --- [ms-promocion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-07-03T20:15:58.202-04:00  INFO 20132 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2026-07-03T20:15:58.210-04:00  INFO 20132 --- [ms-promocion] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-PROMOCION/localhost:ms-promocion:8090 - registration status: 204
+2026-07-03T20:15:58.211-04:00  INFO 20132 --- [ms-promocion] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-PROMOCION/localhost:ms-promocion:8090: registering service...
+2026-07-03T20:15:58.214-04:00  INFO 20132 --- [ms-promocion] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-PROMOCION/localhost:ms-promocion:8090 - registration status: 204
+2026-07-03T20:15:58.214-04:00  INFO 20132 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2026-07-03T20:15:58.218-04:00  INFO 20132 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-PROMOCION/localhost:ms-promocion:8090 - deregister  status: 200
+2026-07-03T20:15:58.219-04:00  INFO 20132 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2026-07-03T20:15:58.229-04:00  INFO 20132 --- [ms-promocion] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-07-03T20:15:58.244-04:00 ERROR 20132 --- [ms-promocion] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8090 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8090 or configure this application to listen on another port.
+
+2026-07-03T20:17:41.307-04:00  INFO 11572 --- [ms-promocion] [main] c.R.ms_promocion.MsPromocionApplication  : Starting MsPromocionApplication using Java 21.0.9 with PID 11572 (C:\Users\va-alumno\Desktop\Evaluacion-Semestral\com.ReservaPro\ms-promocion\target\classes started by VA-Alumno in C:\Users\va-alumno\Desktop\Evaluacion-Semestral)
+2026-07-03T20:17:41.310-04:00  INFO 11572 --- [ms-promocion] [main] c.R.ms_promocion.MsPromocionApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-07-03T20:17:42.053-04:00  INFO 11572 --- [ms-promocion] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-03T20:17:42.182-04:00  INFO 11572 --- [ms-promocion] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 120 ms. Found 1 JPA repository interface.
+2026-07-03T20:17:42.402-04:00  INFO 11572 --- [ms-promocion] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=b0049b99-73e7-38d6-8414-1bd7edefb9f9
+2026-07-03T20:17:42.725-04:00  INFO 11572 --- [ms-promocion] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8095 (http)
+2026-07-03T20:17:42.737-04:00  INFO 11572 --- [ms-promocion] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-03T20:17:42.739-04:00  INFO 11572 --- [ms-promocion] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2026-07-03T20:17:42.845-04:00  INFO 11572 --- [ms-promocion] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-07-03T20:17:42.846-04:00  INFO 11572 --- [ms-promocion] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1495 ms
+2026-07-03T20:17:43.070-04:00  INFO 11572 --- [ms-promocion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-07-03T20:17:43.348-04:00  INFO 11572 --- [ms-promocion] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6cc8da1c
+2026-07-03T20:17:43.350-04:00  INFO 11572 --- [ms-promocion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-07-03T20:17:43.394-04:00  INFO 11572 --- [ms-promocion] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/ms_promocion (MySQL 8.4)
+2026-07-03T20:17:43.406-04:00  WARN 11572 --- [ms-promocion] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: MySQL 8.4 is newer than this version of Flyway and support has not been tested. The latest supported version of MySQL is 8.1.
+2026-07-03T20:17:43.444-04:00  INFO 11572 --- [ms-promocion] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.028s)
+2026-07-03T20:17:43.460-04:00  INFO 11572 --- [ms-promocion] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `ms_promocion`: 2
+2026-07-03T20:17:43.463-04:00  INFO 11572 --- [ms-promocion] [main] o.f.core.internal.command.DbMigrate      : Schema `ms_promocion` is up to date. No migration necessary.
+2026-07-03T20:17:43.541-04:00  INFO 11572 --- [ms-promocion] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-07-03T20:17:43.597-04:00  INFO 11572 --- [ms-promocion] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.2.Final
+2026-07-03T20:17:43.634-04:00  INFO 11572 --- [ms-promocion] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-07-03T20:17:43.891-04:00  INFO 11572 --- [ms-promocion] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-03T20:17:43.945-04:00  WARN 11572 --- [ms-promocion] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-07-03T20:17:43.958-04:00  INFO 11572 --- [ms-promocion] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-03T20:17:44.633-04:00  INFO 11572 --- [ms-promocion] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-03T20:17:44.661-04:00  INFO 11572 --- [ms-promocion] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-03T20:17:45.009-04:00  WARN 11572 --- [ms-promocion] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-03T20:17:46.428-04:00  INFO 11572 --- [ms-promocion] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-07-03T20:17:47.469-04:00  INFO 11572 --- [ms-promocion] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-07-03T20:17:47.489-04:00  INFO 11572 --- [ms-promocion] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-07-03T20:17:47.522-04:00  WARN 11572 --- [ms-promocion] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-07-03T20:17:47.561-04:00  INFO 11572 --- [ms-promocion] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-07-03T20:17:47.583-04:00  INFO 11572 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-07-03T20:17:47.587-04:00  INFO 11572 --- [ms-promocion] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-07-03T20:17:47.595-04:00  INFO 11572 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-07-03T20:17:47.595-04:00  INFO 11572 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-07-03T20:17:47.596-04:00  INFO 11572 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-07-03T20:17:47.596-04:00  INFO 11572 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-07-03T20:17:47.596-04:00  INFO 11572 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-07-03T20:17:47.596-04:00  INFO 11572 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-07-03T20:17:47.596-04:00  INFO 11572 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-07-03T20:17:47.872-04:00  INFO 11572 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-07-03T20:17:47.875-04:00  INFO 11572 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-07-03T20:17:47.877-04:00  INFO 11572 --- [ms-promocion] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-07-03T20:17:47.879-04:00  INFO 11572 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1783124267878 with initial instances count: 8
+2026-07-03T20:17:47.883-04:00  INFO 11572 --- [ms-promocion] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MS-PROMOCION with eureka with status UP
+2026-07-03T20:17:47.883-04:00  INFO 11572 --- [ms-promocion] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1783124267883, current=UP, previous=STARTING]
+2026-07-03T20:17:47.885-04:00  INFO 11572 --- [ms-promocion] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-PROMOCION/localhost:ms-promocion:8095: registering service...
+2026-07-03T20:17:47.911-04:00  INFO 11572 --- [ms-promocion] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8095 (http) with context path '/'
+2026-07-03T20:17:47.912-04:00  INFO 11572 --- [ms-promocion] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8095
+2026-07-03T20:17:47.912-04:00  INFO 11572 --- [ms-promocion] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-PROMOCION/localhost:ms-promocion:8095 - registration status: 204
+2026-07-03T20:17:48.929-04:00  INFO 11572 --- [ms-promocion] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-07-03T20:17:48.937-04:00  INFO 11572 --- [ms-promocion] [main] c.R.ms_promocion.MsPromocionApplication  : Started MsPromocionApplication in 9.137 seconds (process running for 9.866)

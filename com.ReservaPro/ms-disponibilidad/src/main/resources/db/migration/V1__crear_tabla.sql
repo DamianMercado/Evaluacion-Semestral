@@ -9,7 +9,8 @@ CREATE TABLE `disponibilidades` (
                                     `fecha_creacion` DATETIME NOT NULL,
                                     `fecha_actualizacion` DATETIME NOT NULL,
                                     `observacion` VARCHAR(200) DEFAULT NULL,
-                                    `activo` TINYINT(1) NOT NULL
+                                    `activo` TINYINT(1) NOT NULL,
+                                    `id_servicio` BIGINT NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 ALTER TABLE `disponibilidades`

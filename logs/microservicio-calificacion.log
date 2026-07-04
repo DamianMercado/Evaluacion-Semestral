@@ -1,0 +1,215 @@
+2026-07-03T19:32:56.212-04:00  INFO 16560 --- [ms-calificacion] [main] c.R.m.MsCalificacionApplication          : Starting MsCalificacionApplication using Java 21.0.9 with PID 16560 (C:\Users\va-alumno\Desktop\Evaluacion-Semestral\com.ReservaPro\ms-calificacion\target\classes started by VA-Alumno in C:\Users\va-alumno\Desktop\Evaluacion-Semestral)
+2026-07-03T19:32:56.214-04:00  INFO 16560 --- [ms-calificacion] [main] c.R.m.MsCalificacionApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-07-03T19:32:57.001-04:00  INFO 16560 --- [ms-calificacion] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-03T19:32:57.138-04:00  INFO 16560 --- [ms-calificacion] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 129 ms. Found 1 JPA repository interface.
+2026-07-03T19:32:57.356-04:00  INFO 16560 --- [ms-calificacion] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c36ee31d-ecc2-380f-b3c7-c95b0089972c
+2026-07-03T19:32:57.694-04:00  INFO 16560 --- [ms-calificacion] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8088 (http)
+2026-07-03T19:32:57.707-04:00  INFO 16560 --- [ms-calificacion] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-03T19:32:57.707-04:00  INFO 16560 --- [ms-calificacion] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2026-07-03T19:32:57.798-04:00  INFO 16560 --- [ms-calificacion] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-07-03T19:32:57.799-04:00  INFO 16560 --- [ms-calificacion] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1546 ms
+2026-07-03T19:32:58.033-04:00  INFO 16560 --- [ms-calificacion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-07-03T19:32:58.369-04:00  INFO 16560 --- [ms-calificacion] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2c1ea7be
+2026-07-03T19:32:58.371-04:00  INFO 16560 --- [ms-calificacion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-07-03T19:32:58.412-04:00  INFO 16560 --- [ms-calificacion] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/ms_calificacion (MySQL 8.4)
+2026-07-03T19:32:58.426-04:00  WARN 16560 --- [ms-calificacion] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: MySQL 8.4 is newer than this version of Flyway and support has not been tested. The latest supported version of MySQL is 8.1.
+2026-07-03T19:32:58.450-04:00  INFO 16560 --- [ms-calificacion] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `ms_calificacion`.`flyway_schema_history` does not exist yet
+2026-07-03T19:32:58.453-04:00  INFO 16560 --- [ms-calificacion] [main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.014s)
+2026-07-03T19:32:58.454-04:00  WARN 16560 --- [ms-calificacion] [main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2026-07-03T19:32:58.474-04:00  INFO 16560 --- [ms-calificacion] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `ms_calificacion`.`flyway_schema_history` ...
+2026-07-03T19:32:58.562-04:00  INFO 16560 --- [ms-calificacion] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `ms_calificacion`: << Empty Schema >>
+2026-07-03T19:32:58.565-04:00  INFO 16560 --- [ms-calificacion] [main] o.f.core.internal.command.DbMigrate      : Schema `ms_calificacion` is up to date. No migration necessary.
+2026-07-03T19:32:58.658-04:00  INFO 16560 --- [ms-calificacion] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-07-03T19:32:58.736-04:00  INFO 16560 --- [ms-calificacion] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2026-07-03T19:32:58.777-04:00  INFO 16560 --- [ms-calificacion] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-07-03T19:32:59.085-04:00  INFO 16560 --- [ms-calificacion] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-03T19:32:59.144-04:00  WARN 16560 --- [ms-calificacion] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-07-03T19:32:59.158-04:00  INFO 16560 --- [ms-calificacion] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-03T19:32:59.925-04:00  INFO 16560 --- [ms-calificacion] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-03T19:32:59.990-04:00  INFO 16560 --- [ms-calificacion] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-03T19:33:01.290-04:00  INFO 16560 --- [ms-calificacion] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-07-03T19:33:01.417-04:00  WARN 16560 --- [ms-calificacion] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-03T19:33:02.833-04:00  INFO 16560 --- [ms-calificacion] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-07-03T19:33:02.849-04:00  INFO 16560 --- [ms-calificacion] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-07-03T19:33:02.884-04:00  WARN 16560 --- [ms-calificacion] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'compositeCompatibilityVerifier' defined in class path resource [org/springframework/cloud/configuration/CompatibilityVerifierAutoConfiguration.class]: Failed to instantiate [org.springframework.cloud.configuration.CompositeCompatibilityVerifier]: Factory method 'compositeCompatibilityVerifier' threw exception with message: Spring Cloud/ Spring Boot version compatibility checks have failed: [[VerificationResult@14b3976 description = 'Spring Boot [3.5.6] is not compatible with this Spring Cloud release train', action = 'Change Spring Boot version to one of the following versions [3.4.x] .
+You can find the latest Spring Boot versions here [https://spring.io/projects/spring-boot#learn]. 
+If you want to learn more about the Spring Cloud Release train compatibility, you can visit this page [https://spring.io/projects/spring-cloud#overview] and check the [Release Trains] section.
+If you want to disable this check, just set the property [spring.cloud.compatibility-verifier.enabled=false]']]
+2026-07-03T19:33:02.887-04:00  INFO 16560 --- [ms-calificacion] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-03T19:33:02.889-04:00  INFO 16560 --- [ms-calificacion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-07-03T19:33:02.896-04:00  INFO 16560 --- [ms-calificacion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-07-03T19:33:02.899-04:00  INFO 16560 --- [ms-calificacion] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-07-03T19:33:02.910-04:00  INFO 16560 --- [ms-calificacion] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-07-03T19:33:02.926-04:00 ERROR 16560 --- [ms-calificacion] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Your project setup is incompatible with our requirements due to following reasons:
+
+- Spring Boot [3.5.6] is not compatible with this Spring Cloud release train
+
+
+Action:
+
+Consider applying the following actions:
+
+- Change Spring Boot version to one of the following versions [3.4.x] .
+You can find the latest Spring Boot versions here [https://spring.io/projects/spring-boot#learn]. 
+If you want to learn more about the Spring Cloud Release train compatibility, you can visit this page [https://spring.io/projects/spring-cloud#overview] and check the [Release Trains] section.
+If you want to disable this check, just set the property [spring.cloud.compatibility-verifier.enabled=false]
+
+
+2026-07-03T19:35:07.470-04:00  INFO 18952 --- [ms-calificacion] [main] c.R.m.MsCalificacionApplication          : Starting MsCalificacionApplication using Java 21.0.9 with PID 18952 (C:\Users\va-alumno\Desktop\Evaluacion-Semestral\com.ReservaPro\ms-calificacion\target\classes started by VA-Alumno in C:\Users\va-alumno\Desktop\Evaluacion-Semestral)
+2026-07-03T19:35:07.472-04:00  INFO 18952 --- [ms-calificacion] [main] c.R.m.MsCalificacionApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-07-03T19:35:08.241-04:00  INFO 18952 --- [ms-calificacion] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-03T19:35:08.375-04:00  INFO 18952 --- [ms-calificacion] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 124 ms. Found 1 JPA repository interface.
+2026-07-03T19:35:08.627-04:00  INFO 18952 --- [ms-calificacion] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c36ee31d-ecc2-380f-b3c7-c95b0089972c
+2026-07-03T19:35:08.949-04:00  INFO 18952 --- [ms-calificacion] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8088 (http)
+2026-07-03T19:35:08.977-04:00  INFO 18952 --- [ms-calificacion] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-03T19:35:08.977-04:00  INFO 18952 --- [ms-calificacion] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2026-07-03T19:35:09.066-04:00  INFO 18952 --- [ms-calificacion] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-07-03T19:35:09.067-04:00  INFO 18952 --- [ms-calificacion] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1553 ms
+2026-07-03T19:35:09.298-04:00  INFO 18952 --- [ms-calificacion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-07-03T19:35:09.604-04:00  INFO 18952 --- [ms-calificacion] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@35becbd4
+2026-07-03T19:35:09.606-04:00  INFO 18952 --- [ms-calificacion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-07-03T19:35:09.648-04:00  INFO 18952 --- [ms-calificacion] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/ms_calificacion (MySQL 8.4)
+2026-07-03T19:35:09.658-04:00  WARN 18952 --- [ms-calificacion] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: MySQL 8.4 is newer than this version of Flyway and support has not been tested. The latest supported version of MySQL is 8.1.
+2026-07-03T19:35:09.688-04:00  INFO 18952 --- [ms-calificacion] [main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.019s)
+2026-07-03T19:35:09.688-04:00  WARN 18952 --- [ms-calificacion] [main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2026-07-03T19:35:09.702-04:00  INFO 18952 --- [ms-calificacion] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `ms_calificacion`: << Empty Schema >>
+2026-07-03T19:35:09.707-04:00  INFO 18952 --- [ms-calificacion] [main] o.f.core.internal.command.DbMigrate      : Schema `ms_calificacion` is up to date. No migration necessary.
+2026-07-03T19:35:09.790-04:00  INFO 18952 --- [ms-calificacion] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-07-03T19:35:09.847-04:00  INFO 18952 --- [ms-calificacion] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2026-07-03T19:35:09.883-04:00  INFO 18952 --- [ms-calificacion] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-07-03T19:35:10.150-04:00  INFO 18952 --- [ms-calificacion] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-03T19:35:10.199-04:00  WARN 18952 --- [ms-calificacion] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-07-03T19:35:10.211-04:00  INFO 18952 --- [ms-calificacion] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-03T19:35:10.918-04:00  INFO 18952 --- [ms-calificacion] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-03T19:35:10.976-04:00  INFO 18952 --- [ms-calificacion] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-03T19:35:12.241-04:00  INFO 18952 --- [ms-calificacion] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-07-03T19:35:12.372-04:00  WARN 18952 --- [ms-calificacion] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-03T19:35:13.797-04:00  INFO 18952 --- [ms-calificacion] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-07-03T19:35:13.813-04:00  INFO 18952 --- [ms-calificacion] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-07-03T19:35:13.839-04:00  WARN 18952 --- [ms-calificacion] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'compositeCompatibilityVerifier' defined in class path resource [org/springframework/cloud/configuration/CompatibilityVerifierAutoConfiguration.class]: Failed to instantiate [org.springframework.cloud.configuration.CompositeCompatibilityVerifier]: Factory method 'compositeCompatibilityVerifier' threw exception with message: Spring Cloud/ Spring Boot version compatibility checks have failed: [[VerificationResult@47fe4c3e description = 'Spring Boot [3.5.6] is not compatible with this Spring Cloud release train', action = 'Change Spring Boot version to one of the following versions [3.4.x] .
+You can find the latest Spring Boot versions here [https://spring.io/projects/spring-boot#learn]. 
+If you want to learn more about the Spring Cloud Release train compatibility, you can visit this page [https://spring.io/projects/spring-cloud#overview] and check the [Release Trains] section.
+If you want to disable this check, just set the property [spring.cloud.compatibility-verifier.enabled=false]']]
+2026-07-03T19:35:13.841-04:00  INFO 18952 --- [ms-calificacion] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-03T19:35:13.843-04:00  INFO 18952 --- [ms-calificacion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-07-03T19:35:13.851-04:00  INFO 18952 --- [ms-calificacion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-07-03T19:35:13.853-04:00  INFO 18952 --- [ms-calificacion] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-07-03T19:35:13.864-04:00  INFO 18952 --- [ms-calificacion] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-07-03T19:35:13.879-04:00 ERROR 18952 --- [ms-calificacion] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Your project setup is incompatible with our requirements due to following reasons:
+
+- Spring Boot [3.5.6] is not compatible with this Spring Cloud release train
+
+
+Action:
+
+Consider applying the following actions:
+
+- Change Spring Boot version to one of the following versions [3.4.x] .
+You can find the latest Spring Boot versions here [https://spring.io/projects/spring-boot#learn]. 
+If you want to learn more about the Spring Cloud Release train compatibility, you can visit this page [https://spring.io/projects/spring-cloud#overview] and check the [Release Trains] section.
+If you want to disable this check, just set the property [spring.cloud.compatibility-verifier.enabled=false]
+
+
+2026-07-03T19:36:34.905-04:00  INFO 11140 --- [ms-calificacion] [main] c.R.m.MsCalificacionApplication          : Starting MsCalificacionApplication using Java 21.0.9 with PID 11140 (C:\Users\va-alumno\Desktop\Evaluacion-Semestral\com.ReservaPro\ms-calificacion\target\classes started by VA-Alumno in C:\Users\va-alumno\Desktop\Evaluacion-Semestral)
+2026-07-03T19:36:34.908-04:00  INFO 11140 --- [ms-calificacion] [main] c.R.m.MsCalificacionApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-07-03T19:36:35.709-04:00  INFO 11140 --- [ms-calificacion] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-03T19:36:35.846-04:00  INFO 11140 --- [ms-calificacion] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 128 ms. Found 1 JPA repository interface.
+2026-07-03T19:36:36.064-04:00  INFO 11140 --- [ms-calificacion] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=d9573f94-d142-3f09-bf14-e1ccf9c8178d
+2026-07-03T19:36:36.411-04:00  INFO 11140 --- [ms-calificacion] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8088 (http)
+2026-07-03T19:36:36.425-04:00  INFO 11140 --- [ms-calificacion] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-03T19:36:36.425-04:00  INFO 11140 --- [ms-calificacion] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2026-07-03T19:36:36.529-04:00  INFO 11140 --- [ms-calificacion] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-07-03T19:36:36.530-04:00  INFO 11140 --- [ms-calificacion] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1581 ms
+2026-07-03T19:36:36.755-04:00  INFO 11140 --- [ms-calificacion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-07-03T19:36:37.035-04:00  INFO 11140 --- [ms-calificacion] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7f4f1536
+2026-07-03T19:36:37.037-04:00  INFO 11140 --- [ms-calificacion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-07-03T19:36:37.076-04:00  INFO 11140 --- [ms-calificacion] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/ms_calificacion (MySQL 8.4)
+2026-07-03T19:36:37.087-04:00  WARN 11140 --- [ms-calificacion] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: MySQL 8.4 is newer than this version of Flyway and support has not been tested. The latest supported version of MySQL is 8.1.
+2026-07-03T19:36:37.111-04:00  INFO 11140 --- [ms-calificacion] [main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.015s)
+2026-07-03T19:36:37.112-04:00  WARN 11140 --- [ms-calificacion] [main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2026-07-03T19:36:37.128-04:00  INFO 11140 --- [ms-calificacion] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `ms_calificacion`: << Empty Schema >>
+2026-07-03T19:36:37.131-04:00  INFO 11140 --- [ms-calificacion] [main] o.f.core.internal.command.DbMigrate      : Schema `ms_calificacion` is up to date. No migration necessary.
+2026-07-03T19:36:37.218-04:00  INFO 11140 --- [ms-calificacion] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-07-03T19:36:37.308-04:00  INFO 11140 --- [ms-calificacion] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.2.Final
+2026-07-03T19:36:37.344-04:00  INFO 11140 --- [ms-calificacion] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-07-03T19:36:37.637-04:00  INFO 11140 --- [ms-calificacion] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-03T19:36:37.697-04:00  WARN 11140 --- [ms-calificacion] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-07-03T19:36:37.711-04:00  INFO 11140 --- [ms-calificacion] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-03T19:36:38.504-04:00  INFO 11140 --- [ms-calificacion] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-03T19:36:38.555-04:00  INFO 11140 --- [ms-calificacion] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-03T19:36:39.871-04:00  INFO 11140 --- [ms-calificacion] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-07-03T19:36:40.019-04:00  WARN 11140 --- [ms-calificacion] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-03T19:36:41.460-04:00  INFO 11140 --- [ms-calificacion] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-07-03T19:36:41.477-04:00  INFO 11140 --- [ms-calificacion] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-07-03T19:36:41.505-04:00  WARN 11140 --- [ms-calificacion] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-07-03T19:36:41.536-04:00  INFO 11140 --- [ms-calificacion] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-07-03T19:36:41.558-04:00  INFO 11140 --- [ms-calificacion] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-07-03T19:36:41.561-04:00  INFO 11140 --- [ms-calificacion] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-07-03T19:36:41.570-04:00  INFO 11140 --- [ms-calificacion] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-07-03T19:36:41.570-04:00  INFO 11140 --- [ms-calificacion] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-07-03T19:36:41.570-04:00  INFO 11140 --- [ms-calificacion] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-07-03T19:36:41.570-04:00  INFO 11140 --- [ms-calificacion] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-07-03T19:36:41.570-04:00  INFO 11140 --- [ms-calificacion] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-07-03T19:36:41.570-04:00  INFO 11140 --- [ms-calificacion] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-07-03T19:36:41.570-04:00  INFO 11140 --- [ms-calificacion] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-07-03T19:36:41.867-04:00  INFO 11140 --- [ms-calificacion] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-07-03T19:36:41.870-04:00  INFO 11140 --- [ms-calificacion] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-07-03T19:36:41.872-04:00  INFO 11140 --- [ms-calificacion] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-07-03T19:36:41.873-04:00  INFO 11140 --- [ms-calificacion] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1783121801873 with initial instances count: 1
+2026-07-03T19:36:41.876-04:00  INFO 11140 --- [ms-calificacion] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MS-CALIFICACION with eureka with status UP
+2026-07-03T19:36:41.877-04:00  INFO 11140 --- [ms-calificacion] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1783121801877, current=UP, previous=STARTING]
+2026-07-03T19:36:41.878-04:00  INFO 11140 --- [ms-calificacion] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CALIFICACION/localhost:ms-calificacion:8088: registering service...
+2026-07-03T19:36:41.905-04:00  INFO 11140 --- [ms-calificacion] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8088 (http) with context path '/'
+2026-07-03T19:36:41.906-04:00  INFO 11140 --- [ms-calificacion] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8088
+2026-07-03T19:36:41.908-04:00  INFO 11140 --- [ms-calificacion] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CALIFICACION/localhost:ms-calificacion:8088 - registration status: 204
+2026-07-03T19:36:42.922-04:00  INFO 11140 --- [ms-calificacion] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-07-03T19:36:42.930-04:00  INFO 11140 --- [ms-calificacion] [main] c.R.m.MsCalificacionApplication          : Started MsCalificacionApplication in 9.551 seconds (process running for 10.347)
+2026-07-03T19:41:41.583-04:00  INFO 11140 --- [ms-calificacion] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-07-03T19:46:41.598-04:00  INFO 11140 --- [ms-calificacion] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-07-03T19:51:41.606-04:00  INFO 11140 --- [ms-calificacion] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-07-03T19:56:41.616-04:00  INFO 11140 --- [ms-calificacion] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-07-03T20:01:41.616-04:00  INFO 11140 --- [ms-calificacion] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-07-03T20:06:41.620-04:00  INFO 11140 --- [ms-calificacion] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-07-03T20:11:41.620-04:00  INFO 11140 --- [ms-calificacion] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-07-03T20:16:41.631-04:00  INFO 11140 --- [ms-calificacion] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration

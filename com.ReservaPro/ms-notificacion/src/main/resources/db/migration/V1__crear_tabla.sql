@@ -5,7 +5,8 @@ CREATE TABLE `notificaciones` (
                                   `id_cancelacion` BIGINT(20) DEFAULT NULL,
                                   `mensaje` VARCHAR(200) NOT NULL,
                                   `tipo` VARCHAR(20) NOT NULL,
-                                  `leida` TINYINT(1) NOT NULL
+                                  `leida` TINYINT(1) NOT NULL,
+                                  `fecha_envio` DATE NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 

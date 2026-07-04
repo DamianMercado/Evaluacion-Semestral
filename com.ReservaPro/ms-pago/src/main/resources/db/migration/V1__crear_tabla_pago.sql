@@ -1,8 +1,8 @@
 CREATE TABLE IF NOT EXISTS pago (
     id_pago BIGINT AUTO_INCREMENT PRIMARY KEY,
     id_reserva BIGINT NOT NULL,
-    monto_original DECIMAL(10,2) NOT NULL,
-    monto DECIMAL(10,2) NOT NULL,
+    monto_original DOUBLE(10,2) NOT NULL,
+    monto DOUBLE(10,2) NOT NULL,
     metodo VARCHAR(100) NOT NULL,
     banco VARCHAR(100) NOT NULL,
     estado VARCHAR(30) NOT NULL DEFAULT 'PENDIENTE',

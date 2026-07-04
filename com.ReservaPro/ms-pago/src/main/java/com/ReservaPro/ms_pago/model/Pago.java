@@ -27,10 +27,10 @@ public class Pago {
     @Column(name = "id_reserva", nullable = false)
     private Long idReserva;
 
-    @Column(name = "monto_original", nullable = false)
+    @Column(name = "monto_original", nullable = false, columnDefinition = "DECIMAL")
     private Double montoOriginal;
 
-    @Column(name = "monto", nullable = false)
+    @Column(name = "monto", nullable = false, columnDefinition = "DECIMAL")
     private Double montoPago;
 
     @Column(name = "metodo", nullable = false, length = 100)

@@ -1,0 +1,73 @@
+2026-07-03T19:37:09.794-04:00  INFO 11608 --- [ms-cancelacion] [main] c.R.m.MsCancelacionApplication           : Starting MsCancelacionApplication using Java 21.0.9 with PID 11608 (C:\Users\va-alumno\Desktop\Evaluacion-Semestral\com.ReservaPro\ms-cancelacion\target\classes started by VA-Alumno in C:\Users\va-alumno\Desktop\Evaluacion-Semestral)
+2026-07-03T19:37:09.797-04:00  INFO 11608 --- [ms-cancelacion] [main] c.R.m.MsCancelacionApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-07-03T19:37:10.579-04:00  INFO 11608 --- [ms-cancelacion] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-03T19:37:10.717-04:00  INFO 11608 --- [ms-cancelacion] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 121 ms. Found 1 JPA repository interface.
+2026-07-03T19:37:10.934-04:00  INFO 11608 --- [ms-cancelacion] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=579e59e6-51cc-3d90-9743-160bf4b6a0d5
+2026-07-03T19:37:11.278-04:00  INFO 11608 --- [ms-cancelacion] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8089 (http)
+2026-07-03T19:37:11.291-04:00  INFO 11608 --- [ms-cancelacion] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-03T19:37:11.292-04:00  INFO 11608 --- [ms-cancelacion] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2026-07-03T19:37:11.385-04:00  INFO 11608 --- [ms-cancelacion] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-07-03T19:37:11.385-04:00  INFO 11608 --- [ms-cancelacion] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1543 ms
+2026-07-03T19:37:11.602-04:00  INFO 11608 --- [ms-cancelacion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-07-03T19:37:11.878-04:00  INFO 11608 --- [ms-cancelacion] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@11cadb32
+2026-07-03T19:37:11.880-04:00  INFO 11608 --- [ms-cancelacion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-07-03T19:37:11.922-04:00  INFO 11608 --- [ms-cancelacion] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/ms_cancelacion (MySQL 8.4)
+2026-07-03T19:37:11.935-04:00  WARN 11608 --- [ms-cancelacion] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: MySQL 8.4 is newer than this version of Flyway and support has not been tested. The latest supported version of MySQL is 8.1.
+2026-07-03T19:37:11.960-04:00  INFO 11608 --- [ms-cancelacion] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `ms_cancelacion`.`flyway_schema_history` does not exist yet
+2026-07-03T19:37:11.963-04:00  INFO 11608 --- [ms-cancelacion] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.019s)
+2026-07-03T19:37:11.983-04:00  INFO 11608 --- [ms-cancelacion] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `ms_cancelacion`.`flyway_schema_history` ...
+2026-07-03T19:37:12.061-04:00  INFO 11608 --- [ms-cancelacion] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `ms_cancelacion`: << Empty Schema >>
+2026-07-03T19:37:12.071-04:00  INFO 11608 --- [ms-cancelacion] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `ms_cancelacion` to version "1 - crear tabla"
+2026-07-03T19:37:12.228-04:00  INFO 11608 --- [ms-cancelacion] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `ms_cancelacion` to version "2 - insert cancelaciones"
+2026-07-03T19:37:12.251-04:00  INFO 11608 --- [ms-cancelacion] [main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema `ms_cancelacion`, now at version v2 (execution time 00:00.131s)
+2026-07-03T19:37:12.326-04:00  INFO 11608 --- [ms-cancelacion] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-07-03T19:37:12.377-04:00  INFO 11608 --- [ms-cancelacion] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.2.Final
+2026-07-03T19:37:12.410-04:00  INFO 11608 --- [ms-cancelacion] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-07-03T19:37:12.641-04:00  INFO 11608 --- [ms-cancelacion] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-03T19:37:12.687-04:00  WARN 11608 --- [ms-cancelacion] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-07-03T19:37:12.703-04:00  INFO 11608 --- [ms-cancelacion] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-03T19:37:13.409-04:00  INFO 11608 --- [ms-cancelacion] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-03T19:37:13.436-04:00  INFO 11608 --- [ms-cancelacion] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-03T19:37:13.787-04:00  WARN 11608 --- [ms-cancelacion] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-03T19:37:14.824-04:00  INFO 11608 --- [ms-cancelacion] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-07-03T19:37:14.881-04:00  INFO 11608 --- [ms-cancelacion] [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'ms-reserva' URL not provided. Will try picking an instance via load-balancing.
+2026-07-03T19:37:16.335-04:00  INFO 11608 --- [ms-cancelacion] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-07-03T19:37:16.356-04:00  INFO 11608 --- [ms-cancelacion] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-07-03T19:37:16.375-04:00  WARN 11608 --- [ms-cancelacion] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-07-03T19:37:16.396-04:00  INFO 11608 --- [ms-cancelacion] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-07-03T19:37:16.415-04:00  INFO 11608 --- [ms-cancelacion] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-07-03T19:37:16.418-04:00  INFO 11608 --- [ms-cancelacion] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-07-03T19:37:16.426-04:00  INFO 11608 --- [ms-cancelacion] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-07-03T19:37:16.427-04:00  INFO 11608 --- [ms-cancelacion] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-07-03T19:37:16.427-04:00  INFO 11608 --- [ms-cancelacion] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-07-03T19:37:16.427-04:00  INFO 11608 --- [ms-cancelacion] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-07-03T19:37:16.427-04:00  INFO 11608 --- [ms-cancelacion] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-07-03T19:37:16.427-04:00  INFO 11608 --- [ms-cancelacion] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-07-03T19:37:16.428-04:00  INFO 11608 --- [ms-cancelacion] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-07-03T19:37:16.705-04:00  INFO 11608 --- [ms-cancelacion] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-07-03T19:37:16.707-04:00  INFO 11608 --- [ms-cancelacion] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-07-03T19:37:16.709-04:00  INFO 11608 --- [ms-cancelacion] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-07-03T19:37:16.711-04:00  INFO 11608 --- [ms-cancelacion] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1783121836710 with initial instances count: 2
+2026-07-03T19:37:16.714-04:00  INFO 11608 --- [ms-cancelacion] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MS-CANCELACION with eureka with status UP
+2026-07-03T19:37:16.715-04:00  INFO 11608 --- [ms-cancelacion] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1783121836715, current=UP, previous=STARTING]
+2026-07-03T19:37:16.716-04:00  INFO 11608 --- [ms-cancelacion] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CANCELACION/localhost:ms-cancelacion:8089: registering service...
+2026-07-03T19:37:16.739-04:00  INFO 11608 --- [ms-cancelacion] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8089 (http) with context path '/'
+2026-07-03T19:37:16.740-04:00  INFO 11608 --- [ms-cancelacion] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8089
+2026-07-03T19:37:16.743-04:00  INFO 11608 --- [ms-cancelacion] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CANCELACION/localhost:ms-cancelacion:8089 - registration status: 204
+2026-07-03T19:37:17.752-04:00  INFO 11608 --- [ms-cancelacion] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-07-03T19:37:17.760-04:00  INFO 11608 --- [ms-cancelacion] [main] c.R.m.MsCancelacionApplication           : Started MsCancelacionApplication in 9.474 seconds (process running for 10.29)
+2026-07-03T19:42:16.430-04:00  INFO 11608 --- [ms-cancelacion] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-07-03T19:47:16.441-04:00  INFO 11608 --- [ms-cancelacion] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-07-03T19:52:16.450-04:00  INFO 11608 --- [ms-cancelacion] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-07-03T19:57:16.448-04:00  INFO 11608 --- [ms-cancelacion] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-07-03T20:02:16.458-04:00  INFO 11608 --- [ms-cancelacion] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-07-03T20:07:16.467-04:00  INFO 11608 --- [ms-cancelacion] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-07-03T20:12:16.469-04:00  INFO 11608 --- [ms-cancelacion] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-07-03T20:17:16.475-04:00  INFO 11608 --- [ms-cancelacion] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration

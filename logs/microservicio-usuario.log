@@ -1,0 +1,64 @@
+2026-07-03T20:19:21.405-04:00  INFO 10900 --- [ms-usuario] [main] c.R.ms_usuario.MsUsuarioApplication      : Starting MsUsuarioApplication using Java 21.0.9 with PID 10900 (C:\Users\va-alumno\Desktop\Evaluacion-Semestral\com.ReservaPro\ms-usuario\target\classes started by VA-Alumno in C:\Users\va-alumno\Desktop\Evaluacion-Semestral)
+2026-07-03T20:19:21.407-04:00  INFO 10900 --- [ms-usuario] [main] c.R.ms_usuario.MsUsuarioApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-07-03T20:19:22.163-04:00  INFO 10900 --- [ms-usuario] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-03T20:19:22.307-04:00  INFO 10900 --- [ms-usuario] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 136 ms. Found 1 JPA repository interface.
+2026-07-03T20:19:22.539-04:00  INFO 10900 --- [ms-usuario] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=d3473399-4995-3a3c-ac98-92cf805ab583
+2026-07-03T20:19:22.879-04:00  INFO 10900 --- [ms-usuario] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8084 (http)
+2026-07-03T20:19:22.891-04:00  INFO 10900 --- [ms-usuario] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-03T20:19:22.892-04:00  INFO 10900 --- [ms-usuario] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2026-07-03T20:19:22.986-04:00  INFO 10900 --- [ms-usuario] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-07-03T20:19:22.986-04:00  INFO 10900 --- [ms-usuario] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1539 ms
+2026-07-03T20:19:23.200-04:00  INFO 10900 --- [ms-usuario] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-07-03T20:19:23.482-04:00  INFO 10900 --- [ms-usuario] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@13dd7887
+2026-07-03T20:19:23.484-04:00  INFO 10900 --- [ms-usuario] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-07-03T20:19:23.523-04:00  INFO 10900 --- [ms-usuario] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/ms_usuario (MySQL 8.4)
+2026-07-03T20:19:23.536-04:00  WARN 10900 --- [ms-usuario] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: MySQL 8.4 is newer than this version of Flyway and support has not been tested. The latest supported version of MySQL is 8.1.
+2026-07-03T20:19:23.562-04:00  INFO 10900 --- [ms-usuario] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `ms_usuario`.`flyway_schema_history` does not exist yet
+2026-07-03T20:19:23.566-04:00  INFO 10900 --- [ms-usuario] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.021s)
+2026-07-03T20:19:23.583-04:00  INFO 10900 --- [ms-usuario] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `ms_usuario`.`flyway_schema_history` ...
+2026-07-03T20:19:23.658-04:00  INFO 10900 --- [ms-usuario] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `ms_usuario`: << Empty Schema >>
+2026-07-03T20:19:23.668-04:00  INFO 10900 --- [ms-usuario] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `ms_usuario` to version "1 - crear tabla usuario"
+2026-07-03T20:19:23.750-04:00  INFO 10900 --- [ms-usuario] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `ms_usuario` to version "2 - insert usuario"
+2026-07-03T20:19:23.775-04:00  INFO 10900 --- [ms-usuario] [main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema `ms_usuario`, now at version v2 (execution time 00:00.054s)
+2026-07-03T20:19:23.850-04:00  INFO 10900 --- [ms-usuario] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-07-03T20:19:23.908-04:00  INFO 10900 --- [ms-usuario] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.2.Final
+2026-07-03T20:19:23.943-04:00  INFO 10900 --- [ms-usuario] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-07-03T20:19:24.191-04:00  INFO 10900 --- [ms-usuario] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-03T20:19:24.238-04:00  WARN 10900 --- [ms-usuario] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-07-03T20:19:24.251-04:00  INFO 10900 --- [ms-usuario] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-03T20:19:24.986-04:00  INFO 10900 --- [ms-usuario] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-03T20:19:25.012-04:00  INFO 10900 --- [ms-usuario] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-03T20:19:25.389-04:00  WARN 10900 --- [ms-usuario] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-03T20:19:26.843-04:00  INFO 10900 --- [ms-usuario] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-07-03T20:19:27.883-04:00  INFO 10900 --- [ms-usuario] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-07-03T20:19:27.898-04:00  INFO 10900 --- [ms-usuario] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-07-03T20:19:27.928-04:00  WARN 10900 --- [ms-usuario] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-07-03T20:19:27.959-04:00  INFO 10900 --- [ms-usuario] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-07-03T20:19:27.979-04:00  INFO 10900 --- [ms-usuario] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-07-03T20:19:27.983-04:00  INFO 10900 --- [ms-usuario] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-07-03T20:19:27.990-04:00  INFO 10900 --- [ms-usuario] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-07-03T20:19:27.991-04:00  INFO 10900 --- [ms-usuario] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-07-03T20:19:27.991-04:00  INFO 10900 --- [ms-usuario] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-07-03T20:19:27.991-04:00  INFO 10900 --- [ms-usuario] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-07-03T20:19:27.991-04:00  INFO 10900 --- [ms-usuario] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-07-03T20:19:27.992-04:00  INFO 10900 --- [ms-usuario] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-07-03T20:19:27.992-04:00  INFO 10900 --- [ms-usuario] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-07-03T20:19:28.262-04:00  INFO 10900 --- [ms-usuario] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-07-03T20:19:28.264-04:00  INFO 10900 --- [ms-usuario] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-07-03T20:19:28.266-04:00  INFO 10900 --- [ms-usuario] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-07-03T20:19:28.269-04:00  INFO 10900 --- [ms-usuario] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1783124368267 with initial instances count: 9
+2026-07-03T20:19:28.271-04:00  INFO 10900 --- [ms-usuario] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MS-USUARIO with eureka with status UP
+2026-07-03T20:19:28.272-04:00  INFO 10900 --- [ms-usuario] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1783124368272, current=UP, previous=STARTING]
+2026-07-03T20:19:28.273-04:00  INFO 10900 --- [ms-usuario] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-USUARIO/localhost:ms-usuario:8084: registering service...
+2026-07-03T20:19:28.297-04:00  INFO 10900 --- [ms-usuario] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8084 (http) with context path '/'
+2026-07-03T20:19:28.299-04:00  INFO 10900 --- [ms-usuario] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8084
+2026-07-03T20:19:28.301-04:00  INFO 10900 --- [ms-usuario] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-USUARIO/localhost:ms-usuario:8084 - registration status: 204
+2026-07-03T20:19:29.316-04:00  INFO 10900 --- [ms-usuario] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-07-03T20:19:29.324-04:00  INFO 10900 --- [ms-usuario] [main] c.R.ms_usuario.MsUsuarioApplication      : Started MsUsuarioApplication in 9.44 seconds (process running for 10.298)

@@ -7,60 +7,62 @@ spring:
 
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
-      routes:
-        - id: ms-usuario
-          uri: lb://ms-usuario
-          predicates:
-            - Path=/api/v1/usuarios/**
+      server:
+        webmvc:
+          discovery:
+            locator:
+              enabled: true
+              lower-case-service-id: true
+          routes:
+            - id: ms-usuario
+              uri: lb://ms-usuario
+              predicates:
+                - Path=/api/v1/usuarios/**
 
-        - id: ms-reserva
-          uri: lb://ms-reserva
-          predicates:
-            - Path=/api/v1/reservas/**
+            - id: ms-reserva
+              uri: lb://ms-reserva
+              predicates:
+                - Path=/api/v1/reservas/**
 
-        - id: ms-pago
-          uri: lb://ms-pago
-          predicates:
-            - Path=/api/v1/pagos/**
+            - id: ms-pago
+              uri: lb://ms-pago
+              predicates:
+                - Path=/api/v1/pagos/**
 
-        - id: ms-calificacion
-          uri: lb://ms-calificacion
-          predicates:
-            - Path=/api/v1/calificaciones/**
+            - id: ms-calificacion
+              uri: lb://ms-calificacion
+              predicates:
+                - Path=/api/v1/calificaciones/**
 
-        - id: ms-cancelacion
-          uri: lb://ms-cancelacion
-          predicates:
-            - Path=/api/v1/cancelaciones/**
+            - id: ms-cancelacion
+              uri: lb://ms-cancelacion
+              predicates:
+                - Path=/api/v1/cancelaciones/**
 
-        - id: ms-promocion
-          uri: lb://ms-promocion
-          predicates:
-            - Path=/api/v1/promociones/**
+            - id: ms-promocion
+              uri: lb://ms-promocion
+              predicates:
+                - Path=/api/v1/promociones/**
 
-        - id: ms-gestion-servicio
-          uri: lb://ms-gestion-servicio
-          predicates:
-            - Path=/api/v1/gestion-servicio/**
+            - id: ms-gestion-servicio
+              uri: lb://ms-gestion-servicio
+              predicates:
+                - Path=/api/v1/gestion-servicio/**
 
-        - id: ms-notificacion
-          uri: lb://ms-notificacion
-          predicates:
-            - Path=/api/v1/notificaciones/**
+            - id: ms-notificacion
+              uri: lb://ms-notificacion
+              predicates:
+                - Path=/api/v1/notificaciones/**
 
-        - id: ms-disponibilidad
-          uri: lb://ms-disponibilidad
-          predicates:
-            - Path=/api/v1/disponibilidades/**
+            - id: ms-disponibilidad
+              uri: lb://ms-disponibilidad
+              predicates:
+                - Path=/api/v1/disponibilidades/**
 
-        - id: ms-historial-reserva
-          uri: lb://ms-historial-reserva
-          predicates:
-            - Path=/api/v1/historial-reservas/**
+            - id: ms-historial-reserva
+              uri: lb://ms-historial-reserva
+              predicates:
+                - Path=/api/v1/historial-reservas/**
 
 eureka:
   client:

@@ -337,7 +337,7 @@ services:
       dockerfile: Dockerfile
     container_name: reservapro-promocion
     ports:
-      - "8090:8090"
+      - "8095:8095"
     environment:
       - SPRING_PROFILES_ACTIVE=docker
       - EUREKA_URL=http://eureka-server:8761/eureka/

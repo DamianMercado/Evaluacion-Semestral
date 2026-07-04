@@ -11,7 +11,7 @@ import org.mapstruct.Named;
 @Mapper(componentModel = "spring")
 public interface PagoMapper {
 
-    @Mapping(target = "idPago", ignore = true)
+    @Mapping(target = "id", ignore = true)
     @Mapping(target = "estadoPago", constant = "PENDIENTE")
     @Mapping(target = "fechaPago", ignore = true)
     @Mapping(target = "aplicaDescuento", constant = "false")
