@@ -3,8 +3,8 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/com.ReservaPro/ms-calificacion/src/main/resources/db.migration/V1__crear_tabla_calificacion.sql" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/com.ReservaPro/ms-calificacion/src/main/resources/db.migration/V2__insert_calificacion.sql" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/com.ReservaPro/ms-gestion-servicio/src/main/resources/migration/V1__crear_tabla_gestion_servicio.sql" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/com.ReservaPro/ms-gestion-servicio/src/main/resources/migration/V2__insert_gestion_servicio.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/com.ReservaPro/ms-gestion-servicio/src/main/resources/db.migration/V1__crear_tabla_gestion_servicio.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/com.ReservaPro/ms-gestion-servicio/src/main/resources/db.migration/V2__insert_gestion_servicio.sql" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/com.ReservaPro/ms-reserva/src/main/resources/db.migration/V1__crear_tabla_reserva.sql" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/com.ReservaPro/ms-reserva/src/main/resources/db.migration/V2__insert_reservas.sql" dialect="GenericSQL" />
   </component>

@@ -25,7 +25,7 @@ public class GestionServicio {
     @Column(name = "nombre", nullable = false, length = 100)
     private String nombre;
 
-    @Column(name = "precio_servicio", nullable = false)
+    @Column(name = "precio_servicio", columnDefinition = "DECIMAL", nullable = false)
     private Double precioServicio;
 
     @Column(name = "duracion_minuto", nullable = false)
