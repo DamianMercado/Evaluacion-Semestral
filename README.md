@@ -3,7 +3,13 @@
 Sistema de gestión de reservas de servicios (por ejemplo, canchas, espacios o servicios en general) construido con una **arquitectura de microservicios** sobre el ecosistema Spring Cloud. Permite a los usuarios registrarse, consultar disponibilidad, reservar, pagar, calificar y cancelar servicios, con soporte para promociones, notificaciones e historial de cambios.
 
 ---
+# Integrantes
 
+1. Damian Mercado
+2. Cindia Maldonado
+3. Isaac Roman
+
+---
 ## Tabla de contenidos
 
 1. [Características del proyecto](#1-características-del-proyecto)
