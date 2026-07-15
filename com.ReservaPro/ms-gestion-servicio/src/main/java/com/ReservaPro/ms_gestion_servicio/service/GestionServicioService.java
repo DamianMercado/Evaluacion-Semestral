@@ -79,8 +79,6 @@ public class GestionServicioService {
             gestionServicio.setEstadoServicio(EstadoServicio.ACTIVADO);
         }
 
-        if (UsuarioOperadorClient == UsuarioOperadorClient.get
-
         GestionServicio guardado = gestionServicioRepository.save(gestionServicio);
         log.info("Servicio creado correctamente con ID: {}", guardado.getId());
 

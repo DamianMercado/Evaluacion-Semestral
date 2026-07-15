@@ -205,6 +205,38 @@ class PagoServiceTest {
         }
 
         @Test
+        void procesarPagoConPromocionQueFallaDebeIgnorarDescuento() {
+
+            request.setCodigoPromocion("PROMO_INVALIDA");
+
+            feign.FeignException feignException = mock(feign.FeignException.class);
+            when(feignException.getMessage()).thenReturn("Promoción no encontrada");
+
+            when(promocionClient.aplicarPromocion("PROMO_INVALIDA", 10000.0))
+                    .thenThrow(feignException);
+
+            when(pagoMapper.toEntity(request))
+                    .thenReturn(pago);
+
+            when(pagoRepository.save(pago))
+                    .thenReturn(pago);
+
+            when(pagoMapper.toResponse(pago))
+                    .thenReturn(response);
+
+            PagoResponse resultado =
+                    pagoService.procesarPago(request);
+
+            assertNotNull(resultado);
+            assertEquals("No aplica", resultado.getDescuento());
+            assertFalse(pago.isAplicaDescuento());
+            assertEquals(10000.0, pago.getMontoPago());
+
+            verify(promocionClient).aplicarPromocion("PROMO_INVALIDA", 10000.0);
+            verify(pagoRepository).save(pago);
+        }
+
+        @Test
         void procesarPagoConMontoCeroDebeLanzarExcepcion() {
 
             request.setMontoPago(0.0);
