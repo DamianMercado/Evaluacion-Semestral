@@ -42,13 +42,13 @@ public class Reserva {
     @Column(name = "fecha_reserva", nullable = false)
     private LocalDateTime fechaReserva;
 
-    @Column(name = "precio_reserva", nullable = false, columnDefinition = "DECIMAL")
+    @Column(name = "precio_reserva", columnDefinition = "DECIMAL", nullable = false)
     private Double precioReserva;
 
     @Column(name = "descuento_aplicado", columnDefinition = "DECIMAL")
     private Double descuentoAplicado;
 
-    @Column(name = "precio_final", nullable = false, columnDefinition = "DECIMAL")
+    @Column(name = "precio_final", columnDefinition = "DECIMAL", nullable = false)
     private Double precioFinal;
 
     @Enumerated(EnumType.STRING)

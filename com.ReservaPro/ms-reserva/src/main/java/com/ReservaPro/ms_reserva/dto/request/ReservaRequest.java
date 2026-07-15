@@ -3,7 +3,6 @@ package com.ReservaPro.ms_reserva.dto.request;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -38,17 +37,23 @@ public class ReservaRequest {
     @NotNull(message = "La fecha de reserva es obligatoria")
     private LocalDateTime fechaReserva;
 
-    @Schema(description = "Precio original de la reserva", example = "1000")
-    @NotNull(message = "El precioReserva es obligatorio")
-    @Positive(message = "El precioReserva debe ser mayor a 0")
+    @Schema(
+            description = "Precio original de la reserva. No es necesario enviarlo: "
+                    + "se calcula automáticamente con el precioServicio obtenido "
+                    + "desde ms-gestion-servicio a partir de idGestionServicio",
+            example = "1000",
+            accessMode = Schema.AccessMode.READ_ONLY
+    )
     private Double precioReserva;
 
     @Schema(description = "Descuento aplicado (puede ser 0)", example = "0")
     @Min(value = 0, message = "El descuentoAplicado debe ser mayor o igual a 0")
     private Double descuentoAplicado;
 
-    @Schema(description = "Precio final después del descuento", example = "1000")
-    @NotNull(message = "El precioFinal es obligatorio")
-    @Positive(message = "El precioFinal debe ser mayor a 0")
+    @Schema(
+            description = "Precio final después del descuento. Si no se envía, "
+                    + "se calcula automáticamente como precioReserva - descuentoAplicado",
+            example = "1000"
+    )
     private Double precioFinal;
 }

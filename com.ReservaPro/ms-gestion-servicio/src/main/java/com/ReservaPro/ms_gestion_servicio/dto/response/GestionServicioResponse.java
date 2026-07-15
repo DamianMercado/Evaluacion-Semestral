@@ -21,7 +21,7 @@ public class GestionServicioResponse {
     @Schema(description = "Duración en minutos del servicio", example = "60")
     private Integer duracionMinuto;
 
-    @Schema(description = "Estado del servicio", example = "ACTIVADO")
+    @Schema(description = "Estado del servicio", example = "ACTIVADO, DESACTIVADO, MANTENIMIENTO")
     private String estadoServicio;
 
     @Schema(description = "Ubicación donde se presta el servicio", example = "Sucursal Centro")

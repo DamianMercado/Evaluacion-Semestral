@@ -3,6 +3,7 @@ package com.ReservaPro.ms_reserva.service;
 import com.ReservaPro.ms_reserva.client.*;
 import com.ReservaPro.ms_reserva.dto.request.ReservaPagoRequest;
 import com.ReservaPro.ms_reserva.dto.request.ReservaRequest;
+import com.ReservaPro.ms_reserva.dto.response.GestionServicioResponse;
 import com.ReservaPro.ms_reserva.dto.response.ReservaCompletaResponse;
 import com.ReservaPro.ms_reserva.dto.response.ReservaResponse;
 import com.ReservaPro.ms_reserva.enums.EstadoReserva;
@@ -69,13 +70,32 @@ public class ReservaService {
         );
 
         validarUsuario(request.getIdUsuario());
-        validarServicio(request.getIdGestionServicio());
+
+        // Se consulta ms-gestion-servicio con el idGestionServicio para
+        // obtener el precioServicio real y usarlo como precioReserva.
+        GestionServicioResponse servicio =
+                validarServicio(request.getIdGestionServicio());
 
         Reserva reserva = reservaMapper.toEntity(request);
 
         reserva.setEstadoReserva(EstadoReserva.PENDIENTE_PAGO);
 
-        if (request.getPrecioFinal() > request.getPrecioReserva()) {
+        // precioReserva SIEMPRE se asigna con el precioServicio obtenido
+        // desde ms-gestion-servicio (no se confía en lo que envíe el cliente).
+        reserva.setPrecioReserva(servicio.getPrecioServicio());
+
+        Double descuento = request.getDescuentoAplicado() != null
+                ? request.getDescuentoAplicado()
+                : 0.0;
+        reserva.setDescuentoAplicado(descuento);
+
+        // Si no envían precioFinal, se calcula automáticamente.
+        Double precioFinal = request.getPrecioFinal() != null
+                ? request.getPrecioFinal()
+                : reserva.getPrecioReserva() - descuento;
+        reserva.setPrecioFinal(precioFinal);
+
+        if (precioFinal > reserva.getPrecioReserva()) {
             throw new IllegalArgumentException(
                     "El precio final no puede ser mayor al precio de la reserva"
             );
@@ -121,11 +141,30 @@ public class ReservaService {
             );
         }
 
+        // Si cambia el servicio, se vuelve a consultar ms-gestion-servicio
+        // para actualizar precioReserva con el precioServicio vigente.
+        if (!request.getIdGestionServicio()
+                .equals(reserva.getIdGestionServicio())) {
+
+            GestionServicioResponse servicio =
+                    validarServicio(request.getIdGestionServicio());
+
+            reserva.setPrecioReserva(servicio.getPrecioServicio());
+            reserva.setIdGestionServicio(request.getIdGestionServicio());
+        }
+
         reserva.setFechaReserva(request.getFechaReserva());
-        reserva.setPrecioReserva(request.getPrecioReserva());
-        reserva.setDescuentoAplicado(request.getDescuentoAplicado());
-        reserva.setPrecioFinal(request.getPrecioFinal());
-        reserva.setIdGestionServicio(request.getIdGestionServicio());
+
+        Double descuento = request.getDescuentoAplicado() != null
+                ? request.getDescuentoAplicado()
+                : 0.0;
+        reserva.setDescuentoAplicado(descuento);
+
+        Double precioFinal = request.getPrecioFinal() != null
+                ? request.getPrecioFinal()
+                : reserva.getPrecioReserva() - descuento;
+        reserva.setPrecioFinal(precioFinal);
+
         reserva.setIdPromocion(request.getIdPromocion());
 
         Reserva actualizada =
@@ -451,10 +490,22 @@ public class ReservaService {
         }
     }
 
-    private void validarServicio(Long idServicio) {
+    private GestionServicioResponse validarServicio(Long idServicio) {
 
         try {
-            gestionServicioClient.obtenerServicioPorId(idServicio);
+            GestionServicioResponse servicio =
+                    gestionServicioClient.obtenerServicioPorId(idServicio);
+
+            if (servicio == null || servicio.getPrecioServicio() == null) {
+                throw new IllegalArgumentException(
+                        "El servicio con ID " + idServicio
+                                + " no tiene un precioServicio válido"
+                );
+            }
+
+            return servicio;
+        } catch (IllegalArgumentException e) {
+            throw e;
         } catch (Exception e) {
             log.error(
                     "Error al validar servicio ID {}: {}",

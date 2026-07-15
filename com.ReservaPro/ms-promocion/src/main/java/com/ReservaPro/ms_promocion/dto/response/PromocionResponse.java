@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class PromocionResponse {
 
-    private Long idPromocion;
+    private Long id;
     private String codigoPromocion;
     private String descripcion;
     private Double porcentajeDescuento;

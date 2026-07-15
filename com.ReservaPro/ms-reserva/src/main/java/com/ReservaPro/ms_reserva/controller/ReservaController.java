@@ -62,7 +62,7 @@ public class ReservaController {
     }
 
     @GetMapping("/{id}/completa")
-    @Operation(summary = "Obtener reserva completa con datos de otros MS")
+    @Operation(summary = "Obtener reserva completa con datos de otros Microservicios")
     public ResponseEntity<ReservaCompletaResponse> obtenerReservaCompleta(
             @PathVariable Long id) {
 

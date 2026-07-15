@@ -3,12 +3,15 @@ package com.ReservaPro.ms_promocion.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDateTime;
+
 @Data
 @Entity
 public class Promocion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idPromocion;
+    @Column (name = "id_promocion")
+    private Long id;
 
     @Column (name = "codigo", nullable = false)
     private String codigoPromocion;
@@ -21,4 +24,5 @@ public class Promocion {
 
     @Column ( name = "activa_promocion")
     private Boolean activaPromocion;
+
 }

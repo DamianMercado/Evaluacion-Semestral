@@ -1,5 +1,6 @@
 package com.ReservaPro.ms_gestion_servicio.service;
 
+import com.ReservaPro.ms_gestion_servicio.client.UsuarioOperadorClient;
 import com.ReservaPro.ms_gestion_servicio.dto.request.GestionServicioRequest;
 import com.ReservaPro.ms_gestion_servicio.dto.response.GestionServicioResponse;
 import com.ReservaPro.ms_gestion_servicio.enums.EstadoServicio;
@@ -77,6 +78,8 @@ public class GestionServicioService {
         if (gestionServicio.getEstadoServicio() == null) {
             gestionServicio.setEstadoServicio(EstadoServicio.ACTIVADO);
         }
+
+        if (UsuarioOperadorClient == UsuarioOperadorClient.get
 
         GestionServicio guardado = gestionServicioRepository.save(gestionServicio);
         log.info("Servicio creado correctamente con ID: {}", guardado.getId());

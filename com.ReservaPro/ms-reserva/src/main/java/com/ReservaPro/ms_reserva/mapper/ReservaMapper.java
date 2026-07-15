@@ -29,6 +29,10 @@ public interface ReservaMapper {
     // El estado se asigna desde el Service
     @Mapping(target = "estadoReserva", ignore = true)
 
+    // El precioReserva se asigna desde el Service, consultando
+    // el precioServicio real en ms-gestion-servicio
+    @Mapping(target = "precioReserva", ignore = true)
+
     // La fecha de creación se genera automáticamente
     @Mapping(target = "fechaCreacion", ignore = true)
 
@@ -50,7 +54,7 @@ public interface ReservaMapper {
             List<Reserva> reservas
     );
 
-    // Método personalizado para convertir el enum EstadoReserva a String
+    // Métodos personalizado para convertir el enum EstadoReserva a String
     @Named("estadoReservaToString")
     default String estadoReservaToString(
             EstadoReserva estado) {

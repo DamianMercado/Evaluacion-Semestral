@@ -1,5 +1,6 @@
 package com.ReservaPro.ms_reserva.client;
 
+import com.ReservaPro.ms_reserva.dto.response.GestionServicioResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -8,5 +9,5 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface GestionServicioClient {
 
     @GetMapping("/api/v1/gestion-servicio/{id}")
-    Object obtenerServicioPorId(@PathVariable("id") Long id);
+    GestionServicioResponse obtenerServicioPorId(@PathVariable("id") Long id);
 }

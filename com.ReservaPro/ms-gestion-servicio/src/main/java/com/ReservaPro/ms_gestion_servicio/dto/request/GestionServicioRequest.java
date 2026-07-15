@@ -9,7 +9,6 @@ import lombok.Data;
 public class GestionServicioRequest {
 
     @Schema(description = "Identificador del servicio", example = "1")
-    @NotNull(message = "El id del servicio es obligatorio")
     @Min(value = 1, message = "El id del servicio debe ser mayor o igual a 1")
     private Long id;
 
@@ -28,8 +27,7 @@ public class GestionServicioRequest {
     @Max(value = 1440, message = "La duración no puede superar 1440 minutos (24 horas)")
     private Integer duracionMinuto;
 
-    @Schema(description = "Estado del servicio (ej. ACTIVADO, DESACTIVADO)", example = "ACTIVADO")
-    @NotBlank(message = "El estado es obligatorio y no puede estar vacío")
+    @Schema(description = "Estado del servicio (ej. ACTIVADO, DESACTIVADO, MANTENIMIENTO)", example = "ACTIVADO")
     private String estadoServicio;
 
     @Schema(description = "Ubicación donde se presta el servicio", example = "Sucursal Centro")
