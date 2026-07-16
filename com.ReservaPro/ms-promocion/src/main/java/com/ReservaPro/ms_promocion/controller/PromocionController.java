@@ -28,13 +28,13 @@ public class PromocionController {
 
     //LISTAR PROMOCIONES
     @GetMapping
-    @Operation(summary = "Obtener todas las promociones", description = "Obtiene una lista de promciones")
+    @Operation(summary = "Obtener todas las promociones", description = "Obtiene una lista de promociones")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Operación exitosa"),
+            @ApiResponse(responseCode = "201", description = "Listado de promociones exitosa"),
             @ApiResponse(responseCode = "429", description = "Ha superado el tiempo limite de peticiones")
     })
     public ResponseEntity <List<Promocion>> obtenerTodasLasPromociones() {
-        return ResponseEntity.ok().body(promocionService.ListarPromociones());
+        return ResponseEntity.status(HttpStatus.CREATED).body(promocionService.ListarPromociones());
     }
 
     //CREAR PROMOCIONES
